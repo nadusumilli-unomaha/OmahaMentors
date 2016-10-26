@@ -16,7 +16,7 @@
         <!-- Bootstrap Core CSS -->
         <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
         {{Html::style('vendor/bootstrap/css/bootstrap.min.css')}}
-            {{Html::style('vendor/bootstrap/css/bootstrap.min.js')}}
+
         <!-- Html::style('vendor/bootstrap/css/bootstrap-switch.css')}}
         Html::style('vendor/bootstrap/css/bootstrap-switch.min.css')}} -->
         <!-- Theme CSS -->
@@ -78,7 +78,7 @@
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
                             <li class="dropdown-submenu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-expanded="false">
                                     <i class="glyphicon glyphicon-user"></i>  {{ Auth::user()->firstName }} <span class="caret"></span>
                                 </a>
 
