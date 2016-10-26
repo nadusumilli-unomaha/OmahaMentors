@@ -16,7 +16,7 @@
         <!-- Bootstrap Core CSS -->
         <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
         {{Html::style('vendor/bootstrap/css/bootstrap.min.css')}}
-
+            
         <!-- Html::style('vendor/bootstrap/css/bootstrap-switch.css')}}
         Html::style('vendor/bootstrap/css/bootstrap-switch.min.css')}} -->
         <!-- Theme CSS -->
@@ -41,7 +41,7 @@
     <body id="page-top" class="index">
 
         <!-- Navigation -->
-        <nav id="mainNav" class="navbar navbar-default navbar-static-top navbar-custom">
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header page-scroll">
