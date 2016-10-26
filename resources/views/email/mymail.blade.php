@@ -1,7 +1,9 @@
-@extends('layouts.app2')
-
-@section('content')
-	<div>
-		sent mail with {{$messages}}
-	</div>
-@endsection
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Mail</title>
+</head>
+<body>
+	This is the message {{$messages}}
+</body>
+</html>
