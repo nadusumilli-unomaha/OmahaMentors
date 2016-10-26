@@ -103,7 +103,7 @@
 						    <input type="radio" name="mentorToggle" id="option1" autocomplete="off" value="1" checked> View My Profile
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="mentorToggle" id="option2" autocomplete="off" value="2"> View My Student Profile
+						    <input type="radio" name="mentorToggle" id="option2" autocomplete="off" value="2"> View My Student's Profile
 						  </label>
 						  <label class="btn btn-primary">
 						    <input type="radio" name="mentorToggle" id="option3" autocomplete="off" value="3"> Visits

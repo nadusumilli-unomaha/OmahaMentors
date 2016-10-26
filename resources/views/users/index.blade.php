@@ -31,7 +31,9 @@
             display: none;
         }
 
-    </style>
+       
+        </style>
+
 
 
     <!--###########################################################################-->
@@ -44,25 +46,28 @@
                 <div id="myRadioGroup">
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-primary active">
-                            <input type="radio" name="adminToggle" id="option1" autocomplete="off" value="1" checked> View My Profile
+                            <input type="radio" name="adminToggle" id="option1" autocomplete="off" value="1" checked> My Profile
                         </label>
                         <label class="btn btn-primary active">
-                            <input type="radio" name="adminToggle" id="option2" autocomplete="off" value="2" > View Permission Access List
+                            <input type="radio" name="adminToggle" id="option2" autocomplete="off" value="2" > Manage Access
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" name="adminToggle" id="option3" autocomplete="off" value="3"> View All Students Profile
+                            <input type="radio" name="adminToggle" id="option3" autocomplete="off" value="3"> Manage Students
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" name="adminToggle" id="option4" autocomplete="off" value="4"> View All Mentors Profile
+                            <input type="radio" name="adminToggle" id="option4" autocomplete="off" value="4"> Manage Mentors
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" name="adminToggle" id="option5" autocomplete="off" value="5"> View All Employee's Profile
+                            <input type="radio" name="adminToggle" id="option5" autocomplete="off" value="5"> Manage Employees
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" name="adminToggle" id="option6" autocomplete="off" value="6"> View All Visits
+                            <input type="radio" name="adminToggle" id="option6" autocomplete="off" value="6"> Manage Visits
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" name="adminToggle" id="option7" autocomplete="off" value="7"> View All Grades
+                            <input type="radio" name="adminToggle" id="option7" autocomplete="off" value="7"> Manage Grades
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="adminToggle" id="option7" autocomplete="off" value="7"> Generate Report
                         </label>
                     </div>
                 </div>
@@ -125,7 +130,7 @@
             </div>
 
             <div id="adminToggle2" class="adminProfile" >
-            <h1>My Profile</h1>
+            <h1>Manage Access Requests</h1>
             <div class="table-responsive">
                 <!-- The code to list all the mentors and other people stuff that can admin can see and create.-->
                 <table class="table table-bordered table-striped table-hover table-inverse">
@@ -139,7 +144,7 @@
                         <th>Zip</th>
                         <th>Primary Email</th>
                         <th>Phone</th>
-                        <th>Role Request</th>
+                        <th>Requested Role</th>
                         <th>Admin</th>
                         <th>Employee</th>
                         <th>Mentor</th>
@@ -177,7 +182,7 @@
 
             <!-- This is the second part of the radio button information. -->
             <div id="adminToggle3" class="adminProfile" >
-            <h1>All students Profile</h1>
+            <h1>All Student Profile</h1>
             <a class="btn btn-primary" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
             <div class="table-responsive">
                 <!-- The code to list all the students and other people stuff that can admin can see and create.-->
@@ -223,8 +228,8 @@
 
             <!-- This is the third part of the radio button scafolding. -->
             <div id="adminToggle4" class="adminProfile" >
-            <h1>All Mentors Profile</h1>
-            <a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a User</a><br/>
+            <h1>All Mentor Profile</h1>
+            <a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a Mentor</a><br/>
             <div class="table-responsive">
                 <!-- The code to list all the mentors and other people stuff that can admin can see and create.-->
                 <table class="table table-bordered table-striped table-hover table-inverse">
@@ -270,7 +275,7 @@
                 <!-- This is the fourth part of the radio button scafolding. -->
             <div id="adminToggle5" class="adminProfile" >
             <h1>All Employee profile</h1>
-            <a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a User</a><br/>
+            <a class="btn btn-primary" href="{{ action('UserController@create') }}">Create an Employee</a><br/>
             <div class="table-responsive">
                 <!-- The code to list all the employees and other people stuff that can admin can see and create.-->
                 <table class="table table-bordered table-striped table-hover table-inverse">
@@ -390,6 +395,8 @@
                 </table>
                 </div>
             </div>
+
+
         </div>
     </div>
     <!--#############################################################################-->
