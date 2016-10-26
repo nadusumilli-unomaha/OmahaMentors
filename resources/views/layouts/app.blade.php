@@ -14,7 +14,9 @@
 
     <!-- Bootstrap Core CSS -->
     <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    {{Html::style('vendor/bootstrap/css/bootstrap.min.css')}}
     {{Html::style('vendor/bootstrap/css/bootstrap.min.js')}}
+
     <!-- Theme CSS -->
     <!-- <link href="css/freelancer.min.css" rel="stylesheet"> -->
     {{Html::style('css/freelancer.min.css')}}
