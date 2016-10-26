@@ -29,7 +29,7 @@ class Notify extends Mailable
      */
     public function build()
     {
-        return $this->from('superawesome@gmail.com')
+        return $this->from('superawesome@nikhitadusumilli.me')
             ->view('email.mymail');
     }
 }

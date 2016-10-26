@@ -15,7 +15,7 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('postmaster@nikhitadusumilli.me'),
+        'domain' => env('superawesome@nikhitadusumilli.me'),
         'secret' => env('Tufluckfed1'),
     ],
 
