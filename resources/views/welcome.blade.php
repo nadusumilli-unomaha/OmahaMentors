@@ -101,12 +101,12 @@
                 </div>
             </div>
             <div class="row">
-                                   <h2 align="center">Super Awesome Company</h2>
+                                   <h2 align="center">Omaha Mentor For Kids</h2>
                                    <br>
                             
-                            <img src="http://gdurl.com/94Oo" class="img-responsive img-centered" alt="" height="400" width="400">
+                            <img src="http://gdurl.com/TVwB" class="img-responsive img-centered" alt="" height="300" width="300">
                             <br>
-                            <p>Super Awesome Team is a group of young individuals pursuing their graduate career at the University of Nebraska, Omaha. Super Awesome Team is known for delivering excellent website designs and accomplishing requirement. Super Awesome Team puts client's needs first and goes 'above and beyond' to bring value to the clients.</p>
+                            <p>Omaha Mentors for Kids Inc is a fictitious not-for-profit organization in Omaha Nebraska. It provides mentoring for at-risk students in the Omaha Public Schools. When OMK approached Super Awesome Company, their system managed over 800 students and mentors through spreadsheets. Super Awesome Team built this robust, simple, yet, efficient website for them. This website simplifies their tracking & reporting system, this website is compatible on mobile devices.</p>
                 </div>
                 
                 <div class="col-lg-8 col-lg-offset-2 text-center">
