@@ -16,6 +16,7 @@
         <!-- Bootstrap Core CSS -->
         <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
         {{Html::style('vendor/bootstrap/css/bootstrap.min.css')}}
+            {{Html::style('vendor/bootstrap/css/bootstrap.min.js')}}
         <!-- Html::style('vendor/bootstrap/css/bootstrap-switch.css')}}
         Html::style('vendor/bootstrap/css/bootstrap-switch.min.css')}} -->
         <!-- Theme CSS -->
