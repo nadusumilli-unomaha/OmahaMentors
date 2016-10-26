@@ -12,7 +12,7 @@ Add this in the .env file where it says mail_driver. remove those and add these.
 |MAIL_HOST=|smtp.gmail.com|
 |MAIL_PORT=|587|
 |MAIL_USERNAME=|your email|	
-|MAIL_PASSWORD=|obdvkhyvliznipyn|
+|MAIL_PASSWORD=|your password|
 |MAIL_ENCRYPTION=|tls|
 
 ## Development Tools
