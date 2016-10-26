@@ -8,110 +8,51 @@
             <div class="panel-heading"><strong>Update Admin</strong></div>
             <div class="panel-body">
     			{!! Form::model($grade,['method' => 'PATCH','route'=>['grades.update',$grade->id]]) !!}
-		        <div class="form-group floating-label-form-group controls {{ $errors->has('lastName') ? ' has-error has-feedback' : '' }}">
-		            {!! Form::label('lastName', 'Last Name:',['class'=>'col-md-4 control-label']) !!}
+		        
+		        <div class="form-group floating-label-form-group controls {{ $errors->has('subject') ? ' has-error has-feedback' : '' }}">
+		            {!! Form::label('subject', 'Subject:',['class'=>'col-md-4 control-label']) !!}
 		            <div class="col-md-14">
-			            {!! Form::text('lastName',null,['class'=>'form-control','placeholder'=>'Last Name','data-validation-required-message']) !!}
+			            {!! Form::text('subject',$grade['subject'],['class'=>'form-control','placeholder'=>'Subject','data-validation-required-message']) !!}
 			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-			            @if ($errors->has('lastName'))
+			            @if ($errors->has('subject'))
 			                <span class="help-block">
-			                    <strong>{{ $errors->first('lastName') }}</strong>
+			                    <strong>{{ $errors->first('subject') }}</strong>
 			                </span>
 			            @endif
 		            </div>
 		        </div>
-		        <div class="form-group floating-label-form-group controls {{ $errors->has('firstName') ? ' has-error has-feedback' : '' }}">
-		            {!! Form::label('firstName', 'First Name',['class'=>'col-md-4 control-label']) !!}
+		        <div class="form-group floating-label-form-group controls {{ $errors->has('period') ? ' has-error has-feedback' : '' }}">
+		            {!! Form::label('period', 'Period:',['class'=>'col-md-4 control-label']) !!}
 		            <div class="col-md-14">
-			            {!! Form::text('firstName',null,['class'=>'form-control','placeholder'=>'First Name','data-validation-required-message']) !!}
+			            {!! Form::text('period',$grade['period'],['class'=>'form-control','placeholder'=>'Period','data-validation-required-message']) !!}
 			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-			            @if ($errors->has('firstName'))
+			            @if ($errors->has('period'))
 			                <span class="help-block">
-			                    <strong>{{ $errors->first('firstName') }}</strong>
+			                    <strong>{{ $errors->first('period') }}</strong>
 			                </span>
 			            @endif
 		            </div>
 		        </div>
-		        <div class="form-group floating-label-form-group controls {{ $errors->has('address') ? ' has-error has-feedback' : '' }}">
-		            {!! Form::label('address', 'Street Address:',['class'=>'col-md-4 control-label']) !!}
+		        <div class="form-group floating-label-form-group controls {{ $errors->has('actual') ? ' has-error has-feedback' : '' }}">
+		            {!! Form::label('actual', 'Grade:',['class'=>'col-md-4 control-label']) !!}
 		            <div class="col-md-14">
-			            {!! Form::text('address',null,['class'=>'form-control','placeholder'=>'Street Address','data-validation-required-message'] ) !!}
+			            {!! Form::text('actual',$grade['actual'],['class'=>'form-control','placeholder'=>'Grade','data-validation-required-message']) !!}
 			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-			            @if ($errors->has('address'))
+			            @if ($errors->has('actual'))
 			                <span class="help-block">
-			                    <strong>{{ $errors->first('address') }}</strong>
+			                    <strong>{{ $errors->first('actual') }}</strong>
 			                </span>
 			            @endif
 		            </div>
 		        </div>
-		        <div class="form-group floating-label-form-group controls {{ $errors->has('city') ? ' has-error has-feedback' : '' }}">
-		            {!! Form::label('city', 'City:',['class'=>'col-md-4 control-label']) !!}
+		        <div class="form-group floating-label-form-group controls {{ $errors->has('comments') ? ' has-error has-feedback' : '' }}">
+		            {!! Form::label('comments', 'Comments:',['class'=>'col-md-4 control-label']) !!}
 		            <div class="col-md-14">
-		            {!! Form::text('city',null,['class'=>'form-control','placeholder'=>'City','data-validation-required-message']) !!}
-		            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-		            @if ($errors->has('city'))
-		                <span class="help-block">
-		                    <strong>{{ $errors->first('city') }}</strong>
-		                </span>
-		            @endif
-		            </div>
-		        </div>
-		        <div class="form-group floating-label-form-group controls {{ $errors->has('state') ? ' has-error has-feedback' : '' }}">
-		            {!! Form::label('state', 'State:',['class'=>'col-md-4 control-label']) !!}
-		            <div class="col-md-14">
-			            {!! Form::text('state',null,['class'=>'form-control','placeholder'=>'State','data-validation-required-message']) !!}
+			            {!! Form::text('comments',$grade['comments'],['class'=>'form-control','placeholder'=>'Comments','data-validation-required-message']) !!}
 			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-			            @if ($errors->has('state'))
+			            @if ($errors->has('comments'))
 			                <span class="help-block">
-			                    <strong>{{ $errors->first('state') }}</strong>
-			                </span>
-			            @endif
-		            </div>
-		        </div>
-		        <div class="form-group floating-label-form-group controls {{ $errors->has('zip') ? ' has-error has-feedback' : '' }}">
-		            {!! Form::label('zip', 'Zip:',['class'=>'col-md-4 control-label']) !!}
-		            <div class="col-md-14">
-			            {!! Form::text('zip',null,['class'=>'form-control','placeholder'=>'Zip','data-validation-required-message']) !!}
-			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-			            @if ($errors->has('zip'))
-			                <span class="help-block">
-			                    <strong>{{ $errors->first('zip') }}</strong>
-			                </span>
-			            @endif
-		            </div>
-		        </div>
-		        <div class="form-group floating-label-form-group controls {{ $errors->has('email') ? ' has-error has-feedback' : '' }}">
-		            {!! Form::label('email', 'Primary Email:',['class'=>'col-md-4 control-label']) !!}
-		            <div class="col-md-14">
-			            {!! Form::text('email',null,['class'=>'form-control','placeholder'=>'Primary Email','data-validation-required-message']) !!}
-			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-			            @if ($errors->has('email'))
-			                <span class="help-block">
-			                    <strong>{{ $errors->first('email') }}</strong>
-			                </span>
-			            @endif
-		            </div>
-		        </div>
-		        <div class="form-group floating-label-form-group controls {{ $errors->has('phone') ? ' has-error has-feedback' : '' }}">
-		            {!! Form::label('phone', 'Phone:',['class'=>'col-md-4 control-label']) !!}
-		            <div class="col-md-14">
-			            {!! Form::text('phone',null,['class'=>'form-control','placeholder'=>'Phone','data-validation-required-message']) !!}
-			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-			            @if ($errors->has('phone'))
-			                <span class="help-block">
-			                    <strong>{{ $errors->first('phone') }}</strong>
-			                </span>
-			            @endif
-		            </div>
-		        </div>
-		        <div class="form-group floating-label-form-group controls {{ $errors->has('school') ? ' has-error has-feedback' : '' }}">
-		            {!! Form::label('school', 'School:',['class'=>'col-md-4 control-label']) !!}
-		            <div class="col-md-14">
-			            {!! Form::text('school',null,['class'=>'form-control','placeholder'=>'School','data-validation-required-message']) !!}
-			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-			            @if ($errors->has('school'))
-			                <span class="help-block">
-			                    <strong>{{ $errors->first('school') }}</strong>
+			                    <strong>{{ $errors->first('comments') }}</strong>
 			                </span>
 			            @endif
 		            </div>

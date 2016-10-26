@@ -65,7 +65,7 @@ class NotificationController extends Controller
         $notification= new Notification($request->all());
         $notification->type = 'Notification';
         $notification->save();
-        return redirect('notifications');
+        return redirect('/afterLogin');
     }
 
     /**
@@ -115,7 +115,7 @@ class NotificationController extends Controller
         $notification= new Notification($request->all());
         $notification=Notification::find($id);
         $notification->update($request->all());
-        return redirect('notifications');
+        return redirect('/afterLogin');
     }
 
     /**
@@ -127,6 +127,6 @@ class NotificationController extends Controller
     public function destroy($id)
     {
         Notification::find($id)->delete();
-        return redirect('notifications');
+        return redirect('/afterLogin');
     }
 }

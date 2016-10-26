@@ -13,11 +13,11 @@ class Visit extends Model
         'student_id',
     ];
 
-    public function students() {
-        return $this->belongsToMany('App\Student');
+    public function student() {
+        return $this->belongsTo('App\Student');
     }
 
-    public function users() {
+    public function user() {
         return $this->belongsTo('App\User');
     }
 }

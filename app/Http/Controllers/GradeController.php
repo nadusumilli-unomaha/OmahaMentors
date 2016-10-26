@@ -117,7 +117,7 @@ class GradeController extends Controller
         $grade= new Grade($request->all());
         $grade=Grade::find($id);
         $grade->update($request->all());
-        return redirect('grades');
+        return redirect('/afterLogin');
     }
 
     /**
@@ -129,6 +129,6 @@ class GradeController extends Controller
     public function destroy($id)
     {
         Grade::find($id)->delete();
-        return redirect('grades');
+        return redirect('/afterLogin');
     }
 }

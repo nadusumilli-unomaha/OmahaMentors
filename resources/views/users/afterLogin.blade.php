@@ -106,7 +106,7 @@
 						    <input type="radio" name="mentorToggle" id="option2" autocomplete="off" value="2"> View My Student Profile
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="mentorToggle" id="option3" autocomplete="off" value="3"> Attendance
+						    <input type="radio" name="mentorToggle" id="option3" autocomplete="off" value="3"> Visits
 						  </label>
 						</div>
 						</div>
@@ -212,18 +212,21 @@
 									<table class="table table-bordered table-striped table-hover table-inverse">
 										<thead>
 											<th>Student</th>
+											<th>Date</th>
 											<th>Present</th>
 										</thead>
 										<tbody>
-											@foreach ($students as $student)
+											@foreach ($visits as $visit)
 											<tr>
 												<td>
-													{{ $student->firstName }}
+													{{ $visit->student->firstName }}
 												</td>
 												<td>
-													<input type="hidden" name="student_id" value="{{$student->id}}">
+													<input type="text" name="Date" readonly value="{{$visit->Date}}">
+												</td>
+												<td>
 													<label class="switchround" >
-													  <input type="checkbox" name="actual" value="Present">
+													  <input type="checkbox" id="isPresent" {{ $visit->actual === 'Present'  ? 'checked' : ''}} name="actual" value="Present">
 													  <div class="slider round"></div>
 													</label>
 												</td>
@@ -325,7 +328,6 @@
 					                    <th>Zip</th>
 					                    <th>Primary Email</th>
 					                    <th>Phone</th>
-					                    <th>password</th>
 					                    <th>Actions</th>
 					                </tr>
 					                </thead>
@@ -340,7 +342,6 @@
 			                                <td>{{ $mentor->zip }}</td>
 			                                <td>{{ $mentor->email }}</td> 
 			                                <td>{{ $mentor->phone }}</td>
-			                                <td>{{$mentor->password_resets['email']}}</td>
 											<td><a class="btn btn-primary" href="{{ route('users.edit',$mentor->id) }}">Update</a></td>
 					                    </tr>
 					                @endforeach
@@ -369,9 +370,9 @@
 					                    <tr>
 			                                <td>{{ $visit->Date }}</td>
 			                                <td>{{ $visit->check }}</td>
-			                                <td>{{ $visit->users->firstName }}</td>
-			                                <td>{{ $visit->student['firstName'] }}</td>
-											<td><a class="btn btn-primary" href="{{ route('visits.edit',$visit->id) }}">Update</a></td>
+			                                <td>{{ $visit->user->firstName }}</td>
+			                                <td>{{ $visit->student->firstName }}</td>
+											<!-- <td><a class="btn btn-primary" href=" route('visits.edit',$visit->id) }}">Update</a></td> -->
 					                    </tr>
 					                @endforeach
 					                <hr/>
@@ -392,7 +393,6 @@
 					                    <th>Grade</th>
 					                    <th>Comments</th>
 					                    <th>Student</th>
-					                    <th>Mentor</th>
 					                    <th>Actions</th>
 					                </tr>
 					                </thead>
@@ -403,8 +403,7 @@
 			                                <td>{{ $grade->period }}</td>
 			                                <td>{{ $grade->actual }}</td>
 			                                <td>{{ $grade->comments }}</td>
-			                                <td>{{ $grade->user['firstName'] }}</td>
-			                                <td>{{ $grade->student['firstName'] }}</td>
+			                                <td>{{ $grade->student->firstName }}</td>
 											<td><a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Update</a></td>
 					                    </tr>
 					                @endforeach
@@ -416,12 +415,12 @@
 
 						<div id="employeeToggle5" class="employeeProfile">
 							<h1>Notify Users</h1>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							<form style="color:black;" action="{{route('sendmail')}}" method="post">
+								<input type="email" name="email" placeholder="Email Address">
+								<input type="text" name="messages" placeholder="Message To Send">
+								<button type="submit">Notify</button>
+								{{ csrf_field() }}
+							</form>
 						</div>
 					</div>
 				@endif

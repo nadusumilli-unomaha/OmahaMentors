@@ -119,7 +119,7 @@ class StudentController extends Controller
         $student= new Student($request->all());
         $student=Student::find($id);
         $student->update($request->all());
-        return redirect('students');
+        return redirect('/afterLogin');
     }
 
     /**
@@ -131,6 +131,6 @@ class StudentController extends Controller
     public function destroy($id)
     {
         Student::find($id)->delete();
-        return redirect('students');
+        return redirect('/afterLogin');
     }
 }

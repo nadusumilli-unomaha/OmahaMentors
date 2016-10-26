@@ -9,10 +9,8 @@
             <div class="panel-body">
 		        {!! Form::open(['url' => 'grades', 'class'=>'form-horizontal', 'role'=>'form']) !!}
 		        <div style="color:black; margin:10px 0px 0px 0px;">
-                <label>Students:</label>{!! Form::select('student_id', $students) !!}
-                </div>
-		        <div style="color:black; margin:10px 0px 0px 0px;">
-                <label>Mentors:</label>{!! Form::select('user_id', $mentors) !!}
+		        	{!! Form::label('student_id', 'Student Name:',['class'=>'col-md-4 control-label']) !!}
+                	{!! Form::select('student_id', $students) !!}
                 </div>
 		        <div class="form-group floating-label-form-group controls {{ $errors->has('subject') ? ' has-error has-feedback' : '' }}">
 		            {!! Form::label('subject', 'Subject:',['class'=>'col-md-4 control-label']) !!}

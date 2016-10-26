@@ -61,15 +61,15 @@ class UsersTableSeeder extends Seeder
         $user->roles()->attach($role_mentor);
 
         $user = new User();
-        $user->firstName = 'Nikhit ';
-        $user->lastName = 'Adusumilli';
-        $user->email = 'nikhitadusumilli@gmail.com';
+        $user->firstName = 'Tony';
+        $user->lastName = 'Stark';
+        $user->email = 'tonystark@gmail.com';
         $user->password = bcrypt('Tufluckfed1');
-        $user->address = '7535 pierce plaza apt 4';
+        $user->address = '7595 harrison street apt 4';
         $user->city = 'Omaha';
         $user->state = 'NE';
-        $user->zip = '68124'; 
-        $user->phone = '4029991276';
+        $user->zip = '68554'; 
+        $user->phone = '4027776666';
         $user->role_request = 'Mentor';
         $user->save();
         $user->roles()->attach($role_pending);

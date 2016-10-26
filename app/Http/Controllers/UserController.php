@@ -68,9 +68,21 @@ class UserController extends Controller
                 'zip' => 'required|numeric|digits:5',
                 'email' => 'required|email|unique:users,email',
                 'phone' => 'required|numeric|digits:10|unique:users,phone',
-            ]);
-        $user= new User($request->all());
-        return redirect('home');
+        ]);
+        $user = new User;
+        $user->firstName = $request['firstName'];
+        $user->email = $request['email'];
+        $user->password = bcrypt($request['password']);
+        $user->lastName = $request['lastName'];
+        $user->address = $request['address'];
+        $user->city = $request['city'];
+        $user->state = $request['state'];
+        $user->zip = $request['zip'];
+        $user->phone = $request['phone'];
+        $user->role_request = $request['role_request'];
+        $user->save();
+        $user->roles()->attach(Role::where('name','Pending')->first());
+        return redirect('/afterLogin');
     }
 
     /**

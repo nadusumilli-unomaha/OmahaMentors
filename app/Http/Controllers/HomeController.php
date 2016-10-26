@@ -40,7 +40,8 @@ class HomeController extends Controller
             else if($role->name === 'Mentor')
             {
                 $students = Student::where('user_id',$user->id)->get();
-                return view('users.afterLogin', compact('user','students'));
+                $visits = Visit::all();
+                return view('users.afterLogin', compact('user','students','visits'));
             }
             else if($role->name === 'Employee')
             {
@@ -67,7 +68,8 @@ class HomeController extends Controller
             if($role->name === 'Mentor')
             {
                 $students = Student::where('user_id',$user->id)->get();
-                return view('users.afterLogin', compact('user','students'));
+                $visits = Visit::all();
+                return view('users.afterLogin', compact('user','students','visits'));
             }
             else if($role->name === 'Pending')
             {

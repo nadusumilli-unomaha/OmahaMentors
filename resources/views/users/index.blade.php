@@ -178,6 +178,7 @@
             <!-- This is the second part of the radio button information. -->
             <div id="adminToggle3" class="adminProfile" >
             <h1>All students Profile</h1>
+            <a class="btn btn-primary" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
             <div class="table-responsive">
                 <!-- The code to list all the students and other people stuff that can admin can see and create.-->
                 <table class="table table-bordered table-striped table-hover table-inverse">
@@ -206,8 +207,12 @@
                                     <td>{{ $student->email }}
                                     <td>{{ $student->phone }}</td>
                                     <td><a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}">Update</a></td>
-                                    <td><a class="btn btn-primary" href="{{ route('students.destroy',$student->id) }}">Delete</a></td>
                                     <td><a class="btn btn-primary" href="{{ route('students.show',$student->id) }}">Read</a></td>
+                                    <td>
+                                        {!! Form::open(['method' => 'DELETE', 'route'=>['students.destroy', $student->id], 'onSubmit'=> 'if(!confirm("Deleting the student will delete all the info relating to the student\n\nAre you Sure you want to delete the student?")){return false;}'])!!}
+                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                        {!! Form::close() !!}
+                                    </td>
                         </tr>
                     @endforeach
                     <hr/>
@@ -219,6 +224,7 @@
             <!-- This is the third part of the radio button scafolding. -->
             <div id="adminToggle4" class="adminProfile" >
             <h1>All Mentors Profile</h1>
+            <a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a User</a><br/>
             <div class="table-responsive">
                 <!-- The code to list all the mentors and other people stuff that can admin can see and create.-->
                 <table class="table table-bordered table-striped table-hover table-inverse">
@@ -247,8 +253,12 @@
                                     <td>{{ $mentor->email }}
                                     <td>{{ $mentor->phone }}</td>
                                     <td><a class="btn btn-primary" href="{{ route('users.edit',$mentor->id) }}">Update</a></td>
-                                    <td><a class="btn btn-primary" href="{{ route('users.destroy',$mentor->id) }}">Delete</a></td>
                                     <td><a class="btn btn-primary" href="{{ route('users.show',$mentor->id) }}">Read</a></td>
+                                    <td>
+                                        {!! Form::open(['method' => 'DELETE', 'route'=>['users.destroy', $mentor->id], 'onSubmit'=> 'if(!confirm("Deleting the mentor will delete all the info relating to the mentor\n\nAre you Sure you want to delete the mentor?")){return false;}'])!!}
+                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                        {!! Form::close() !!}
+                                    </td>
                         </tr>
                     @endforeach
                     <hr/>
@@ -260,6 +270,7 @@
                 <!-- This is the fourth part of the radio button scafolding. -->
             <div id="adminToggle5" class="adminProfile" >
             <h1>All Employee profile</h1>
+            <a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a User</a><br/>
             <div class="table-responsive">
                 <!-- The code to list all the employees and other people stuff that can admin can see and create.-->
                 <table class="table table-bordered table-striped table-hover table-inverse">
@@ -288,8 +299,12 @@
                                     <td>{{ $employee->email }}
                                     <td>{{ $employee->phone }}</td>
                                     <td><a class="btn btn-primary" href="{{ route('users.edit',$employee->id) }}">Update</a></td>
-                                    <td><a class="btn btn-primary" href="{{ route('users.destroy',$employee->id) }}">Delete</a></td>
                                     <td><a class="btn btn-primary" href="{{ route('users.show',$employee->id) }}">Read</a></td>
+                                    <td>
+                                        {!! Form::open(['method' => 'DELETE', 'route'=>['users.destroy', $employee->id], 'onSubmit'=> 'if(!confirm("Deleting the employee will delete all the info relating to the employee\n\nAre you Sure you want to delete the Employee?")){return false;}'])!!}
+                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                        {!! Form::close() !!}
+                                    </td>
                         </tr>
                     @endforeach
                     <hr/>
@@ -301,6 +316,7 @@
             <!-- This is the fourth part of the radio button scafolding. -->
             <div id="adminToggle6" class="adminProfile" >
             <h1>All Visits</h1>
+            <a class="btn btn-primary" href="{{ action('VisitController@create') }}">Create a visit</a><br/>
             <div class="table-responsive">
                 <!-- The code to list all the visits and other people stuff that can admin can see and create.-->
                 <table class="table table-bordered table-striped table-hover table-inverse">
@@ -318,11 +334,15 @@
                         <tr>
                             <td>{{ $visit->Date }}</td>
                             <td>{{ $visit->check }}</td>
-                            <td>{{ $visit->users }}</td>
-                            <td>{{ $visit->students }}</td>
+                            <td>{{ $visit->user->firstName }}</td>
+                            <td>{{ $visit->student->firstName }}</td>
                             <td><a class="btn btn-primary" href="{{ route('visits.edit',$visit->id) }}">Update</a></td>
-                            <td><a class="btn btn-primary" href="{{ route('visits.destroy',$visit->id) }}">Delete</a></td>
                             <td><a class="btn btn-primary" href="{{ route('visits.show',$visit->id) }}">Read</a></td>
+                            <td>
+                                {!! Form::open(['method' => 'DELETE', 'route'=>['visits.destroy', $visit->id], 'onSubmit'=> 'if(!confirm("Deleting the visit will clear the attendance and notes relating to it.\n\nAre you Sure you want to delete the Visit?")){return false;}'])!!}
+                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                {!! Form::close() !!}
+                            </td>
                         </tr>
                     @endforeach
                     <hr/>
@@ -334,43 +354,42 @@
             <!-- This is the fifth part of the radio bnutton Scafolding. -->
             <div id="adminToggle7" class="adminProfile" >
             <h1>All Grade</h1>
+            <a class="btn btn-primary" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
             <div class="table-responsive">
                 <!-- The code to list all the grades and other people stuff that can admin can see and create.-->
                 <table class="table table-bordered table-striped table-hover table-inverse">
                     <thead>
                     <tr class="bg-info">
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Current Address</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Zip</th>
-                        <th>Primary Email</th>
-                        <th>Phone</th>
+                        <th>Subject</th>
+                        <th>Period</th>
+                        <th>Grade</th>
+                        <th>Comments</th>
+                        <th>Student</th>
                         <th colspan="3" class="text-center">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach ($grades as $grade)
                         <tr>
-                            <td>{{ $grade->lastName }}</td>
-                            <td>{{ $grade->firstName }}</td>
-                            <td>{{ $grade->address }}</td>
-                            <td>{{ $grade->city }}</td>
-                            <td>{{ $grade->state }}</td>
-                            <td>{{ $grade->zip }}</td>
-                            <td>{{ $grade->email }}
-                            <td>{{ $grade->phone }}</td>
+                            <td>{{ $grade->subject }}</td>
+                            <td>{{ $grade->period }}</td>
+                            <td>{{ $grade->actual }}</td>
+                            <td>{{ $grade->comments }}</td>
+                            <td>{{ $grade->student->firstName }}</td>
                             <td><a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Update</a></td>
-                            <td><a class="btn btn-primary" href="{{ route('grades.destroy',$grade->id) }}">Delete</a></td>
                             <td><a class="btn btn-primary" href="{{ route('grades.show',$grade->id) }}">Read</a></td>
+                            <td>
+                                {!! Form::open(['method' => 'DELETE', 'route'=>['grades.destroy', $grade->id], 'onSubmit'=> 'if(!confirm("\n\nAre you Sure you want to delete the Grade?")){return false;}'])!!}
+                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                {!! Form::close() !!}
+                            </td>
                         </tr>
                     @endforeach
                     <hr/>
                     </tbody>
                 </table>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
     <!--#############################################################################-->

@@ -36,21 +36,24 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    //These are the relationship defenitions for the Models.
+    //These are how eloquent qeries for relationships.
     public function roles()
     {
         return $this->belongsToMany('App\Role','user_role','user_id','role_id');
     }
     
     public function students() {
-        return $this->belongsToMany('App\Student');
+        return $this->hasMany('App\Student');
     }
+
     public function visits() {
         return $this->hasMany('App\Visit');
     }
-    public function grades() {
-        return $this->belongsToMany('App\Visit');
-    }
 
+    //##################################################################
+    //# Helper functions to create a role based login and assignments. #
+    //##################################################################
     public function hasAnyRole($roles)
     {
         if(is_array($roles)){
@@ -85,4 +88,8 @@ class User extends Authenticatable
     {
         return $this->roles()->save($role);
     }
+
+    //#####################################################################
+    //# The end of Helper functions for role based login and assignments. #
+    //#####################################################################
 }

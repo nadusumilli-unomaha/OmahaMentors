@@ -89,6 +89,11 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
+                                <li>
+                                    <a class="dropdown-item" style="color:black"  href="{{ url('/resetPassword') }}">
+                                        Reset Password
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     @endif

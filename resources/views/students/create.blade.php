@@ -9,7 +9,8 @@
             <div class="panel-body">
 		        {!! Form::open(['url' => 'students', 'class'=>'form-horizontal', 'role'=>'form']) !!}
 		        <div style="color:black;">
-                {!! Form::select('user_id', $users) !!}
+		        	{!! Form::label('user_id', 'Mentor Name:',['class'=>'col-md-4 control-label']) !!}
+                	{!! Form::select('user_id', $users) !!}
                 </div>
 		        <div class="form-group floating-label-form-group controls {{ $errors->has('lastName') ? ' has-error has-feedback' : '' }}">
 		            {!! Form::label('lastName', 'Last Name:',['class'=>'col-md-4 control-label']) !!}

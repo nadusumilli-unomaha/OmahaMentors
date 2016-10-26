@@ -24,47 +24,38 @@
     <!-- The code to list all the students and other people stuff that can visit can see and create.-->
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
-        <div class="table-responsive">   
-            <table class="table table-bordered table-striped table-hover table-inverse">
-                <thead>
-                <tr class="bg-info">
-                    <th>lastName</th>
-                    <th>firstName</th>
-                    <th>Current Address</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Zip</th>
-                    <th>Primary Email</th>
-                    <th>phone</th>
-                    <th>Type</th>
-                    <th colspan="3">Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach ($visits as $visit)
-                    <tr>
-                            <td>{{ $visit->lastName }}</td>
-                            <td>{{ $visit->firstName }}</td>
-                            <td>{{ $visit->address }}</td>
-                            <td>{{ $visit->city }}</td>
-                            <td>{{ $visit->state }}</td>
-                            <td>{{ $visit->zip }}</td>
-                            <td>{{ $visit->email }}</td>
-                            <td>{{ $visit->phone }}</td>
-                            <td>{{ $visit->type }}</td>
-                            <td><a href="{{url('visits',$visit->id)}}" class="btn btn-primary">Read</a></td>
-                            <td><a href="{{route('visits.edit',$visit->id)}}" class="btn btn-warning">Update</a></td>
+        <div class="table-responsive">
+                <!-- The code to list all the visits and other people stuff that can admin can see and create.-->
+                <table class="table table-bordered table-striped table-hover table-inverse">
+                    <thead>
+                    <tr class="bg-info">
+                        <th>Date</th>
+                        <th>Attendance</th>
+                        <th>Mentor</th>
+                        <th>Student</th>
+                        <th colspan="3" class="text-center">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($visits as $visit)
+                        <tr>
+                            <td>{{ $visit->Date }}</td>
+                            <td>{{ $visit->check }}</td>
+                            <td>{{ $visit->user->firstName }}</td>
+                            <td>{{ $visit->student->firstName }}</td>
+                            <td><a class="btn btn-primary" href="{{ route('visits.edit',$visit->id) }}">Update</a></td>
+                            <td><a class="btn btn-primary" href="{{ route('visits.show',$visit->id) }}">Read</a></td>
                             <td>
-                                {!! Form::open(['method' => 'DELETE', 'route'=>['visits.destroy', $visit->id], 'onSubmit'=> 'if(!confirm("\n\nAre you Sure you want to delete the visit?")){return false;}'])!!}
+                                {!! Form::open(['method' => 'DELETE', 'route'=>['visits.destroy', $visit->id], 'onSubmit'=> 'if(!confirm("Deleting the visit will clear the attendance and notes relating to it.\n\nAre you Sure you want to delete the Visit?")){return false;}'])!!}
                                 {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                                 {!! Form::close() !!}
                             </td>
-                            <?php $bool = 1;?>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-            </div>
+                        </tr>
+                    @endforeach
+                    <hr/>
+                    </tbody>
+                </table>
+                </div>
         </div>
     </div>
 @endsection

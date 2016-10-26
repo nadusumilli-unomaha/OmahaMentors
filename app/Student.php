@@ -22,14 +22,14 @@ class Student extends Model
     ];
 
     public function users() {
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User');
     }
 
     public function grades() {
-        return $this->belongsToMany('App\Grade'); 
+        return $this->hasMany('App\Grade'); 
     }
     
     public function visits() {
-        return $this->belongsToMany('App\Visit');
+        return $this->hasMany('App\Visit');
     }
 }

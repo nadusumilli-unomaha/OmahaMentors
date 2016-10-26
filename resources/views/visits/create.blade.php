@@ -8,11 +8,13 @@
             <div class="panel-heading"><strong>New Visit</strong></div>
             <div class="panel-body">
 		        {!! Form::open(['url' => 'visits', 'class'=>'form-horizontal', 'role'=>'form']) !!}
-		        <div style="color:black;">
-                <label>Mentors:</label>{!! Form::select('user_id', $mentors) !!}
+		        <div style="color:black; margin:10px 0px 0px 0px;">
+		        	{!! Form::label('student_id', 'Student Name:',['class'=>'col-md-4 control-label']) !!}
+                	{!! Form::select('student_id', $students) !!}
                 </div>
 		        <div style="color:black; margin:10px 0px 0px 0px;">
-                <label>Students:</label>{!! Form::select('student_id', $students) !!}
+		        	{!! Form::label('user_id', 'User Name:',['class'=>'col-md-4 control-label']) !!}
+                	{!! Form::select('user_id', $mentors) !!}
                 </div>
 		        <div class="form-group floating-label-form-group controls {{ $errors->has('Date') ? ' has-error has-feedback' : '' }}">
 		            {!! Form::label('Date', 'Date:',['class'=>'col-md-4 control-label']) !!}
