@@ -101,22 +101,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                   <h2 align="center">Super Awesome Company</h2>
+                                   <br>
+                            
+                            <img src="http://gdurl.com/94Oo" class="img-responsive img-centered" alt="" height="400" width="400">
+                            <br>
+                            <p>Super Awesome Team is a group of young individuals pursuing their graduate career at the University of Nebraska, Omaha. Super Awesome Team is known for delivering excellent website designs and accomplishing requirement. Super Awesome Team puts client's needs first and goes 'above and beyond' to bring value to the clients.</p>
                 </div>
-                <div class="col-lg-4">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
+                
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                 </div>
             </div>
