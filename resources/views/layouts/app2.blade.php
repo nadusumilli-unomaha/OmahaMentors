@@ -64,12 +64,12 @@
                                 <a href="{{ url('/home') }}"> <i class="glyphicon glyphicon-home"></i> Home</a>
                             @endif
                         </li>
-                        <li class="page-scroll">
+                        <<li class="page-scroll">
                             <a href="{{ url('/#portfolio') }}">Portfolio</a>
                         </li>
-                        <li class="page-scroll">
+                        <!--<li class="page-scroll">
                             <a href="{{ url('/#about') }}">About</a>
-                        </li>
+                        </li>-->
                         <li class="page-scroll">
                             <a href="{{ url('/#contact') }}">Contact</a>
                         </li>
