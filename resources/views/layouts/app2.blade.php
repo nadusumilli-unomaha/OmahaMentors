@@ -37,7 +37,8 @@
         <![endif]-->
 
         <style type="text/css">
-            .navmenu-nav.dropdown-menu { position:relative; }
+            .navmenu-nav.dropdown-submenu { position:relative; }
+            dropdown-backdrop{position: static;}
         </style>
 
     </head>

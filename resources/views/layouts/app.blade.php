@@ -34,6 +34,11 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+        <style type="text/css">
+            .navmenu-nav.dropdown-submenu { position:relative; }
+            dropdown-backdrop{position: static;}
+        </style>
+
 </head>
 
 <body id="page-top" class="index">
