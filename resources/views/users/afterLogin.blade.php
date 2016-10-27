@@ -447,8 +447,7 @@
                     <th>Zip</th>
                     <th>Primary Email</th>
                     <th>phone</th>
-                    <th>Type</th>
-                    <th colspan="3">Actions</th>
+                    <th colspan="2">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -462,8 +461,8 @@
                             <td>{{ $student->zip }}</td>
                             <td>{{ $student->email }}</td>
                             <td>{{ $student->phone }}</td>
-                            <td>{{ $student->type }}</td>
                             <td><a href="{{url('/generatePDF')}}" class="btn btn-primary">Generate Report</a></td>
+                            <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
                           
                             <?php $bool = 1;?>
                     </tr>

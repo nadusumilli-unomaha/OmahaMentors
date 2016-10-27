@@ -100,6 +100,7 @@ Route::post('/sendmail', function (\Illuminate\Http\Request $request, \Illuminat
 
 Route::get('/generatePDF','PDFController@generatePDF');
 Route::get('/PDF', 'PDFController@index');
+Route::resource('PDF','PDFController',['only'=>'show']);
 
 
 //#######################################################################################

@@ -33,7 +33,8 @@ return $pdf->download('report.pdf');
                     $student = Student::findOrFail($id);
             return view('PDF.show',compact('student'));
         }
-        
+
+          
     
         
 }
