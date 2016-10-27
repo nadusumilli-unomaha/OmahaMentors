@@ -84,6 +84,9 @@
         #employeeToggle5 {
             display: none;
         }
+        #employeeToggle6 {
+            display: none;
+        }
 
         td, th{
         	color:black;
@@ -100,13 +103,13 @@
 					<div id="myRadioGroup">
 						<div class="btn-group" data-toggle="buttons">
 						  <label class="btn btn-primary active">
-						    <input type="radio" name="mentorToggle" id="option1" autocomplete="off" value="1" checked> View My Profile
+						    <input type="radio" name="mentorToggle" id="option1" autocomplete="off" value="1" checked> Manage Profile
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="mentorToggle" id="option2" autocomplete="off" value="2"> View My Student's Profile
+						    <input type="radio" name="mentorToggle" id="option2" autocomplete="off" value="2"> View Students
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="mentorToggle" id="option3" autocomplete="off" value="3"> Visits
+						    <input type="radio" name="mentorToggle" id="option3" autocomplete="off" value="3"> View Visits
 						  </label>
 						</div>
 						</div>
@@ -253,10 +256,10 @@
 					<div id="myRadioGroup">
 						<div class="btn-group" data-toggle="buttons">
 						  <label class="btn btn-primary active">
-						    <input type="radio" name="employeeToggle" id="option1" autocomplete="off" value="1" checked> View Student Profile
+						    <input type="radio" name="employeeToggle" id="option1" autocomplete="off" value="1" checked> View Students
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="2" > View Mentor Profile
+						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="2" > View Mentors
 						  </label>
 						  <label class="btn btn-primary">
 						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="3" > View Visits
@@ -267,7 +270,10 @@
 						  <label class="btn btn-primary">
 						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="5" > Notify
 						  </label>
-						</div>
+						  <label class="btn btn-primary">
+						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="6" > Generate Report
+						  </label>
+						  						</div>
 					</div>
 						<div id="employeeToggle1" class="employeeProfile">
 							<h1>Student Profile</h1>
@@ -315,7 +321,7 @@
 
 						<div id="employeeToggle2" class="employeeProfile">
 							<h1>Mentor Profile</h1>
-							<a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a User</a><br/>
+							<a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a Mentor</a><br/>
 							<div class="table-responsive">
 							<table class="table table-bordered table-striped table-hover table-inverse">
 					                <thead>
@@ -362,7 +368,7 @@
 					                    <th>Attendance</th>
 					                    <th>Mentor</th>
 					                    <th>Student</th>
-					                    <th>Actions</th>
+					                   
 					                </tr>
 					                </thead>
 					                <tbody>
@@ -422,8 +428,52 @@
 								{{ csrf_field() }}
 							</form>
 						</div>
-					</div>
+
+											
 				@endif
+		
+        
+<div id="employeeToggle6" class="employeeProfile" >
+            <h1>Generate Reports</h1>
+            <div class="table-responsive">   
+            <table class="table table-bordered table-striped table-hover table-inverse">
+                <thead>
+                <tr class="bg-info">
+                    <th>lastName</th>
+                    <th>firstName</th>
+                    <th>Current Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Primary Email</th>
+                    <th>phone</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach ($students as $student)
+                    <tr>
+                            <td>{{ $student->lastName }}</td>
+                            <td>{{ $student->firstName }}</td>
+                            <td>{{ $student->address }}</td>
+                            <td>{{ $student->city }}</td>
+                            <td>{{ $student->state }}</td>
+                            <td>{{ $student->zip }}</td>
+                            <td>{{ $student->email }}</td>
+                            <td>{{ $student->phone }}</td>
+                            <td><a href="{{url('/generatePDF')}}" class="btn btn-primary">Generate Report</a></td>
+                            <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
+                          
+                            <?php $bool = 1;?>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
 				<!--###########################################################################-->
 				<!--####                     The End of Mentor Code.                       ####-->
 				<!--###########################################################################-->
