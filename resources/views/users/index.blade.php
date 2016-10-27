@@ -359,44 +359,44 @@
             <!-- This is the fifth part of the radio bnutton Scafolding. -->
             <div id="adminToggle7" class="adminProfile" >
             <h1>All Grade</h1>
-            <a class="btn btn-primary" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
-            <div class="table-responsive">
-                <!-- The code to list all the grades and other people stuff that can admin can see and create.-->
-                <table class="table table-bordered table-striped table-hover table-inverse">
-                    <thead>
-                    <tr class="bg-info">
-                        <th>Subject</th>
-                        <th>Period</th>
-                        <th>Grade</th>
-                        <th>Comments</th>
-                        <th>Student</th>
-                        <th colspan="3" class="text-center">Actions</th>
+       
+        
+        <div class="table-responsive">   
+            <table class="table table-bordered table-striped table-hover table-inverse">
+                <thead>
+                <tr class="bg-info">
+                    <th>lastName</th>
+                    <th>firstName</th>
+                    <th>Current Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Primary Email</th>
+                    <th>phone</th>
+                    <th>Type</th>
+                    <th colspan="3">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach ($students as $student)
+                    <tr>
+                            <td>{{ $student->lastName }}</td>
+                            <td>{{ $student->firstName }}</td>
+                            <td>{{ $student->address }}</td>
+                            <td>{{ $student->city }}</td>
+                            <td>{{ $student->state }}</td>
+                            <td>{{ $student->zip }}</td>
+                            <td>{{ $student->email }}</td>
+                            <td>{{ $student->phone }}</td>
+                            <td>{{ $student->type }}</td>
+                            <td><a href="{{url('/generatePDF')}}" class="btn btn-primary">Generate Report</a></td>
+                          
+                            <?php $bool = 1;?>
                     </tr>
-                    </thead>
-                    <tbody>
-                    @foreach ($grades as $grade)
-                        <tr>
-                            <td>{{ $grade->subject }}</td>
-                            <td>{{ $grade->period }}</td>
-                            <td>{{ $grade->actual }}</td>
-                            <td>{{ $grade->comments }}</td>
-                            <td>{{ $grade->student->firstName }}</td>
-                            <td><a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Update</a></td>
-                            <td><a class="btn btn-primary" href="{{ route('grades.show',$grade->id) }}">Read</a></td>
-                            <td>
-                                {!! Form::open(['method' => 'DELETE', 'route'=>['grades.destroy', $grade->id], 'onSubmit'=> 'if(!confirm("\n\nAre you Sure you want to delete the Grade?")){return false;}'])!!}
-                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                                {!! Form::close() !!}
-                            </td>
-                        </tr>
-                    @endforeach
-                    <hr/>
-                    </tbody>
-                </table>
-                </div>
+                @endforeach
+                </tbody>
+            </table>
             </div>
-
-
         </div>
     </div>
     <!--#############################################################################-->

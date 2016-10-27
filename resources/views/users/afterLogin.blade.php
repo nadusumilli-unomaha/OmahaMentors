@@ -103,13 +103,13 @@
 					<div id="myRadioGroup">
 						<div class="btn-group" data-toggle="buttons">
 						  <label class="btn btn-primary active">
-						    <input type="radio" name="mentorToggle" id="option1" autocomplete="off" value="1" checked> View My Profile
+						    <input type="radio" name="mentorToggle" id="option1" autocomplete="off" value="1" checked> Manage Profile
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="mentorToggle" id="option2" autocomplete="off" value="2"> View My Student's Profile
+						    <input type="radio" name="mentorToggle" id="option2" autocomplete="off" value="2"> View Students
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="mentorToggle" id="option3" autocomplete="off" value="3"> Visits
+						    <input type="radio" name="mentorToggle" id="option3" autocomplete="off" value="3"> View Visits
 						  </label>
 						</div>
 						</div>
@@ -256,16 +256,16 @@
 					<div id="myRadioGroup">
 						<div class="btn-group" data-toggle="buttons">
 						  <label class="btn btn-primary active">
-						    <input type="radio" name="employeeToggle" id="option1" autocomplete="off" value="1" checked> View Student Profile
+						    <input type="radio" name="employeeToggle" id="option1" autocomplete="off" value="1" checked> Students
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="2" > View Mentor Profile
+						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="2" > Mentors
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="3" > View Visits
+						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="3" > Visits
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="4" > View Grades
+						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="4" > Grades
 						  </label>
 						  <label class="btn btn-primary">
 						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="5" > Notify
@@ -318,7 +318,7 @@
 
 						<div id="employeeToggle2" class="employeeProfile">
 							<h1>Mentor Profile</h1>
-							<a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a User</a><br/>
+							<a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a Mentor</a><br/>
 							<div class="table-responsive">
 							<table class="table table-bordered table-striped table-hover table-inverse">
 					                <thead>
