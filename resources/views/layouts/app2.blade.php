@@ -36,6 +36,10 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+        <style type="text/css">
+            .navmenu-nav.dropdown-menu { position:relative; }
+        </style>
+
     </head>
 
     <body id="page-top" class="index">
@@ -77,19 +81,19 @@
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
-                        <li><a href="{{ url('/logout') }}"onclick="event.preventDefault();
+                        <!-- <li><a href="{{ url('/logout') }}"onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();"> Logout</a>
                                                  <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
                                     </li>
-
-                        <li><a href="{{ url('/resetPassword') }}">Reset Password</a></li>
-                            <!--<li class="dropdown-submenu">
+                        
+                        <li><a href="{{ url('/resetPassword') }}">Reset Password</a></li> -->
+                            <li class="dropdown-submenu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="glyphicon glyphicon-user"></i>  {{ Auth::user()->firstName }} <span class="caret"></span>
                                 </a>
-
+                            
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuLink">
                                     <li>
                                         <a class="dropdown-item" style="color:black" href="{{ url('/logout') }}"
@@ -107,7 +111,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>-->
+                            </li>
                         @endif
                     </ul>
                 </div>

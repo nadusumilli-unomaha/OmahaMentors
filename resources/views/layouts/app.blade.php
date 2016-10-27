@@ -75,21 +75,21 @@
                         <li><a href="{{ url('/login') }}"> Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                    <li><a href="{{ url('/logout') }}"onclick="event.preventDefault();
+                    <!-- <li><a href="{{ url('/logout') }}"onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();"> Logout</a>
                                                  <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
                                     </li>
-
-                        <li><a href="{{ url('/resetPassword') }}">Reset Password</a></li>
-                        <!--<li class="dropdown">
+                    
+                        <li><a href="{{ url('/resetPassword') }}">Reset Password</a></li> -->
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <i class="glyphicon glyphicon-user"></i>  {{ Auth::user()->firstName }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuLink">
-                                <!--<li>
+                                <li>
                                     <a class="dropdown-item " style="color:black" href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -105,11 +105,11 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>-->
+                        </li>
                     @endif
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+            <!-- /.navbar-collapse 
         </div>
         <!-- /.container-fluid -->
     </nav>
