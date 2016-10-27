@@ -36,11 +36,6 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <style type="text/css">
-            .navmenu-nav.dropdown-submenu { position:relative; }
-            dropdown-backdrop{position: static;}
-        </style>
-
     </head>
 
     <body id="page-top" class="index">
@@ -69,12 +64,12 @@
                                 <a href="{{ url('/home') }}"> <i class="glyphicon glyphicon-home"></i> Home</a>
                             @endif
                         </li>
-                        <<li class="page-scroll">
+                        <li class="page-scroll">
                             <a href="{{ url('/#portfolio') }}">Portfolio</a>
                         </li>
-                        <!--<li class="page-scroll">
+                        <!-- <li class="page-scroll">
                             <a href="{{ url('/#about') }}">About</a>
-                        </li>-->
+                        </li> -->
                         <li class="page-scroll">
                             <a href="{{ url('/#contact') }}">Contact</a>
                         </li>
@@ -82,14 +77,6 @@
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
-                        <!-- <li><a href="{{ url('/logout') }}"onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();"> Logout</a>
-                                                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                    </li>
-                        
-                        <li><a href="{{ url('/resetPassword') }}">Reset Password</a></li> -->
                             <li class="dropdown-submenu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="glyphicon glyphicon-user"></i>  {{ Auth::user()->firstName }} <span class="caret"></span>
@@ -386,7 +373,7 @@
         <!-- <script src="js/contact_me.js"></script> -->
 
         <!-- Theme JavaScript -->
-        {{Html::script('js/freelancer.min.js')}}
+        <!-- Html::script('js/freelancer.min.js')}} -->
         <!-- <script src="js/freelancer.min.js"></script> -->
     </body>
         <script type="text/javascript">

@@ -5,12 +5,18 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <title>Omaha Mentor for Kids</title>
     <link rel="icon" href="{{ asset('img/OMK.png') }}" type="image/png">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    {{Html::style('vendor/font-awesome/css/font-awesome.min.css')}}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core CSS -->
     <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -21,23 +27,12 @@
     <!-- <link href="css/freelancer.min.css" rel="stylesheet"> -->
     {{Html::style('css/freelancer.min.css')}}
 
-    <!-- Custom Fonts -->
-    <!-- <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    {{Html::style('vendor/font-awesome/css/font-awesome.min.css')}}
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-        <style type="text/css">
-            .navmenu-nav.dropdown-submenu { position:relative; }
-            dropdown-backdrop{position: static;}
-        </style>
 
 </head>
 
@@ -48,8 +43,8 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>Menu<i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="{{ url('/') }}">Omaha Mentor for Kids</a>
             </div>
@@ -80,15 +75,7 @@
                         <li><a href="{{ url('/login') }}"> Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                    <!-- <li><a href="{{ url('/logout') }}"onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();"> Logout</a>
-                                                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                    </li>
-                    
-                        <li><a href="{{ url('/resetPassword') }}">Reset Password</a></li> -->
-                        <li class="dropdown">
+                        <li class="dropdown-submenu">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <i class="glyphicon glyphicon-user"></i>  {{ Auth::user()->firstName }} <span class="caret"></span>
                             </a>
@@ -353,6 +340,9 @@
         </div>
     </div>
     
+    <!-- {{Html::script("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")}}
+    {{Html::script("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")}} -->
+
     <!-- jQuery -->
     <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
     {{Html::script('vendor/jquery/jquery.min.js')}}
@@ -371,7 +361,7 @@
     <!-- <script src="js/contact_me.js"></script> -->
 
     <!-- Theme JavaScript -->
-    {{Html::script('js/freelancer.min.js')}}
+    <!-- Html::script('js/freelancer.min.js')}} -->
     <!-- <script src="js/freelancer.min.js"></script> -->
 
 </body>
