@@ -373,7 +373,7 @@
         <!-- <script src="js/contact_me.js"></script> -->
 
         <!-- Theme JavaScript -->
-        <!-- Html::script('js/freelancer.min.js')}} -->
+        {{Html::script('js/freelancer.min.js')}}
         <!-- <script src="js/freelancer.min.js"></script> -->
     </body>
         <script type="text/javascript">

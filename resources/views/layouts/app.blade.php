@@ -57,25 +57,25 @@
                     </li>
                     <li class="page-scroll">
                         @if(Auth::Check())
-                            <a href="{{ url('/afterLogin') }}"> <i class="glyphicon glyphicon-home"></i> Home</a>
+                            <a class="scrol" href="{{ url('/afterLogin') }}"> <i class="glyphicon glyphicon-home"></i> Home</a>
                         @else
-                            <a href="{{ url('/home') }}"> <i class="glyphicon glyphicon-home"></i> Home</a>
+                            <a class="scrol" href="{{ url('/home') }}"> <i class="glyphicon glyphicon-home"></i> Home</a>
                         @endif
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
+                        <a class="scrol" href="#portfolio">Portfolio</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">About</a>
+                        <a class="scrol" href="#about">About</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact">Contact</a>
+                        <a class="scrol" href="#contact">Contact</a>
                     </li>
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}"> Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                        <li class="dropdown-submenu">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <i class="glyphicon glyphicon-user"></i>  {{ Auth::user()->firstName }} <span class="caret"></span>
                             </a>
@@ -361,7 +361,7 @@
     <!-- <script src="js/contact_me.js"></script> -->
 
     <!-- Theme JavaScript -->
-    <!-- Html::script('js/freelancer.min.js')}} -->
+    {{Html::script('js/freelancer.min.js')}}
     <!-- <script src="js/freelancer.min.js"></script> -->
 
 </body>
