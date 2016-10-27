@@ -23,6 +23,7 @@
 	                        </div>
 	                    </div>
 
+	                   
 	                    <div class="form-group floating-label-form-group controls {{ $errors->has('oldpassword') ? ' has-error' : '' }}">
 	                        <label for="oldpassword" class="col-md-4 control-label" style="color:#2c3e50;">Old Password</label>
 
@@ -36,7 +37,8 @@
 	                            @endif
 	                        </div>
 	                    </div>
-
+	                   
+	                   
 	                    <div class="form-group floating-label-form-group controls {{ $errors->has('password') ? ' has-error' : '' }}">
 	                        <label for="password" class="col-md-4 control-label" style="color:#2c3e50;">Password</label>
 
@@ -78,4 +80,5 @@
             </div>
         </div>
     </div>	
+    
 @endsection

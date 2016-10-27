@@ -98,6 +98,10 @@ Route::post('/sendmail', function (\Illuminate\Http\Request $request, \Illuminat
 	return redirect()->back();
 })->name('sendmail');
 
+Route::get('/generatePDF','PDFController@generatePDF');
+Route::get('/PDF', 'PDFController@index');
+
+
 //#######################################################################################
 //Wildcard Route is all the random routes that can throw an error in the web application.
 //#######################################################################################

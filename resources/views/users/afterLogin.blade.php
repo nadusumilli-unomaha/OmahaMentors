@@ -84,6 +84,9 @@
         #employeeToggle5 {
             display: none;
         }
+        #employeeToggle6 {
+            display: none;
+        }
 
         td, th{
         	color:black;
@@ -267,7 +270,7 @@
 						  <label class="btn btn-primary">
 						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="5" > Notify
 						  </label>
-						</div>
+						  						</div>
 					</div>
 						<div id="employeeToggle1" class="employeeProfile">
 							<h1>Student Profile</h1>
@@ -422,7 +425,8 @@
 								{{ csrf_field() }}
 							</form>
 						</div>
-					</div>
+
+											
 				@endif
 				<!--###########################################################################-->
 				<!--####                     The End of Mentor Code.                       ####-->

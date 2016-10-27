@@ -179,6 +179,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*--- Generate Report / PDF -------- */
+
+        Barryvdh\DomPDF\serviceProvider::class,
+
     ],
 
     /*
@@ -228,6 +232,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'PDF'=> Barryvdh\DomPDF\Facade::class,
 
     ],
 
