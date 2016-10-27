@@ -8,8 +8,9 @@
     </style>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
-    	<a class="btn btn-primary pull-right" style="margin: 10px 10px 10px 10px;" href="{{ URL::previous() }}">Go Back</a></br>
-        <h1 style="color:black; margin: 0px 0px 0px 100px;">Student</h1>
+    	<a class="btn btn-primary pull-right" style="margin: 10px 10px 10px 10px;" href="{{ URL('/afterLogin')}}">Go Back</a></br>
+        <h1  margin: 0px 0px 0px 100px;">Student</h1>
+        <br>
         <table class="table table-striped table-bordered table-hover">
             <tbody>
                 <tr class="bg-info"/>
@@ -58,9 +59,11 @@
     </div>
     </div>
 
-
+<br>
+<br>
+<h2> Student Grade </h2>
    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
+           <div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
         <div class="table-responsive">
                 <!-- The code to list all the grades and other people stuff that can admin can see and create.-->
                 <table class="table table-bordered table-striped table-hover table-inverse">
@@ -88,6 +91,10 @@
                 </div>
         </div>
     </div>
+
+    <br>
+<br>
+<h2> Student - Mentor Visits </h2>
 
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">

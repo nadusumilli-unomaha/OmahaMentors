@@ -368,7 +368,7 @@
 					                    <th>Attendance</th>
 					                    <th>Mentor</th>
 					                    <th>Student</th>
-					                    <th>Actions</th>
+					                   
 					                </tr>
 					                </thead>
 					                <tbody>
