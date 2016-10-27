@@ -256,19 +256,22 @@
 					<div id="myRadioGroup">
 						<div class="btn-group" data-toggle="buttons">
 						  <label class="btn btn-primary active">
-						    <input type="radio" name="employeeToggle" id="option1" autocomplete="off" value="1" checked> Students
+						    <input type="radio" name="employeeToggle" id="option1" autocomplete="off" value="1" checked> View Students
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="2" > Mentors
+						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="2" > View Mentors
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="3" > Visits
+						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="3" > View Visits
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="4" > Grades
+						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="4" > View Grades
 						  </label>
 						  <label class="btn btn-primary">
 						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="5" > Notify
+						  </label>
+						  <label class="btn btn-primary">
+						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="6" > Generate Report
 						  </label>
 						  						</div>
 					</div>
@@ -428,6 +431,50 @@
 
 											
 				@endif
+		
+        
+<div id="employeeToggle6" class="employeeProfile" >
+            <h1>Generate Reports</h1>
+            <div class="table-responsive">   
+            <table class="table table-bordered table-striped table-hover table-inverse">
+                <thead>
+                <tr class="bg-info">
+                    <th>lastName</th>
+                    <th>firstName</th>
+                    <th>Current Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Primary Email</th>
+                    <th>phone</th>
+                    <th>Type</th>
+                    <th colspan="3">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach ($students as $student)
+                    <tr>
+                            <td>{{ $student->lastName }}</td>
+                            <td>{{ $student->firstName }}</td>
+                            <td>{{ $student->address }}</td>
+                            <td>{{ $student->city }}</td>
+                            <td>{{ $student->state }}</td>
+                            <td>{{ $student->zip }}</td>
+                            <td>{{ $student->email }}</td>
+                            <td>{{ $student->phone }}</td>
+                            <td>{{ $student->type }}</td>
+                            <td><a href="{{url('/generatePDF')}}" class="btn btn-primary">Generate Report</a></td>
+                          
+                            <?php $bool = 1;?>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
 				<!--###########################################################################-->
 				<!--####                     The End of Mentor Code.                       ####-->
 				<!--###########################################################################-->

@@ -433,6 +433,7 @@
                         $('#employeeToggle3').css('display', 'none');
                         $('#employeeToggle4').css('display', 'none');
                         $('#employeeToggle5').css('display', 'none');
+                        $('#employeeToggle6').css('display', 'none');
                         $('#log').val('This is 1. || ');
                     }
                     else if($(this).val() == '2'){
@@ -441,6 +442,7 @@
                         $('#employeeToggle3').css('display', 'none');
                         $('#employeeToggle4').css('display', 'none');
                         $('#employeeToggle5').css('display', 'none');
+                        $('#employeeToggle6').css('display', 'none');
                         $('#log').val("This is 2. || ");
                     }
                     else if($(this).val() == '3'){
@@ -449,6 +451,7 @@
                         $('#employeeToggle3').css('display', 'block');
                         $('#employeeToggle4').css('display', 'none');
                         $('#employeeToggle5').css('display', 'none');
+                        $('#employeeToggle6').css('display', 'none');
                         $('#log').val("This is 3. || ");
                     }
                     else if($(this).val() == '4'){
@@ -457,6 +460,7 @@
                         $('#employeeToggle3').css('display', 'none');
                         $('#employeeToggle4').css('display', 'block');
                         $('#employeeToggle5').css('display', 'none');
+                        $('#employeeToggle6').css('display', 'none');
                         $('#log').val("This is 3. || ");
                     }
                     else if($(this).val() == '5'){
@@ -465,6 +469,16 @@
                         $('#employeeToggle3').css('display', 'none');
                         $('#employeeToggle4').css('display', 'none');
                         $('#employeeToggle5').css('display', 'block');
+                        $('#employeeToggle6').css('display', 'none');
+                        $('#log').val("This is 3. || ");
+                    }
+                      else if($(this).val() == '6'){
+                        $('#employeeToggle1').css('display', 'none');
+                        $('#employeeToggle2').css('display', 'none');
+                        $('#employeeToggle3').css('display', 'none');
+                        $('#employeeToggle4').css('display', 'none');
+                        $('#employeeToggle5').css('display', 'none');
+                        $('#employeeToggle6').css('display', 'block');
                         $('#log').val("This is 3. || ");
                     }
                 });
@@ -484,6 +498,7 @@
                         $('#adminToggle5').css('display', 'none');
                         $('#adminToggle6').css('display', 'none');
                         $('#adminToggle7').css('display', 'none');
+                        $('#adminToggle8').css('display', 'none');
                         $('#log').val('This is 1. || ');
                     }
                     else if($(this).val() == '2'){
@@ -494,6 +509,7 @@
                         $('#adminToggle5').css('display', 'none');
                         $('#adminToggle6').css('display', 'none');
                         $('#adminToggle7').css('display', 'none');
+                        $('#adminToggle8').css('display', 'none');
                         $('#log').val("This is 2. || ");
                     }
                     else if($(this).val() == '3'){
@@ -504,6 +520,7 @@
                         $('#adminToggle5').css('display', 'none');
                         $('#adminToggle6').css('display', 'none');
                         $('#adminToggle7').css('display', 'none');
+                        $('#adminToggle8').css('display', 'none');
                         $('#log').val("This is 3. || ");
                     }
                     else if($(this).val() == '4'){
@@ -514,6 +531,7 @@
                         $('#adminToggle5').css('display', 'none');
                         $('#adminToggle6').css('display', 'none');
                         $('#adminToggle7').css('display', 'none');
+                        $('#adminToggle8').css('display', 'none');
                         $('#log').val("This is 3. || ");
                     }
                     else if($(this).val() == '5'){
@@ -524,6 +542,7 @@
                         $('#adminToggle5').css('display', 'block');
                         $('#adminToggle6').css('display', 'none');
                         $('#adminToggle7').css('display', 'none');
+                        $('#adminToggle8').css('display', 'none');
                         $('#log').val("This is 3. || ");
                     }
                     else if($(this).val() == '6'){
@@ -534,6 +553,7 @@
                         $('#adminToggle5').css('display', 'none');
                         $('#adminToggle6').css('display', 'block');
                         $('#adminToggle7').css('display', 'none');
+                        $('#adminToggle8').css('display', 'none');
                         $('#log').val("This is 3. || ");
                     }
                     else if($(this).val() == '7'){
@@ -544,6 +564,18 @@
                         $('#adminToggle5').css('display', 'none');
                         $('#adminToggle6').css('display', 'none');
                         $('#adminToggle7').css('display', 'block');
+                        $('#adminToggle8').css('display', 'none');
+                        $('#log').val("This is 3. || ");
+                    }
+                     else if($(this).val() == '8'){
+                        $('#adminToggle1').css('display', 'none');
+                        $('#adminToggle2').css('display', 'none');
+                        $('#adminToggle3').css('display', 'none');
+                        $('#adminToggle4').css('display', 'none');
+                        $('#adminToggle5').css('display', 'none');
+                        $('#adminToggle6').css('display', 'none');
+                        $('#adminToggle7').css('display', 'none');
+                        $('#adminToggle8').css('display', 'block');
                         $('#log').val("This is 3. || ");
                     }
                 });

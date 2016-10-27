@@ -30,6 +30,9 @@
         #adminToggle7 {
             display: none;
         }
+        #adminToggle8 {
+            display: none;
+        }
 
        
         </style>
@@ -67,7 +70,7 @@
                             <input type="radio" name="adminToggle" id="option7" autocomplete="off" value="7"> Manage Grades
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" name="adminToggle" id="option7" autocomplete="off" value="7"> Generate Report
+                            <input type="radio" name="adminToggle" id="option8" autocomplete="off" value="8"> Generate Report
                         </label>
                     </div>
                 </div>
@@ -359,9 +362,52 @@
             <!-- This is the fifth part of the radio bnutton Scafolding. -->
             <div id="adminToggle7" class="adminProfile" >
             <h1>All Grade</h1>
-       
-        
-        <div class="table-responsive">   
+            <a class="btn btn-primary" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
+            <div class="table-responsive">
+                <!-- The code to list all the grades and other people stuff that can admin can see and create.-->
+                <table class="table table-bordered table-striped table-hover table-inverse">
+                    <thead>
+                    <tr class="bg-info">
+                        <th>Subject</th>
+                        <th>Period</th>
+                        <th>Grade</th>
+                        <th>Comments</th>
+                        <th>Student</th>
+                        <th colspan="3" class="text-center">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($grades as $grade)
+                        <tr>
+                            <td>{{ $grade->subject }}</td>
+                            <td>{{ $grade->period }}</td>
+                            <td>{{ $grade->actual }}</td>
+                            <td>{{ $grade->comments }}</td>
+                            <td>{{ $grade->student->firstName }}</td>
+                            <td><a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Update</a></td>
+                            <td><a class="btn btn-primary" href="{{ route('grades.show',$grade->id) }}">Read</a></td>
+                            <td>
+                                {!! Form::open(['method' => 'DELETE', 'route'=>['grades.destroy', $grade->id], 'onSubmit'=> 'if(!confirm("\n\nAre you Sure you want to delete the Grade?")){return false;}'])!!}
+                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                {!! Form::close() !!}
+                            </td>
+                        </tr>
+                    @endforeach
+                    <hr/>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
+<div id="adminToggle8" class="adminProfile" >
+            <h1>All Reports</h1>
+            <div class="table-responsive">   
             <table class="table table-bordered table-striped table-hover table-inverse">
                 <thead>
                 <tr class="bg-info">
@@ -398,7 +444,12 @@
             </table>
             </div>
         </div>
+        </div>
+        </div>
     </div>
+
+
+
     <!--#############################################################################-->
     <!--####                        The End of the Table.                        ####-->
     <!--#############################################################################-->
