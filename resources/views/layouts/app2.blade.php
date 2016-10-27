@@ -116,6 +116,24 @@
                 <!-- <img class="img-responsive" src="img/profile.png" alt=""> -->
                 <div class="intro-text">
                     <div class="container-fluid">
+                        <div class="modal fade" id="modal-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h3 style="color:black;" class="modal-title">Delete User</h3>
+                                    </div>
+                                    <div style="color:black;" class="modal-body">
+                                        Are you sure you want to delete the data?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="" class="btn btn-warning pull-right" data-dismiss="modal">Close</a>
+                                        <a href="" class="btn btn-danger" style="margin: 0px 20px 0px 0px;" data-dismiss="modal">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Activate</button>
                         @yield('content')
                     </div>
                 </div>
