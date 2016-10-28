@@ -11,13 +11,14 @@
         "phpmailer/phpmailer": "^5.2",
         "guzzlehttp/guzzle": "^6.2",
         "barryvdh/laravel-dompdf": "^0.7.0",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
         "symfony/dom-crawler": "3.1.*"
-        
+}
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~5.0",
+        "phpspec/phpspec":"2.2.1",
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*"
     },
