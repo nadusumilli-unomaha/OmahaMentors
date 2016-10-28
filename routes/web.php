@@ -98,7 +98,7 @@ Route::post('/sendmail', function (\Illuminate\Http\Request $request, \Illuminat
 	return redirect()->back();
 })->name('sendmail');
 
-Route::get('/generatePDF','PDFController@generatePDF');
+Route::get('/generatePDF/{id}','PDFController@generatePDF');
 Route::get('/PDF', 'PDFController@index');
 Route::resource('PDF','PDFController',['only'=>'show']);
 

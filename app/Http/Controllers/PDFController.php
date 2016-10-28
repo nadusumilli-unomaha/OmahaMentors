@@ -15,24 +15,23 @@ use App\Note;
 
 class PDFController extends Controller
 {
-    public function generatePDF(){
-$students=Student::all();
-    $pdf=PDF::loadview('PDF.report',compact('students'));
-return $pdf->download('report.pdf');
+    public function generatePDF($id){
+        $student = Student::findOrFail($id);
+        $pdf=PDF::loadview('PDF.report',compact('student'));
+        return $pdf->download('report.pdf');
     }
 
      public function index()
     {
-     
-            $students=Student::all();
-            return view('PDF.index',compact('students'));
-        }
+        $students=Student::all();
+        return view('PDF.index',compact('students'));
+    }
 
         public function show($id)
     {
-                    $student = Student::findOrFail($id);
-            return view('PDF.show',compact('student'));
-        }
+        $student = Student::findOrFail($id);
+        return view('PDF.show',compact('student'));
+    }
 
           
     

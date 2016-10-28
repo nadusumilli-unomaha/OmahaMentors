@@ -435,7 +435,7 @@
                             <td>{{ $student->email }}</td>
                             <td>{{ $student->phone }}</td>
                             
-                            <td><a href="{{url('/generatePDF')}}" class="btn btn-primary">Generate Report</a></td>
+                            <td><a href="{{ action('PDFController@generatePDF',$student->id) }}" class="btn btn-primary">Generate Report</a></td>
                             <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
                           
                             <?php $bool = 1;?>
