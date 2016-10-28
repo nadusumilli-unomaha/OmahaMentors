@@ -49,8 +49,7 @@
                             <td>{{ $student->zip }}</td>
                             <td>{{ $student->email }}</td>
                             <td>{{ $student->phone }}</td>
-                            <td>{{ $student->type }}</td>
-                    </tr>
+                                                </tr>
                 </tbody>
             </table>
         </div><br/><br/>
