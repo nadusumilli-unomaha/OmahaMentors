@@ -36,8 +36,7 @@
                     <th>Zip</th>
                     <th>Primary Email</th>
                     <th>phone</th>
-                    <th>Type</th>
-                </tr>
+                                    </tr>
                 </thead>
                 <tbody>
                     <tr>
