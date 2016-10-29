@@ -46,7 +46,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($role)
     {
             return view('users.create');
     }

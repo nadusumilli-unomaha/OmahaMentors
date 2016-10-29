@@ -61,108 +61,73 @@
 		  border-radius: 50%;
 		}
 
-		#mentorToggle2 {
-            display: none;
-        }
-
-        #mentorToggle3 {
-            display: none;
-        }
-
-        #employeeToggle2 {
-            display: none;
-        }
-        
-        #employeeToggle3 {
-            display: none;
-        }
-        
-        #employeeToggle4 {
-            display: none;
-        }
-        
-        #employeeToggle5 {
-            display: none;
-        }
-        #employeeToggle6 {
-            display: none;
-        }
-
         td, th{
         	color:black;
         }
 	</style>
 	<!-- The Basic Scafolding of the automatic adjusting screen. -->
 	<div class="row">
-	        <div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
-				<!--###########################################################################-->
-				<!--####    The Basic Scafolding for Finding a Mentor and adding code.   ####-->
-				<!--###########################################################################-->
+        <div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
+			<!--###########################################################################-->
+			<!--####    The Basic Scafolding for Finding a Mentor and adding code.   ####-->
+			<!--###########################################################################-->
 				@if($user->roles[0]->name === 'Mentor')
 					<h1>Welcome {{$user->firstName}}</h1>
-					<div id="myRadioGroup">
-						<div class="btn-group" data-toggle="buttons">
-						  <label class="btn btn-primary active">
-						    <input type="radio" name="mentorToggle" id="option1" autocomplete="off" value="1" checked> Manage Profile
-						  </label>
-						  <label class="btn btn-primary">
-						    <input type="radio" name="mentorToggle" id="option2" autocomplete="off" value="2"> View Students
-						  </label>
-						  <label class="btn btn-primary">
-						    <input type="radio" name="mentorToggle" id="option3" autocomplete="off" value="3"> View Visits
-						  </label>
-						</div>
-						</div>
+					<ul class="nav nav-tabs nav-justified">
+		                <li class="active"><a style="color: black;" href="#mentorToggle1" data-toggle="tab">My Profile</a></li>
+		                <li><a style="color: black;" href="#mentorToggle2" data-toggle="tab">Manage My Students</a></li>
+		                <li><a style="color: black;" href="#mentorToggle3" data-toggle="tab">Attendance</a></li>
+		            </ul>
 
-						<!-- This is the first mentor toggle or the profile information relating to the mentors. -->
-						<div id="mentorToggle1" class="mentorProfile" >
+					<!-- This is the first mentor toggle or the profile information relating to the mentors. -->
+					<div class="tab-content">
+						<div id="mentorToggle1" class="tab-pane fade in active" >
 							<h1>Mentor Profile</h1>
 							<table class="table table-striped table-bordered table-hover">
 					            <tbody>
-						                <tr class="bg-info"/>
-						                <tr>
-						                    <td>Last Name</td>
-						                    <td><?php echo ($user['lastName']); ?></td>
-						                </tr>
-						                <tr>
-						                    <td>First Name</td>
-						                    <td><?php echo ($user['firstName']); ?></td>
-						                </tr>
-						                <tr>
-						                    <td>Address</td>
-						                    <td><?php echo ($user['address']); ?></td>
-						                </tr>
-						                <tr>
-						                    <td>City </td>
-						                    <td><?php echo ($user['city']); ?></td>
-						                </tr>
-						                <tr>
-						                    <td>State</td>
-						                    <td><?php echo ($user['state']); ?></td>
-						                </tr>
-						                <tr>
-						                    <td>Zip </td>
-						                    <td><?php echo ($user['zip']); ?></td>
-						                </tr>
-						                <tr>
-						                    <td>Phone</td>
-						                    <td><?php echo ($user['phone']); ?></td>
-						                </tr>
-						                <tr>
-						                    <td>Type</td>
-						                    <td><?php echo ($user->roles[0]['name']); ?></td>
-						                </tr>
-						            </tbody>
-						        </table>
-
-						        <!-- The Update user function. -->
-						        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit Mentor</a>
-								<!-- This is the Visit Schedule link. -->
-								<a class="btn btn-primary" href="#">My Visits</a>
+					                <tr class="bg-info"/>
+					                <tr>
+					                    <td>Last Name</td>
+					                    <td><?php echo ($user['lastName']); ?></td>
+					                </tr>
+					                <tr>
+					                    <td>First Name</td>
+					                    <td><?php echo ($user['firstName']); ?></td>
+					                </tr>
+					                <tr>
+					                    <td>Address</td>
+					                    <td><?php echo ($user['address']); ?></td>
+					                </tr>
+					                <tr>
+					                    <td>City </td>
+					                    <td><?php echo ($user['city']); ?></td>
+					                </tr>
+					                <tr>
+					                    <td>State</td>
+					                    <td><?php echo ($user['state']); ?></td>
+					                </tr>
+					                <tr>
+					                    <td>Zip </td>
+					                    <td><?php echo ($user['zip']); ?></td>
+					                </tr>
+					                <tr>
+					                    <td>Phone</td>
+					                    <td><?php echo ($user['phone']); ?></td>
+					                </tr>
+					                <tr>
+					                    <td>Type</td>
+					                    <td><?php echo ($user->roles[0]['name']); ?></td>
+					                </tr>
+					            </tbody>
+					        </table>
+					        <!-- The Update user function. -->
+					        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit Mentor</a>
+							<!-- This is the Visit Schedule link. -->
+							<a class="btn btn-primary" href="#">My Visits</a>
 						</div>
 
 						<!-- This is the second mentor toggle or the student information relating to the mentors. -->
-						<div id="mentorToggle2" class="mentorProfile">
+						<div id="mentorToggle2" class="tab-pane fade">
 							<h1>Student Profile</h1>
 							<div class="table-responsive" style="color:black;">
 								<table class="table table-bordered table-striped table-hover table-inverse">
@@ -204,8 +169,8 @@
 					            </table>
 							</div>
 						</div>
-						
-						<div id="mentorToggle3" class="mentorProfile">
+							
+						<div id="mentorToggle3" class="tab-pane fade">
 							<h1>Visit Attendance</h1>
 							<div class="panel panel-default">
 								<div class="panel-heading">
@@ -241,7 +206,6 @@
 								</form>
 							</div>
 						</div>
-						<!-- This is the end of the mentor Toggles in the Metor method. -->
 					</div>
 				@endif
 				<!--###########################################################################-->
@@ -251,227 +215,211 @@
 				<!--###########################################################################-->
 				<!--####    The Basic Scafolding for Finding a Employee and adding code.   ####-->
 				<!--###########################################################################-->
-				@if($user->roles[0]->name === 'Employee')
-					<h1>Welcome {{$user->firstName}}</h1>
-					<div id="myRadioGroup">
-						<div class="btn-group" data-toggle="buttons">
-						  <label class="btn btn-primary active">
-						    <input type="radio" name="employeeToggle" id="option1" autocomplete="off" value="1" checked> View Students
-						  </label>
-						  <label class="btn btn-primary">
-						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="2" > View Mentors
-						  </label>
-						  <label class="btn btn-primary">
-						    <input type="radio" name="employeeToggle" id="option2" autocomplete="off" value="3" > View Visits
-						  </label>
-						  <label class="btn btn-primary">
-						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="4" > View Grades
-						  </label>
-						  <label class="btn btn-primary">
-						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="5" > Notify
-						  </label>
-						  <label class="btn btn-primary">
-						    <input type="radio" name="employeeToggle" id="option3" autocomplete="off" value="6" > Generate Report
-						  </label>
-						  						</div>
-					</div>
-						<div id="employeeToggle1" class="employeeProfile">
-							<h1>Student Profile</h1>
-							<a class="btn btn-primary" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
-								<div class="table-responsive">
-								<table class="table table-bordered table-striped table-hover table-inverse">
-					                <thead>
-					                <tr class="bg-info">
-					                    <th>Last Name</th>
-					                    <th>First Name</th>
-					                    <th>Current Address</th>
-					                    <th>City</th>
-					                    <th>State</th>
-					                    <th>Zip</th>
-					                    <th>Primary Email</th>
-					                    <th>Phone</th>
-					                    <th>Date of Birth</th>
-					                    <th>Gender</th>
-					                    <th>School</th>
-					                    <th>Actions</th>
-					                </tr>
-					                </thead>
-					                <tbody>
-					                @foreach ($students as $student)
-					                    <tr>
-			                                <td>{{ $student->lastName }}</td>
-			                                <td>{{ $student->firstName }}</td>
-			                                <td>{{ $student->address }}</td>
-			                                <td>{{ $student->city }}</td>
-			                                <td>{{ $student->state }}</td>
-			                                <td>{{ $student->zip }}</td>
-			                                <td>{{ $student->email }}</td> 
-			                                <td>{{ $student->phone }}</td>
-			                                <td>{{ $student->dob }}</td>
-			                                <td>{{ $student->gender }}</td>
-			                                <td>{{ $student->school }}</td>
-											<td><a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}">Update</a></td>
-					                    </tr>
-					                @endforeach
-					                <hr/>
-					                </tbody>
-					            </table>
-					            </div>
-						</div>
-
-						<div id="employeeToggle2" class="employeeProfile">
-							<h1>Mentor Profile</h1>
-							<a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a Mentor</a><br/>
-							<div class="table-responsive">
+			@if($user->roles[0]->name === 'Employee')
+				<h1>Welcome {{$user->firstName}}</h1>
+				<ul class="nav nav-tabs nav-justified">
+	                <li class="active"><a style="color: black;" href="#employeeToggle1" data-toggle="tab">My Profile</a></li>
+	                <li><a style="color: black;" href="#employeeToggle2" data-toggle="tab">Manage My Students</a></li>
+	                <li><a style="color: black;" href="#employeeToggle3" data-toggle="tab">Manage Visits</a></li>
+	                <li><a style="color: black;" href="#employeeToggle4" data-toggle="tab">Manage Grade</a></li>
+	                <li><a style="color: black;" href="#employeeToggle5" data-toggle="tab">Notify Visit</a></li>
+	                <li><a style="color: black;" href="#employeeToggle6" data-toggle="tab">Genenrate Report</a></li>
+	            </ul>
+				<div class="tab-content">
+					<div id="employeeToggle1" class="tab-pane fade in active">
+						<h1>Student Profile</h1>
+						<a class="btn btn-primary" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
+						<div class="table-responsive">
 							<table class="table table-bordered table-striped table-hover table-inverse">
-					                <thead>
-					                <tr class="bg-info">
-					                    <th>Last Name</th>
-					                    <th>First Name</th>
-					                    <th>Current Address</th>
-					                    <th>City</th>
-					                    <th>State</th>
-					                    <th>Zip</th>
-					                    <th>Primary Email</th>
-					                    <th>Phone</th>
-					                    <th>Actions</th>
-					                </tr>
-					                </thead>
-					                <tbody>
-					                @foreach ($mentors as $mentor)
-					                    <tr>
-			                                <td>{{ $mentor->lastName }}</td>
-			                                <td>{{ $mentor->firstName }}</td>
-			                                <td>{{ $mentor->address }}</td>
-			                                <td>{{ $mentor->city }}</td>
-			                                <td>{{ $mentor->state }}</td>
-			                                <td>{{ $mentor->zip }}</td>
-			                                <td>{{ $mentor->email }}</td> 
-			                                <td>{{ $mentor->phone }}</td>
-											<td><a class="btn btn-primary" href="{{ route('users.edit',$mentor->id) }}">Update</a></td>
-					                    </tr>
-					                @endforeach
-					                <hr/>
-					                </tbody>
-					            </table>
-					            </div>
-						</div>
+				                <thead>
+				                <tr class="bg-info">
+				                    <th>Last Name</th>
+				                    <th>First Name</th>
+				                    <th>Current Address</th>
+				                    <th>City</th>
+				                    <th>State</th>
+				                    <th>Zip</th>
+				                    <th>Primary Email</th>
+				                    <th>Phone</th>
+				                    <th>Date of Birth</th>
+				                    <th>Gender</th>
+				                    <th>School</th>
+				                    <th>Actions</th>
+				                </tr>
+				                </thead>
+				                <tbody>
+				                @foreach ($students as $student)
+				                    <tr>
+		                                <td>{{ $student->lastName }}</td>
+		                                <td>{{ $student->firstName }}</td>
+		                                <td>{{ $student->address }}</td>
+		                                <td>{{ $student->city }}</td>
+		                                <td>{{ $student->state }}</td>
+		                                <td>{{ $student->zip }}</td>
+		                                <td>{{ $student->email }}</td> 
+		                                <td>{{ $student->phone }}</td>
+		                                <td>{{ $student->dob }}</td>
+		                                <td>{{ $student->gender }}</td>
+		                                <td>{{ $student->school }}</td>
+										<td><a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}">Update</a></td>
+				                    </tr>
+				                @endforeach
+				                <hr/>
+				                </tbody>
+				            </table>
+			            </div>
+					</div>
 
-						<div id="employeeToggle3" class="employeeProfile">
-							<h1>visit Profile</h1>
-							<a class="btn btn-primary" href="{{ action('VisitController@create') }}">Create a visit</a><br/>
-								<div class="table-responsive">
-								<table class="table table-bordered table-striped table-hover table-inverse">
-					                <thead>
-					                <tr class="bg-info">
-					                    <th>Date</th>
-					                    <th>Attendance</th>
-					                    <th>Mentor</th>
-					                    <th>Student</th>
-					                   
-					                </tr>
-					                </thead>
-					                <tbody>
-					                @foreach ($visits as $visit)
-					                    <tr>
-			                                <td>{{ $visit->Date }}</td>
-			                                <td>{{ $visit->check }}</td>
-			                                <td>{{ $visit->user->firstName }}</td>
-			                                <td>{{ $visit->student->firstName }}</td>
-											<!-- <td><a class="btn btn-primary" href=" route('visits.edit',$visit->id) }}">Update</a></td> -->
-					                    </tr>
-					                @endforeach
-					                <hr/>
-					                </tbody>
-					            </table>
-					            </div>
-					    </div>
+					<div id="employeeToggle2" class="tab-pane fade">
+						<h1>Mentor Profile</h1>
+						<a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a Mentor</a><br/>
+						<div class="table-responsive">
+							<table class="table table-bordered table-striped table-hover table-inverse">
+				                <thead>
+				                <tr class="bg-info">
+				                    <th>Last Name</th>
+				                    <th>First Name</th>
+				                    <th>Current Address</th>
+				                    <th>City</th>
+				                    <th>State</th>
+				                    <th>Zip</th>
+				                    <th>Primary Email</th>
+				                    <th>Phone</th>
+				                    <th>Actions</th>
+				                </tr>
+				                </thead>
+				                <tbody>
+				                @foreach ($mentors as $mentor)
+				                    <tr>
+		                                <td>{{ $mentor->lastName }}</td>
+		                                <td>{{ $mentor->firstName }}</td>
+		                                <td>{{ $mentor->address }}</td>
+		                                <td>{{ $mentor->city }}</td>
+		                                <td>{{ $mentor->state }}</td>
+		                                <td>{{ $mentor->zip }}</td>
+		                                <td>{{ $mentor->email }}</td> 
+		                                <td>{{ $mentor->phone }}</td>
+										<td><a class="btn btn-primary" href="{{ route('users.edit',$mentor->id) }}">Update</a></td>
+				                    </tr>
+				                @endforeach
+				                <hr/>
+				                </tbody>
+				            </table>
+			            </div>
+					</div>
 
-						<div id="employeeToggle4" class="employeeProfile">
-							<h1>grade Profile</h1>
-							<a class="btn btn-primary" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
-								<div class="table-responsive">
-								<table class="table table-bordered table-striped table-hover table-inverse">
-					                <thead>
-					                <tr class="bg-info">
-					                    <th>Subject</th>
-					                    <th>Period</th>
-					                    <th>Grade</th>
-					                    <th>Comments</th>
-					                    <th>Student</th>
-					                    <th>Actions</th>
-					                </tr>
-					                </thead>
-					                <tbody>
-					                @foreach ($grades as $grade)
-					                    <tr>
-			                                <td>{{ $grade->subject }}</td>
-			                                <td>{{ $grade->period }}</td>
-			                                <td>{{ $grade->actual }}</td>
-			                                <td>{{ $grade->comments }}</td>
-			                                <td>{{ $grade->student->firstName }}</td>
-											<td><a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Update</a></td>
-					                    </tr>
-					                @endforeach
-					                <hr/>
-					                </tbody>
-					            </table>
-					            </div>
-					    </div>
+					<div id="employeeToggle3" class="tab-pane fade">
+						<h1>visit Profile</h1>
+						<a class="btn btn-primary" href="{{ action('VisitController@create') }}">Create a visit</a><br/>
+						<div class="table-responsive">
+							<table class="table table-bordered table-striped table-hover table-inverse">
+				                <thead>
+				                <tr class="bg-info">
+				                    <th>Date</th>
+				                    <th>Attendance</th>
+				                    <th>Mentor</th>
+				                    <th>Student</th>
+				                   
+				                </tr>
+				                </thead>
+				                <tbody>
+				                @foreach ($visits as $visit)
+				                    <tr>
+		                                <td>{{ $visit->Date }}</td>
+		                                <td>{{ $visit->check }}</td>
+		                                <td>{{ $visit->user->firstName }}</td>
+		                                <td>{{ $visit->student->firstName }}</td>
+										<!-- <td><a class="btn btn-primary" href=" route('visits.edit',$visit->id) }}">Update</a></td> -->
+				                    </tr>
+				                @endforeach
+				                <hr/>
+				                </tbody>
+				            </table>
+			            </div>
+				    </div>
 
-						<div id="employeeToggle5" class="employeeProfile">
-							<h1>Notify Users</h1>
-							<form style="color:black;" action="{{route('sendmail')}}" method="post">
-								<input type="email" name="email" placeholder="Email Address">
-								<input type="text" name="messages" placeholder="Message To Send">
-								<button type="submit">Notify</button>
-								{{ csrf_field() }}
-							</form>
-						</div>
+					<div id="employeeToggle4" class="tab-pane fade">
+						<h1>grade Profile</h1>
+						<a class="btn btn-primary" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
+						<div class="table-responsive">
+							<table class="table table-bordered table-striped table-hover table-inverse">
+				                <thead>
+				                <tr class="bg-info">
+				                    <th>Subject</th>
+				                    <th>Period</th>
+				                    <th>Grade</th>
+				                    <th>Comments</th>
+				                    <th>Student</th>
+				                    <th>Actions</th>
+				                </tr>
+				                </thead>
+				                <tbody>
+				                @foreach ($grades as $grade)
+				                    <tr>
+		                                <td>{{ $grade->subject }}</td>
+		                                <td>{{ $grade->period }}</td>
+		                                <td>{{ $grade->actual }}</td>
+		                                <td>{{ $grade->comments }}</td>
+		                                <td>{{ $grade->student->firstName }}</td>
+										<td><a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Update</a></td>
+				                    </tr>
+				                @endforeach
+				                <hr/>
+				                </tbody>
+				            </table>
+			            </div>
+				    </div>
 
-											
-				@endif
-		
-        
-<div id="employeeToggle6" class="employeeProfile" >
-            <h1>Generate Reports</h1>
-            <div class="table-responsive">   
-            <table class="table table-bordered table-striped table-hover table-inverse">
-                <thead>
-                <tr class="bg-info">
-                    <th>lastName</th>
-                    <th>firstName</th>
-                    <th>Current Address</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Zip</th>
-                    <th>Primary Email</th>
-                    <th>phone</th>
-                    <th colspan="2">Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach ($students as $student)
-                    <tr>
-                            <td>{{ $student->lastName }}</td>
-                            <td>{{ $student->firstName }}</td>
-                            <td>{{ $student->address }}</td>
-                            <td>{{ $student->city }}</td>
-                            <td>{{ $student->state }}</td>
-                            <td>{{ $student->zip }}</td>
-                            <td>{{ $student->email }}</td>
-                            <td>{{ $student->phone }}</td>
-                            <td><a href="{{url('/generatePDF')}}" class="btn btn-primary">Generate Report</a></td>
-                            <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
-                          
-                            <?php $bool = 1;?>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-            </div>
-        </div>
-        </div>
+					<div id="employeeToggle5" class="tab-pane fade">
+						<h1>Notify Users</h1>
+						<form style="color:black;" action="{{route('sendmail')}}" method="post">
+							<input type="email" name="email" placeholder="Email Address">
+							<input type="text" name="messages" placeholder="Message To Send">
+							<button type="submit">Notify</button>
+							{{ csrf_field() }}
+						</form>
+					</div>
+
+					<div id="employeeToggle6" class="tab-pane fade" >
+			            <h1>Generate Reports</h1>
+			            <div class="table-responsive">   
+				            <table class="table table-bordered table-striped table-hover table-inverse">
+				                <thead>
+				                <tr class="bg-info">
+				                    <th>lastName</th>
+				                    <th>firstName</th>
+				                    <th>Current Address</th>
+				                    <th>City</th>
+				                    <th>State</th>
+				                    <th>Zip</th>
+				                    <th>Primary Email</th>
+				                    <th>phone</th>
+				                    <th colspan="2">Actions</th>
+				                </tr>
+				                </thead>
+				                <tbody>
+				                @foreach ($students as $student)
+				                    <tr>
+				                            <td>{{ $student->lastName }}</td>
+				                            <td>{{ $student->firstName }}</td>
+				                            <td>{{ $student->address }}</td>
+				                            <td>{{ $student->city }}</td>
+				                            <td>{{ $student->state }}</td>
+				                            <td>{{ $student->zip }}</td>
+				                            <td>{{ $student->email }}</td>
+				                            <td>{{ $student->phone }}</td>
+				                            <td><a href="{{url('/generatePDF')}}" class="btn btn-primary">Generate Report</a></td>
+				                            <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
+				                          
+				                            <?php $bool = 1;?>
+				                    </tr>
+				                @endforeach
+				                </tbody>
+				            </table>
+		        		</div>
+		        	</div>
+		        </div>
+			@endif
         </div>
     </div>
 				<!--###########################################################################-->

@@ -128,12 +128,11 @@
                                     </div>
                                     <div class="modal-footer">
                                         <a href="" class="btn btn-warning pull-right" data-dismiss="modal">Close</a>
-                                        <a href="" class="btn btn-danger" style="margin: 0px 20px 0px 0px;" data-dismiss="modal">Delete</a>
+                                        <button type="submit" style="margin: 0px 10px 0px 10px;" class="btn btn-danger" id="btnYes">Delete</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Activate</button>
                         @yield('content')
                     </div>
                 </div>
@@ -412,200 +411,10 @@
                             this.setCustomValidity("");
                         });
                 }
-
-
-                //###########################################################################
-                //####    The JavaScript to Handle Employee Radio Button Event on Divs.  ####
-                //###########################################################################
-                $("input[name=mentorToggle]:radio").change(function () {
-                    if ($(this).val() == '1') {
-                        $('#mentorToggle1').css('display', 'block');
-                        $('#mentorToggle2').css('display', 'none');
-                        $('#mentorToggle3').css('display', 'none');
-                        $('#log').val('This is 1. || ');
-                    }
-                    else if($(this).val() == '2'){
-                        $('#mentorToggle1').css('display', 'none');
-                        $('#mentorToggle2').css('display', 'block');
-                        $('#mentorToggle3').css('display', 'none');
-                        $('#log').val("This is 2. || ");
-                    }
-                    else if($(this).val() == '3'){
-                        $('#mentorToggle1').css('display', 'none');
-                        $('#mentorToggle2').css('display', 'none');
-                        $('#mentorToggle3').css('display', 'block');
-                        $('#log').val("This is 3. || ");
-                    }
-                });
-                //###########################################################################
-                //####                     The End of Mentor JS.                         ####
-                //###########################################################################
                 
                 //###########################################################################
-                //####    The JavaScript to Handle Employee Radio Button Event on Divs.  ####
+                //####                      The end for JS Code.                         ####
                 //###########################################################################
-                $("input[name=employeeToggle]:radio").change(function () {
-                    if ($(this).val() == '1') {
-                        $('#employeeToggle1').css('display', 'block');
-                        $('#employeeToggle2').css('display', 'none');
-                        $('#employeeToggle3').css('display', 'none');
-                        $('#employeeToggle4').css('display', 'none');
-                        $('#employeeToggle5').css('display', 'none');
-                        $('#employeeToggle6').css('display', 'none');
-                        $('#log').val('This is 1. || ');
-                    }
-                    else if($(this).val() == '2'){
-                        $('#employeeToggle1').css('display', 'none'); 
-                        $('#employeeToggle2').css('display', 'block');
-                        $('#employeeToggle3').css('display', 'none');
-                        $('#employeeToggle4').css('display', 'none');
-                        $('#employeeToggle5').css('display', 'none');
-                        $('#employeeToggle6').css('display', 'none');
-                        $('#log').val("This is 2. || ");
-                    }
-                    else if($(this).val() == '3'){
-                        $('#employeeToggle1').css('display', 'none');
-                        $('#employeeToggle2').css('display', 'none');
-                        $('#employeeToggle3').css('display', 'block');
-                        $('#employeeToggle4').css('display', 'none');
-                        $('#employeeToggle5').css('display', 'none');
-                        $('#employeeToggle6').css('display', 'none');
-                        $('#log').val("This is 3. || ");
-                    }
-                    else if($(this).val() == '4'){
-                        $('#employeeToggle1').css('display', 'none');
-                        $('#employeeToggle2').css('display', 'none');
-                        $('#employeeToggle3').css('display', 'none');
-                        $('#employeeToggle4').css('display', 'block');
-                        $('#employeeToggle5').css('display', 'none');
-                        $('#employeeToggle6').css('display', 'none');
-                        $('#log').val("This is 3. || ");
-                    }
-                    else if($(this).val() == '5'){
-                        $('#employeeToggle1').css('display', 'none');
-                        $('#employeeToggle2').css('display', 'none');
-                        $('#employeeToggle3').css('display', 'none');
-                        $('#employeeToggle4').css('display', 'none');
-                        $('#employeeToggle5').css('display', 'block');
-                        $('#employeeToggle6').css('display', 'none');
-                        $('#log').val("This is 3. || ");
-                    }
-                      else if($(this).val() == '6'){
-                        $('#employeeToggle1').css('display', 'none');
-                        $('#employeeToggle2').css('display', 'none');
-                        $('#employeeToggle3').css('display', 'none');
-                        $('#employeeToggle4').css('display', 'none');
-                        $('#employeeToggle5').css('display', 'none');
-                        $('#employeeToggle6').css('display', 'block');
-                        $('#log').val("This is 3. || ");
-                    }
-                });
-                //###########################################################################
-                //####                     The End of Employee JS.                       ####
-                //###########################################################################
-                
-                //###########################################################################
-                //####    The JavaScript to Handle Admin Radio Button Event on Divs.     ####
-                //###########################################################################
-                $("input[name=adminToggle]:radio").change(function () {
-                    if ($(this).val() == '1') {
-                        $('#adminToggle1').css('display', 'block');
-                        $('#adminToggle2').css('display', 'none');
-                        $('#adminToggle3').css('display', 'none');
-                        $('#adminToggle4').css('display', 'none');
-                        $('#adminToggle5').css('display', 'none');
-                        $('#adminToggle6').css('display', 'none');
-                        $('#adminToggle7').css('display', 'none');
-                        $('#adminToggle8').css('display', 'none');
-                        $('#log').val('This is 1. || ');
-                    }
-                    else if($(this).val() == '2'){
-                        $('#adminToggle1').css('display', 'none');
-                        $('#adminToggle2').css('display', 'block');
-                        $('#adminToggle3').css('display', 'none');
-                        $('#adminToggle4').css('display', 'none');
-                        $('#adminToggle5').css('display', 'none');
-                        $('#adminToggle6').css('display', 'none');
-                        $('#adminToggle7').css('display', 'none');
-                        $('#adminToggle8').css('display', 'none');
-                        $('#log').val("This is 2. || ");
-                    }
-                    else if($(this).val() == '3'){
-                        $('#adminToggle1').css('display', 'none');
-                        $('#adminToggle2').css('display', 'none');
-                        $('#adminToggle3').css('display', 'block');
-                        $('#adminToggle4').css('display', 'none');
-                        $('#adminToggle5').css('display', 'none');
-                        $('#adminToggle6').css('display', 'none');
-                        $('#adminToggle7').css('display', 'none');
-                        $('#adminToggle8').css('display', 'none');
-                        $('#log').val("This is 3. || ");
-                    }
-                    else if($(this).val() == '4'){
-                        $('#adminToggle1').css('display', 'none');
-                        $('#adminToggle2').css('display', 'none');
-                        $('#adminToggle3').css('display', 'none');
-                        $('#adminToggle4').css('display', 'block');
-                        $('#adminToggle5').css('display', 'none');
-                        $('#adminToggle6').css('display', 'none');
-                        $('#adminToggle7').css('display', 'none');
-                        $('#adminToggle8').css('display', 'none');
-                        $('#log').val("This is 3. || ");
-                    }
-                    else if($(this).val() == '5'){
-                        $('#adminToggle1').css('display', 'none');
-                        $('#adminToggle2').css('display', 'none');
-                        $('#adminToggle3').css('display', 'none');
-                        $('#adminToggle4').css('display', 'none');
-                        $('#adminToggle5').css('display', 'block');
-                        $('#adminToggle6').css('display', 'none');
-                        $('#adminToggle7').css('display', 'none');
-                        $('#adminToggle8').css('display', 'none');
-                        $('#log').val("This is 3. || ");
-                    }
-                    else if($(this).val() == '6'){
-                        $('#adminToggle1').css('display', 'none');
-                        $('#adminToggle2').css('display', 'none');
-                        $('#adminToggle3').css('display', 'none');
-                        $('#adminToggle4').css('display', 'none');
-                        $('#adminToggle5').css('display', 'none');
-                        $('#adminToggle6').css('display', 'block');
-                        $('#adminToggle7').css('display', 'none');
-                        $('#adminToggle8').css('display', 'none');
-                        $('#log').val("This is 3. || ");
-                    }
-                    else if($(this).val() == '7'){
-                        $('#adminToggle1').css('display', 'none');
-                        $('#adminToggle2').css('display', 'none');
-                        $('#adminToggle3').css('display', 'none');
-                        $('#adminToggle4').css('display', 'none');
-                        $('#adminToggle5').css('display', 'none');
-                        $('#adminToggle6').css('display', 'none');
-                        $('#adminToggle7').css('display', 'block');
-                        $('#adminToggle8').css('display', 'none');
-                        $('#log').val("This is 3. || ");
-                    }
-                     else if($(this).val() == '8'){
-                        $('#adminToggle1').css('display', 'none');
-                        $('#adminToggle2').css('display', 'none');
-                        $('#adminToggle3').css('display', 'none');
-                        $('#adminToggle4').css('display', 'none');
-                        $('#adminToggle5').css('display', 'none');
-                        $('#adminToggle6').css('display', 'none');
-                        $('#adminToggle7').css('display', 'none');
-                        $('#adminToggle8').css('display', 'block');
-                        $('#log').val("This is 3. || ");
-                    }
-                });
-                //###########################################################################
-                //####                     The End of Admin JS.                          ####
-                //###########################################################################
-                
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
             });
         </script>
 
