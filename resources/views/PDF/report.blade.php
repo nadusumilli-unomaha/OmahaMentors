@@ -36,8 +36,7 @@
                     <th>Zip</th>
                     <th>Primary Email</th>
                     <th>phone</th>
-                    <th>Type</th>
-                </tr>
+                                    </tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -49,15 +48,14 @@
                             <td>{{ $student->zip }}</td>
                             <td>{{ $student->email }}</td>
                             <td>{{ $student->phone }}</td>
-                            <td>{{ $student->type }}</td>
-                    </tr>
+                                                </tr>
                 </tbody>
             </table>
         </div><br/><br/>
 
         <div>
             <!-- The code to list all the grades and other people stuff that can admin can see and create.-->
-            <h3>Student's Grade Information</h3>
+            <h3>Student's Grades</h3>
             <table>
                 <thead>
                 <tr >
@@ -84,7 +82,7 @@
 
         <div>
                 <!-- The code to list all the visits and other people stuff that can admin can see and create.-->
-            <h3>Student's Visit Information</h3>
+            <h3>Student- Menotr Visits</h3>
                <table>
                     <thead>
                         <tr>
