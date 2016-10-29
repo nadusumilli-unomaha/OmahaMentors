@@ -12,9 +12,9 @@
         "guzzlehttp/guzzle": "^6.2",
         "barryvdh/laravel-dompdf": "^0.7.0",
         "ext-mbstring": "*",
-        "barryvdh/laravel-snappy": "^0.3.1"
-    },
+        "barryvdh/laravel-snappy": "^0.3.1",
         "symfony/dom-crawler": "3.1.*"
+    },
 }
     "require-dev": {
         "fzaninotto/faker": "~1.4",
