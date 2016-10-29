@@ -9,21 +9,17 @@
         "laravel/framework": "5.3.*",
         "laravelcollective/html": "5.3.*",
         "phpmailer/phpmailer": "^5.2",
-        "guzzlehttp/guzzle": "^6.2",
-        "barryvdh/laravel-dompdf": "^0.7.0",
-        "ext-mbstring": "*",
-        "barryvdh/laravel-snappy": "^0.3.1",
-        "symfony/dom-crawler": "3.1.*"
+        "guzzlehttp/guzzle": "^6.2"
     },
-}
+
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~5.0",
         "phpspec/phpspec":"2.2.1",
-        "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*"
+        "symfony/css-selector": "3.1.*"
     },
+
     "autoload": {
         "classmap": [
             "database"
@@ -32,11 +28,13 @@
             "App\\": "app/"
         }
     },
+
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php"
         ]
     },
+
     "scripts": {
         "post-root-package-install": [
             "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -53,6 +51,7 @@
             "php artisan optimize"
         ]
     },
+
     "config": {
         "preferred-install": "dist"
     }
