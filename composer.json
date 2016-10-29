@@ -12,13 +12,10 @@
         "guzzlehttp/guzzle": "^6.2",
         "barryvdh/laravel-dompdf": "^0.7.0",
         "ext-mbstring": "*",
-<<<<<<< HEAD
         "barryvdh/laravel-snappy": "^0.3.1"
     },
-=======
         "symfony/dom-crawler": "3.1.*"
 }
->>>>>>> afe95846d2b0221cb9d41ae06caf9ca55453e885
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
