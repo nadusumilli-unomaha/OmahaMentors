@@ -220,13 +220,59 @@
 				<ul class="nav nav-tabs nav-justified">
 	                <li class="active"><a style="color: black;" href="#employeeToggle1" data-toggle="tab">My Profile</a></li>
 	                <li><a style="color: black;" href="#employeeToggle2" data-toggle="tab">Manage My Students</a></li>
-	                <li><a style="color: black;" href="#employeeToggle3" data-toggle="tab">Manage Visits</a></li>
-	                <li><a style="color: black;" href="#employeeToggle4" data-toggle="tab">Manage Grade</a></li>
-	                <li><a style="color: black;" href="#employeeToggle5" data-toggle="tab">Notify Visit</a></li>
-	                <li><a style="color: black;" href="#employeeToggle6" data-toggle="tab">Genenrate Report</a></li>
+	                <li><a style="color: black;" href="#employeeToggle3" data-toggle="tab">Manage My Mentors</a></li>
+	                <li><a style="color: black;" href="#employeeToggle4" data-toggle="tab">Manage Visits</a></li>
+	                <li><a style="color: black;" href="#employeeToggle5" data-toggle="tab">Manage Grade</a></li>
+	                <li><a style="color: black;" href="#employeeToggle6" data-toggle="tab">Notify Visit</a></li>
+	                <li><a style="color: black;" href="#employeeToggle7" data-toggle="tab">Genenrate Report</a></li>
 	            </ul>
 				<div class="tab-content">
-					<div id="employeeToggle1" class="tab-pane fade in active">
+					<div id="employeeToggle1" class="tab-pane fade in active" >
+						<h1>My Profile</h1>
+						<table class="table table-striped table-bordered table-hover">
+				            <tbody>
+				                <tr class="bg-info"/>
+				                <tr>
+				                    <td>Last Name</td>
+				                    <td><?php echo ($user['lastName']); ?></td>
+				                </tr>
+				                <tr>
+				                    <td>First Name</td>
+				                    <td><?php echo ($user['firstName']); ?></td>
+				                </tr>
+				                <tr>
+				                    <td>Address</td>
+				                    <td><?php echo ($user['address']); ?></td>
+				                </tr>
+				                <tr>
+				                    <td>City </td>
+				                    <td><?php echo ($user['city']); ?></td>
+				                </tr>
+				                <tr>
+				                    <td>State</td>
+				                    <td><?php echo ($user['state']); ?></td>
+				                </tr>
+				                <tr>
+				                    <td>Zip </td>
+				                    <td><?php echo ($user['zip']); ?></td>
+				                </tr>
+				                <tr>
+				                    <td>Phone</td>
+				                    <td><?php echo ($user['phone']); ?></td>
+				                </tr>
+				                <tr>
+				                    <td>Type</td>
+				                    <td><?php echo ($user->roles[0]['name']); ?></td>
+				                </tr>
+				            </tbody>
+				        </table>
+				        <!-- The Update user function. -->
+				        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit Mentor</a>
+						<!-- This is the Visit Schedule link. -->
+						<a class="btn btn-primary" href="#">My Visits</a>
+					</div>
+
+					<div id="employeeToggle2" class="tab-pane fade">
 						<h1>Student Profile</h1>
 						<a class="btn btn-primary" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
 						<div class="table-responsive">
@@ -270,7 +316,7 @@
 			            </div>
 					</div>
 
-					<div id="employeeToggle2" class="tab-pane fade">
+					<div id="employeeToggle3" class="tab-pane fade">
 						<h1>Mentor Profile</h1>
 						<a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a Mentor</a><br/>
 						<div class="table-responsive">
@@ -308,7 +354,7 @@
 			            </div>
 					</div>
 
-					<div id="employeeToggle3" class="tab-pane fade">
+					<div id="employeeToggle4" class="tab-pane fade">
 						<h1>visit Profile</h1>
 						<a class="btn btn-primary" href="{{ action('VisitController@create') }}">Create a visit</a><br/>
 						<div class="table-responsive">
@@ -338,7 +384,7 @@
 			            </div>
 				    </div>
 
-					<div id="employeeToggle4" class="tab-pane fade">
+					<div id="employeeToggle5" class="tab-pane fade">
 						<h1>grade Profile</h1>
 						<a class="btn btn-primary" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
 						<div class="table-responsive">
@@ -370,7 +416,7 @@
 			            </div>
 				    </div>
 
-					<div id="employeeToggle5" class="tab-pane fade">
+					<div id="employeeToggle6" class="tab-pane fade">
 						<h1>Notify Users</h1>
 						<form style="color:black;" action="{{route('sendmail')}}" method="post">
 							<input type="email" name="email" placeholder="Email Address">
@@ -380,7 +426,7 @@
 						</form>
 					</div>
 
-					<div id="employeeToggle6" class="tab-pane fade" >
+					<div id="employeeToggle7" class="tab-pane fade" >
 			            <h1>Generate Reports</h1>
 			            <div class="table-responsive">   
 				            <table class="table table-bordered table-striped table-hover table-inverse">
