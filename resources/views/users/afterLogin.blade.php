@@ -282,6 +282,16 @@
 					</div>
 
 					<div id="employeeToggle2" class="tab-pane fade">
+	                    {!! Form::open(['route'=> 'afterLogin', 'method' => 'GET', 'class' => 'navbar-form navbar-right', 'role' => 'search']) !!}
+	                        <div class="input-group">
+	                            {!! Form::text('studentTerm', Request::get('studentTerm'), ['class'=>'form-control', 'placeholder' => 'Search...']) !!}
+	                            <span class="input-group-btn">
+	                                <button class="btn btn-default" type="submit">
+	                                    <i class="glyphicon glyphicon-search"></i>
+	                                </button>
+	                            </span>
+	                        </div>
+	                    {!! Form::close() !!}
 						<h1>Student Profile</h1>
 						<a class="btn btn-primary" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
 						<div class="table-responsive">
@@ -326,6 +336,16 @@
 					</div>
 
 					<div id="employeeToggle3" class="tab-pane fade">
+	                    {!! Form::open(['route'=> 'afterLogin', 'method' => 'GET', 'class' => 'navbar-form navbar-right', 'role' => 'search']) !!}
+	                        <div class="input-group">
+	                            {!! Form::text('mentorTerm', Request::get('mentorTerm'), ['class'=>'form-control', 'placeholder' => 'Search...']) !!}
+	                            <span class="input-group-btn">
+	                                <button class="btn btn-default" type="submit">
+	                                    <i class="glyphicon glyphicon-search"></i>
+	                                </button>
+	                            </span>
+	                        </div>
+	                    {!! Form::close() !!}
 						<h1>Mentor Profile</h1>
 						<a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a Mentor</a><br/>
 						<div class="table-responsive">
@@ -364,6 +384,16 @@
 					</div>
 
 					<div id="employeeToggle4" class="tab-pane fade">
+	                    {!! Form::open(['route'=> 'afterLogin', 'method' => 'GET', 'class' => 'navbar-form navbar-right', 'role' => 'search']) !!}
+	                        <div class="input-group">
+	                            {!! Form::text('visitTerm', Request::get('visitTerm'), ['class'=>'form-control', 'placeholder' => 'Search...']) !!}
+	                            <span class="input-group-btn">
+	                                <button class="btn btn-default" type="submit">
+	                                    <i class="glyphicon glyphicon-search"></i>
+	                                </button>
+	                            </span>
+	                        </div>
+	                    {!! Form::close() !!}
 						<h1>visit Profile</h1>
 						<a class="btn btn-primary" href="{{ action('VisitController@create') }}">Create a visit</a><br/>
 						<div class="table-responsive">
@@ -394,6 +424,16 @@
 				    </div>
 
 					<div id="employeeToggle5" class="tab-pane fade">
+	                    {!! Form::open(['route'=> 'afterLogin', 'method' => 'GET', 'class' => 'navbar-form navbar-right', 'role' => 'search']) !!}
+	                        <div class="input-group">
+	                            {!! Form::text('gradeTerm', Request::get('gradeTerm'), ['class'=>'form-control', 'placeholder' => 'Search...']) !!}
+	                            <span class="input-group-btn">
+	                                <button class="btn btn-default" type="submit">
+	                                    <i class="glyphicon glyphicon-search"></i>
+	                                </button>
+	                            </span>
+	                        </div>
+	                    {!! Form::close() !!}
 						<h1>grade Profile</h1>
 						<a class="btn btn-primary" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
 						<div class="table-responsive">
@@ -436,8 +476,7 @@
 					</div>
 
 					<div id="employeeToggle7" class="tab-pane fade" >
-			            <h1>Generate Reports</h1>
-	                    <div class="btn-group" style="margin: 0px 0px 10px 800px;">
+	                    <div class="btn-group pull-right">
 	                        <button type="button" class="btn btn-primary">Export</button>
 	                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 	                            <span class="caret"></span>
@@ -449,6 +488,7 @@
 	                            <li><a href="#">Other</a></li>
 	                        </ul>
 	                    </div>
+			            <h1>Generate Reports</h1>
 			            <div class="table-responsive">   
 				            <table class="table table-bordered table-striped table-hover table-inverse">
 				                <thead>

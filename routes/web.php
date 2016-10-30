@@ -87,6 +87,7 @@ Route::group(['middleware' => 'roles', 'roles'=>['Admin', 'Employee', 'Mentor']]
 //The below are the routes that are only accessible by anyone on the website but they have to authenticated to do so.
 //###################################################################################################################
 Route::get('/afterLogin', 'HomeController@afterLogin');
+Route::get('afterLogin',array('as' => 'afterLogin', 'uses' => 'HomeController@afterLogin'));
 
 //#######################################################################################
 //This is the Route to sent a mail and is only accessible when called.
@@ -98,9 +99,14 @@ Route::post('/sendmail', function (\Illuminate\Http\Request $request, \Illuminat
 	return redirect()->back();
 })->name('sendmail');
 
+//Not working on heroku.
 Route::get('/generatePDF/{id}','PDFController@generatePDF');
 Route::get('/PDF', 'PDFController@index');
 Route::resource('PDF','PDFController',['only'=>'show']);
+
+//#######################################################################################
+//This is the Route to import data from and export data to excel sheet.
+//#######################################################################################
 Route::get('/getImport', 'ExcelController@getImport');
 Route::post('/postImport', 'ExcelController@postImport');
 Route::get('/getExport', 'ExcelController@getExport');
