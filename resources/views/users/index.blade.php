@@ -370,11 +370,19 @@
                                             <td>{{ $student->zip }}</td>
                                             <td>{{ $student->email }}</td>
                                             <td>{{ $student->phone }}</td>
-                                            
-                                            <td><a href="{{ action('PDFController@generatePDF',$student->id) }}" class="btn btn-primary">Generate Report</a></td>
-                                            <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
-                                          
-                                            <?php $bool = 1;?>
+                                            <td><div class="btn-group">
+                                                <button type="button" class="btn btn-info">Export</button>
+                                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                                                    <span class="caret"></span>
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <ul class="dropdown-menu" role="menu" id="export-menu">
+                                                    <li id="export-to-excel"><a href="{{ URL::to('getExport') }}">Export to Excel</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#">Other</a></li>
+                                                </ul>
+                                            </div></td>
+                                                <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
                                     </tr>
                                 @endforeach
                             </tbody>

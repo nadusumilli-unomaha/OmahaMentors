@@ -101,6 +101,9 @@ Route::post('/sendmail', function (\Illuminate\Http\Request $request, \Illuminat
 Route::get('/generatePDF/{id}','PDFController@generatePDF');
 Route::get('/PDF', 'PDFController@index');
 Route::resource('PDF','PDFController',['only'=>'show']);
+Route::get('/getImport', 'ExcelController@getImport');
+Route::post('/postImport', 'ExcelController@postImport');
+Route::get('/getExport', 'ExcelController@getExport');
 
 
 //#######################################################################################
