@@ -28,11 +28,11 @@ class UserController extends Controller
             //This is the student search algorithm.
             if($request->studentTerm){
                 $students = Student::where('firstName','like','%'.$request->studentTerm.'%')
-                    ->orWhere('email','like','%'.$request->studentTerm.'%')
-                    ->orWhere('lastName','like','%'.$request->studentTerm.'%')
-                    ->orWhere('city','like','%'.$request->studentTerm.'%')
-                    ->orWhere('state','like','%'.$request->studentTerm.'%')
-                    ->orWhere('address','like','%'.$request->studentTerm.'%')
+                    ->orWhere('email','ilike','%'.$request->studentTerm.'%')
+                    ->orWhere('lastName','ilike','%'.$request->studentTerm.'%')
+                    ->orWhere('city','ilike','%'.$request->studentTerm.'%')
+                    ->orWhere('state','ilike','%'.$request->studentTerm.'%')
+                    ->orWhere('address','ilike','%'.$request->studentTerm.'%')
                     ->orderBy('id','desc')
                     ->paginate(5);
             }
