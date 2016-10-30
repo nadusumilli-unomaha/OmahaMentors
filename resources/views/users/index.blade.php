@@ -402,8 +402,7 @@
                 </div>
 
                 <div id="adminToggle8" class="tab-pane fade" >
-                    <h1>All Reports</h1>
-                    <div class="btn-group" style="margin: 0px 0px 10px 800px;">
+                    <div class="btn-group pull-right">
                         <button type="button" class="btn btn-primary">Export</button>
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
@@ -415,6 +414,7 @@
                             <li><a href="#">Other</a></li>
                         </ul>
                     </div>
+                    <h1>All Reports</h1>
                     <div class="table-responsive">   
                         <table class="table table-bordered table-striped table-hover table-inverse">
                             <thead>

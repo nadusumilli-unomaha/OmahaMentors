@@ -2,7 +2,7 @@
 
 @section('content')
     <style type="text/css">
-        td{
+        td,th{
             color:black;
         }
     </style>
