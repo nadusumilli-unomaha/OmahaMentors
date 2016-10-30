@@ -27,9 +27,9 @@ class UserController extends Controller
             $admin = User::where('email', Auth::user()->email)->first();
             //This is the student search algorithm.
             if($request->studentTerm){
-                $students = Student::where('firstName','like','%'.$request->term.'%')
-                    ->orWhere('email','like','%'.$request->term.'%')
-                    ->orWhere('lastName','like','%'.$request->term.'%')
+                $students = Student::where('firstName','like','%'.$request->studentTerm.'%')
+                    ->orWhere('email','like','%'.$request->studentTerm.'%')
+                    ->orWhere('lastName','like','%'.$request->studentTerm.'%')
                     ->orderBy('id','desc')
                     ->paginate(5);
             }
