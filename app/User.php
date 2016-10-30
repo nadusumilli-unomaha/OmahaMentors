@@ -36,6 +36,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $casts = [
+        'firstname' => 'string',
+        'email' => 'string',
+        'lastName' => 'string',
+        'address' => 'string',
+        'city' => 'string',
+        'state' => 'string',
+        'zip' => 'string',
+    ];
+
     //These are the relationship defenitions for the Models.
     //These are how eloquent qeries for relationships.
     public function roles()
