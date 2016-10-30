@@ -43,7 +43,7 @@ class User extends Authenticatable
         'address' => 'string',
         'city' => 'string',
         'state' => 'string',
-        'zip' => 'string',
+        'zip' => 'int',
     ];
 
     //These are the relationship defenitions for the Models.
