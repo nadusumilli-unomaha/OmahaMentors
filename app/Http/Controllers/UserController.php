@@ -33,7 +33,6 @@ class UserController extends Controller
                     ->orWhere('city','like','%'.$request->studentTerm.'%')
                     ->orWhere('state','like','%'.$request->studentTerm.'%')
                     ->orWhere('address','like','%'.$request->studentTerm.'%')
-                    ->orWhere('zip','like','%'.$request->studentTerm.'%')
                     ->orderBy('id','desc')
                     ->paginate(5);
             }
@@ -51,7 +50,6 @@ class UserController extends Controller
                     ->orWhere('city','like','%'.$request->mentorTerm.'%')
                     ->orWhere('state','like','%'.$request->mentorTerm.'%')
                     ->orWhere('address','like','%'.$request->mentorTerm.'%')
-                    ->orWhere('zip','like','%'.$request->mentorTerm.'%')
                     ->orderBy('id','desc')
                     ->paginate(5);
             }
@@ -71,7 +69,6 @@ class UserController extends Controller
                     ->orWhere('city','like','%'.$request->employeeTerm.'%')
                     ->orWhere('state','like','%'.$request->employeeTerm.'%')
                     ->orWhere('address','like','%'.$request->employeeTerm.'%')
-                    ->orWhere('zip','like','%'.$request->employeeTerm.'%')
                     ->orderBy('id','desc')
                     ->paginate(5);
             }
