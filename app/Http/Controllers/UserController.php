@@ -27,7 +27,7 @@ class UserController extends Controller
             $admin = User::where('email', Auth::user()->email)->first();
             //This is the student search algorithm.
             if($request->studentTerm){
-                $students = Student::where('firstName','like','%'.$request->studentTerm.'%')
+                $students = Student::where('firstName','ilike','%'.$request->studentTerm.'%')
                     ->orWhere('email','ilike','%'.$request->studentTerm.'%')
                     ->orWhere('lastName','ilike','%'.$request->studentTerm.'%')
                     ->orWhere('city','ilike','%'.$request->studentTerm.'%')
@@ -90,7 +90,7 @@ class UserController extends Controller
             }
             //This is the grade search algorithm.
             if($request->gradeTerm){
-                $grades = Grade::where('period','like','%'.$request->gradeTerm.'%')
+                $grades = Grade::where('period','ilike','%'.$request->gradeTerm.'%')
                     ->orWhere('subject','ilike','%'.$request->gradeTerm.'%')
                     ->orWhere('actual','ilike','%'.$request->gradeTerm.'%')
                     ->orWhere('comments','ilike','%'.$request->gradeTerm.'%')
