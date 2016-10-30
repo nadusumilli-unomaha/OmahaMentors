@@ -437,6 +437,18 @@
 
 					<div id="employeeToggle7" class="tab-pane fade" >
 			            <h1>Generate Reports</h1>
+	                    <div class="btn-group" style="margin: 0px 0px 10px 800px;">
+	                        <button type="button" class="btn btn-primary">Export</button>
+	                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+	                            <span class="caret"></span>
+	                            <span class="sr-only">Toggle Dropdown</span>
+	                        </button>
+	                        <ul class="dropdown-menu" role="menu" id="export-menu">
+	                            <li id="export-to-excel"><a href="{{ URL::to('getExport') }}">Export to Excel</a></li>
+	                            <li class="divider"></li>
+	                            <li><a href="#">Other</a></li>
+	                        </ul>
+	                    </div>
 			            <div class="table-responsive">   
 				            <table class="table table-bordered table-striped table-hover table-inverse">
 				                <thead>
@@ -463,18 +475,6 @@
 				                            <td>{{ $student->zip }}</td>
 				                            <td>{{ $student->email }}</td>
 				                            <td>{{ $student->phone }}</td>
-				                            <td><div class="btn-group">
-                                                <button type="button" class="btn btn-info">Export</button>
-                                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-                                                    <span class="caret"></span>
-                                                    <span class="sr-only">Toggle Dropdown</span>
-                                                </button>
-                                                <ul class="dropdown-menu" role="menu" id="export-menu">
-                                                    <li id="export-to-excel"><a href="#">Export to Excel</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Other</a></li>
-                                                </ul>
-                                            </div></td>
 				                            <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
 				                          
 				                            <?php $bool = 1;?>

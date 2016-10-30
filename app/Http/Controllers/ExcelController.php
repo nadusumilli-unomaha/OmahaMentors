@@ -35,7 +35,7 @@ class ExcelController extends Controller
         $users = User::whereHas('roles', function ($query) {
                                 $query->where('name', 'like', 'Mentor');
                             })->get();
-    	Excel::create('Export Data', function($excel) use($export,$grade,$users,$visits){
+    	Excel::create('Export Student Data', function($excel) use($export,$grade,$users,$visits){
     		$excel->sheet('Sheet 1', function($sheet) use($export){
     			$sheet->fromArray($export);
     		});

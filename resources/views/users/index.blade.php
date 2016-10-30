@@ -6,6 +6,15 @@
         th, td{
             color:black;
         }
+        
+        .nav-tabs>li>a:hover {
+            background-color: #23527c;
+            color: #23527c;
+        } 
+        .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus{
+            background-color:#2c3e50;
+            color:#161f29;
+        }
     </style>
 
     <!--###########################################################################-->
@@ -16,14 +25,14 @@
             <!-- This is the admin dashboard stuff with the colum sizing. -->
             <h1>Welcome Admin</h1>
             <ul class="nav nav-tabs nav-justified">
-                <li class="active"><a style="color: black;" href="#adminToggle1" data-toggle="tab">My Profile</a></li>
-                <li><a style="color: black;" href="#adminToggle2" data-toggle="tab">Manage Access</a></li>
-                <li><a style="color: black;" href="#adminToggle3" data-toggle="tab">Manage Students</a></li>
-                <li><a style="color: black;" href="#adminToggle4" data-toggle="tab">Manage Mentors</a></li>
-                <li><a style="color: black;" href="#adminToggle5" data-toggle="tab">Manage Employees</a></li>
-                <li><a style="color: black;" href="#adminToggle6" data-toggle="tab">Manage Visits</a></li>
-                <li><a style="color: black;" href="#adminToggle7" data-toggle="tab">Manage Grades</a></li>
-                <li><a style="color: black;" href="#adminToggle8" data-toggle="tab">Generate Report</a></li>
+                <li class="active"><a style="color: white;" href="#adminToggle1" data-toggle="tab"><strong>My Profile</strong></a></li>
+                <li><a style="color: white;" href="#adminToggle2" data-toggle="tab"><strong>Manage Access</strong></a></li>
+                <li><a style="color: white;" href="#adminToggle3" data-toggle="tab"><strong>Manage Students</strong></a></li>
+                <li><a style="color: white;" href="#adminToggle4" data-toggle="tab"><strong>Manage Mentors</strong></a></li>
+                <li><a style="color: white;" href="#adminToggle5" data-toggle="tab"><strong>Manage Employees</strong></a></li>
+                <li><a style="color: white;" href="#adminToggle6" data-toggle="tab"><strong>Manage Visits</strong></a></li>
+                <li><a style="color: white;" href="#adminToggle7" data-toggle="tab"><strong>Manage Grades</strong></a></li>
+                <li><a style="color: white;" href="#adminToggle8" data-toggle="tab"><strong>Generate Report</strong></a></li>
             </ul>
             <!--#############################################################################-->
             <!--####                        The End of the Table.                        ####-->
@@ -344,6 +353,18 @@
 
                 <div id="adminToggle8" class="tab-pane fade" >
                     <h1>All Reports</h1>
+                    <div class="btn-group" style="margin: 0px 0px 10px 800px;">
+                        <button type="button" class="btn btn-primary">Export</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" id="export-menu">
+                            <li id="export-to-excel"><a href="{{ URL::to('getExport') }}">Export to Excel</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Other</a></li>
+                        </ul>
+                    </div>
                     <div class="table-responsive">   
                         <table class="table table-bordered table-striped table-hover table-inverse">
                             <thead>
@@ -370,19 +391,7 @@
                                             <td>{{ $student->zip }}</td>
                                             <td>{{ $student->email }}</td>
                                             <td>{{ $student->phone }}</td>
-                                            <td><div class="btn-group">
-                                                <button type="button" class="btn btn-info">Export</button>
-                                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-                                                    <span class="caret"></span>
-                                                    <span class="sr-only">Toggle Dropdown</span>
-                                                </button>
-                                                <ul class="dropdown-menu" role="menu" id="export-menu">
-                                                    <li id="export-to-excel"><a href="{{ URL::to('getExport') }}">Export to Excel</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Other</a></li>
-                                                </ul>
-                                            </div></td>
-                                                <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
+                                            <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
