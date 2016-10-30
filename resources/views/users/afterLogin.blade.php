@@ -64,6 +64,15 @@
         td, th{
         	color:black;
         }
+        
+		.nav-tabs>li>a:hover {
+		    background-color: #23527c;
+		    color: #23527c;
+		} 
+		.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus{
+			background-color:#2c3e50;
+			color:#161f29;
+		}
 	</style>
 	<!-- The Basic Scafolding of the automatic adjusting screen. -->
 	<div class="row">
@@ -218,13 +227,13 @@
 			@if($user->roles[0]->name === 'Employee')
 				<h1>Welcome {{$user->firstName}}</h1>
 				<ul class="nav nav-tabs nav-justified">
-	                <li class="active"><a style="color: black;" href="#employeeToggle1" data-toggle="tab">My Profile</a></li>
-	                <li><a style="color: black;" href="#employeeToggle2" data-toggle="tab">Manage My Students</a></li>
-	                <li><a style="color: black;" href="#employeeToggle3" data-toggle="tab">Manage My Mentors</a></li>
-	                <li><a style="color: black;" href="#employeeToggle4" data-toggle="tab">Manage Visits</a></li>
-	                <li><a style="color: black;" href="#employeeToggle5" data-toggle="tab">Manage Grade</a></li>
-	                <li><a style="color: black;" href="#employeeToggle6" data-toggle="tab">Notify Visit</a></li>
-	                <li><a style="color: black;" href="#employeeToggle7" data-toggle="tab">Genenrate Report</a></li>
+	                <li class="active"><a style="color: white;" href="#employeeToggle1" data-toggle="tab"><strong>My Profile</strong></a></li>
+	                <li><a style="color: white;" href="#employeeToggle2" data-toggle="tab"><strong>Manage My Students</strong></a></li>
+	                <li><a style="color: white;" href="#employeeToggle3" data-toggle="tab"><strong>Manage My Mentors</strong></a></li>
+	                <li><a style="color: white;" href="#employeeToggle4" data-toggle="tab"><strong>Manage Visits</strong></a></li>
+	                <li><a style="color: white;" href="#employeeToggle5" data-toggle="tab"><strong>Manage Grade</strong></a></li>
+	                <li><a style="color: white;" href="#employeeToggle6" data-toggle="tab"><strong>Notify Visit</strong></a></li>
+	                <li><a style="color: white;" href="#employeeToggle7" data-toggle="tab"><strong>Genenrate Report</strong></a></li>
 	            </ul>
 				<div class="tab-content">
 					<div id="employeeToggle1" class="tab-pane fade in active" >
