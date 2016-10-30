@@ -44,12 +44,12 @@ class UserController extends Controller
                 $mentors = User::whereHas('roles', function ($query) use($request){
                             $query->where('name', 'like', 'Mentor');
                 })
-                    ->where('firstName','like','%'.$request->mentorTerm.'%')
-                    ->orWhere('email','like','%'.$request->mentorTerm.'%')
-                    ->orWhere('lastName','like','%'.$request->mentorTerm.'%')
-                    ->orWhere('city','like','%'.$request->mentorTerm.'%')
-                    ->orWhere('state','like','%'.$request->mentorTerm.'%')
-                    ->orWhere('address','like','%'.$request->mentorTerm.'%')
+                    ->where('firstName','ilike','%'.$request->mentorTerm.'%')
+                    ->orWhere('email','ilike','%'.$request->mentorTerm.'%')
+                    ->orWhere('lastName','ilike','%'.$request->mentorTerm.'%')
+                    ->orWhere('city','ilike','%'.$request->mentorTerm.'%')
+                    ->orWhere('state','ilike','%'.$request->mentorTerm.'%')
+                    ->orWhere('address','ilike','%'.$request->mentorTerm.'%')
                     ->orderBy('id','desc')
                     ->paginate(5);
             }
@@ -63,12 +63,12 @@ class UserController extends Controller
                 $employees = User::whereHas('roles', function ($query) {
                     $query->where('name', 'like', 'Employee');
                 })
-                    ->where('firstName','like','%'.$request->employeeTerm.'%')
-                    ->orWhere('email','like','%'.$request->employeeTerm.'%')
-                    ->orWhere('lastName','like','%'.$request->employeeTerm.'%')
-                    ->orWhere('city','like','%'.$request->employeeTerm.'%')
-                    ->orWhere('state','like','%'.$request->employeeTerm.'%')
-                    ->orWhere('address','like','%'.$request->employeeTerm.'%')
+                    ->where('firstName','ilike','%'.$request->employeeTerm.'%')
+                    ->orWhere('email','ilike','%'.$request->employeeTerm.'%')
+                    ->orWhere('lastName','ilike','%'.$request->employeeTerm.'%')
+                    ->orWhere('city','ilike','%'.$request->employeeTerm.'%')
+                    ->orWhere('state','ilike','%'.$request->employeeTerm.'%')
+                    ->orWhere('address','ilike','%'.$request->employeeTerm.'%')
                     ->orderBy('id','desc')
                     ->paginate(5);
             }
@@ -79,7 +79,7 @@ class UserController extends Controller
             }
             //This is the visit search algorithm.
             if($request->visitTerm){
-                $visits = Visit::where('check','like','%'.$request->visitTerm.'%')
+                $visits = Visit::where('check','ilike','%'.$request->visitTerm.'%')
                     /*->orWhere('mentor','like','%'.$request->visitTerm.'%')
                     ->orWhere('student','like','%'.$request->visitTerm.'%')*/
                     ->orderBy('id','desc')
@@ -91,9 +91,9 @@ class UserController extends Controller
             //This is the grade search algorithm.
             if($request->gradeTerm){
                 $grades = Grade::where('period','like','%'.$request->gradeTerm.'%')
-                    ->orWhere('subject','like','%'.$request->gradeTerm.'%')
-                    ->orWhere('actual','like','%'.$request->gradeTerm.'%')
-                    ->orWhere('comments','like','%'.$request->gradeTerm.'%')
+                    ->orWhere('subject','ilike','%'.$request->gradeTerm.'%')
+                    ->orWhere('actual','ilike','%'.$request->gradeTerm.'%')
+                    ->orWhere('comments','ilike','%'.$request->gradeTerm.'%')
                     ->orderBy('id','desc')
                     ->paginate(5);
             }
