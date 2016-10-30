@@ -20,20 +20,78 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         if(Auth::check()){
             $users=User::all();
-            $mentors = User::whereHas('roles', function ($query) {
+            $admin = User::where('email', Auth::user()->email)->first();
+            //This is the student search algorithm.
+            if($request->studentTerm){
+                $students = Student::where('firstName','like','%'.$request->term.'%')
+                    ->orWhere('email','like','%'.$request->term.'%')
+                    ->orWhere('lastName','like','%'.$request->term.'%')
+                    ->orderBy('id','desc')
+                    ->paginate(5);
+            }
+            else{
+                $students = Student::all();
+            }
+            //This is the mentor search algorithm.
+            if($request->mentorTerm){
+                $mentors = User::whereHas('roles', function ($query) use($request){
+                            $query->where('name', 'like', 'Mentor');
+                })
+                    ->where('firstName','like','%'.$request->mentorTerm.'%')
+                    ->orWhere('email','like','%'.$request->mentorTerm.'%')
+                    ->orWhere('lastName','like','%'.$request->mentorTerm.'%')
+                    ->orderBy('id','desc')
+                    ->paginate(5);
+            }
+            else{
+                $mentors = User::whereHas('roles', function ($query) {
                             $query->where('name', 'like', 'Mentor');
                         })->get();
-            $employees = User::whereHas('roles', function ($query) {
-                            $query->where('name', 'like', 'Employee');
-                        })->get();
-            $admin = User::where('email', Auth::user()->email)->first();
-            $students = Student::all();
-            $visits = Visit::all();
-            $grades = Grade::all();
+            }
+            //This is the Employee search algorithm.
+            if($request->employeeTerm){
+                $employees = User::whereHas('roles', function ($query) {
+                    $query->where('name', 'like', 'Employee');
+                })
+                    ->where('firstName','like','%'.$request->employeeTerm.'%')
+                    ->orWhere('email','like','%'.$request->employeeTerm.'%')
+                    ->orWhere('lastName','like','%'.$request->employeeTerm.'%')
+                    ->orderBy('id','desc')
+                    ->paginate(5);
+            }
+            else{
+                $employees = User::whereHas('roles', function ($query) {
+                    $query->where('name', 'like', 'Employee');
+                })->get();
+            }
+            //This is the visit search algorithm.
+            if($request->visitTerm){
+                $visits = Visit::where('check','like','%'.$request->visitTerm.'%')
+                    /*->orWhere('mentor','like','%'.$request->visitTerm.'%')
+                    ->orWhere('student','like','%'.$request->visitTerm.'%')*/
+                    ->orderBy('id','desc')
+                    ->paginate(5);
+            }
+            else{
+                $visits = Visit::all();
+            }
+            //This is the grade search algorithm.
+            if($request->gradeTerm){
+                $grades = Grade::where('period','like','%'.$request->gradeTerm.'%')
+                    ->orWhere('subject','like','%'.$request->gradeTerm.'%')
+                    ->orWhere('actual','like','%'.$request->gradeTerm.'%')
+                    ->orWhere('comments','like','%'.$request->gradeTerm.'%')
+                    ->orderBy('id','desc')
+                    ->paginate(5);
+            }
+            else{
+                $grades = Grade::all();
+            }
+
             return view('users.index',compact('users','mentors','employees','students','visits','grades','admin'));
         }
         else{
@@ -46,7 +104,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($role)
+    public function create()
     {
             return view('users.create');
     }

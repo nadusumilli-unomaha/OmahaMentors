@@ -143,6 +143,16 @@
                 <!-- This is the second part of the radio button information. -->
                 <div id="adminToggle3" class="tab-pane fade" >
                     <h1>All Student Profile</h1>
+                    {!! Form::open(['route'=> 'users.index', 'method' => 'GET', 'class' => 'navbar-form navbar-right', 'role' => 'search']) !!}
+                        <div class="input-group">
+                            {!! Form::text('studentTerm', Request::get('studentTerm'), ['class'=>'form-control', 'placeholder' => 'Search...']) !!}
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    {!! Form::close() !!}
                     <a class="btn btn-primary" style="margin: 10px 10px 10px 10px;" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
                     <div class="table-responsive">
                         <!-- The code to list all the students and other people stuff that can admin can see and create.-->
@@ -188,6 +198,16 @@
                 <!-- This is the third part of the radio button scafolding. -->
                 <div id="adminToggle4" class="tab-pane fade" >
                     <h1>All Mentor Profile</h1>
+                    {!! Form::open(['route'=> 'users.index', 'method' => 'GET', 'class' => 'navbar-form navbar-right', 'role' => 'search']) !!}
+                        <div class="input-group">
+                            {!! Form::text('mentorTerm', Request::get('mentorTerm'), ['class'=>'form-control', 'placeholder' => 'Search...']) !!}
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    {!! Form::close() !!}
                     <a class="btn btn-primary" style="margin: 10px 10px 10px 10px;" href="{{ action('UserController@create',"Mentor") }}">Create a Mentor</a><br/>
                     <div class="table-responsive">
                         <!-- The code to list all the mentors and other people stuff that can admin can see and create.-->
@@ -233,6 +253,16 @@
                     <!-- This is the fourth part of the radio button scafolding. -->
                 <div id="adminToggle5" class="tab-pane fade" >
                     <h1>All Employee profile</h1>
+                    {!! Form::open(['route'=> 'users.index', 'method' => 'GET', 'class' => 'navbar-form navbar-right', 'role' => 'search']) !!}
+                        <div class="input-group">
+                            {!! Form::text('employeeTerm', Request::get('employeeTerm'), ['class'=>'form-control', 'placeholder' => 'Search...']) !!}
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    {!! Form::close() !!}
                     <a class="btn btn-primary" style="margin: 10px 10px 10px 10px;" href="{{ action('UserController@create', "Employee") }}">Create an Employee</a><br/>
                     <div class="table-responsive">
                         <!-- The code to list all the employees and other people stuff that can admin can see and create.-->
@@ -278,6 +308,16 @@
                 <!-- This is the fourth part of the radio button scafolding. -->
                 <div id="adminToggle6" class="tab-pane fade" >
                     <h1>All Visits</h1>
+                    {!! Form::open(['route'=> 'users.index', 'method' => 'GET', 'class' => 'navbar-form navbar-right', 'role' => 'search']) !!}
+                        <div class="input-group">
+                            {!! Form::text('visitTerm', Request::get('visitTerm'), ['class'=>'form-control', 'placeholder' => 'Search...']) !!}
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    {!! Form::close() !!}
                     <a class="btn btn-primary" style="margin: 10px 10px 10px 10px;" href="{{ action('VisitController@create') }}">Create a visit</a><br/>
                     <div class="table-responsive">
                         <!-- The code to list all the visits and other people stuff that can admin can see and create.-->
@@ -315,6 +355,16 @@
                 <!-- This is the fifth part of the radio bnutton Scafolding. -->
                 <div id="adminToggle7" class="tab-pane fade" >
                     <h1>All Grade</h1>
+                    {!! Form::open(['route'=> 'users.index', 'method' => 'GET', 'class' => 'navbar-form navbar-right', 'role' => 'search']) !!}
+                        <div class="input-group">
+                            {!! Form::text('gradeTerm', Request::get('gradeTerm'), ['class'=>'form-control', 'placeholder' => 'Search...']) !!}
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    {!! Form::close() !!}
                     <a class="btn btn-primary" style="margin: 10px 10px 10px 10px;" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
                     <div class="table-responsive">
                     <!-- The code to list all the grades and other people stuff that can admin can see and create.-->
