@@ -81,7 +81,7 @@
 			<!--####    The Basic Scafolding for Finding a Mentor and adding code.   ####-->
 			<!--###########################################################################-->
 				@if($user->roles[0]->name === 'Mentor')
-					<h1>Welcome {{$user->firstName}}</h1>
+					<h1 style="color: #2c3e50;">Welcome {{$user->firstName}}</h1>
 					<ul class="nav nav-tabs nav-justified">
 		                <li class="active"><a style="color: black;" href="#mentorToggle1" data-toggle="tab">My Profile</a></li>
 		                <li><a style="color: black;" href="#mentorToggle2" data-toggle="tab">Manage My Students</a></li>
@@ -225,7 +225,7 @@
 				<!--####    The Basic Scafolding for Finding a Employee and adding code.   ####-->
 				<!--###########################################################################-->
 			@if($user->roles[0]->name === 'Employee')
-				<h1>Welcome {{$user->firstName}}</h1>
+				<h1 style="color: #2c3e50;">Welcome {{$user->firstName}}</h1>
 				<ul class="nav nav-tabs nav-justified">
 	                <li class="active"><a style="color: white;" href="#employeeToggle1" data-toggle="tab"><strong>My Profile</strong></a></li>
 	                <li><a style="color: white;" href="#employeeToggle2" data-toggle="tab"><strong>Manage My Students</strong></a></li>
