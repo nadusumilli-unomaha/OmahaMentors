@@ -153,7 +153,7 @@
                             </span>
                         </div>
                     {!! Form::close() !!}
-                    <a class="btn btn-primary" style="margin: 10px 10px 10px 10px;" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
+                    <a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
                     <div class="table-responsive">
                         <!-- The code to list all the students and other people stuff that can admin can see and create.-->
                         <table class="table table-bordered table-striped table-hover table-inverse">
@@ -208,7 +208,7 @@
                             </span>
                         </div>
                     {!! Form::close() !!}
-                    <a class="btn btn-primary" style="margin: 10px 10px 10px 10px;" href="{{ action('UserController@create',"Mentor") }}">Create a Mentor</a><br/>
+                    <a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('UserController@create',"Mentor") }}">Create a Mentor</a><br/>
                     <div class="table-responsive">
                         <!-- The code to list all the mentors and other people stuff that can admin can see and create.-->
                         <table class="table table-bordered table-striped table-hover table-inverse">
@@ -263,7 +263,7 @@
                             </span>
                         </div>
                     {!! Form::close() !!}
-                    <a class="btn btn-primary" style="margin: 10px 10px 10px 10px;" href="{{ action('UserController@create', "Employee") }}">Create an Employee</a><br/>
+                    <a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('UserController@create', "Employee") }}">Create an Employee</a><br/>
                     <div class="table-responsive">
                         <!-- The code to list all the employees and other people stuff that can admin can see and create.-->
                         <table class="table table-bordered table-striped table-hover table-inverse">
@@ -318,7 +318,7 @@
                             </span>
                         </div>
                     {!! Form::close() !!}
-                    <a class="btn btn-primary" style="margin: 10px 10px 10px 10px;" href="{{ action('VisitController@create') }}">Create a visit</a><br/>
+                    <a class="btn btn-primary" style="margin: 10px 0px 10px 230px;" href="{{ action('VisitController@create') }}">Create a visit</a><br/>
                     <div class="table-responsive">
                         <!-- The code to list all the visits and other people stuff that can admin can see and create.-->
                         <table class="table table-bordered table-striped table-hover table-inverse">
@@ -365,7 +365,7 @@
                             </span>
                         </div>
                     {!! Form::close() !!}
-                    <a class="btn btn-primary" style="margin: 10px 10px 10px 10px;" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
+                    <a class="btn btn-primary" style="margin: 10px 0px 10px 230px;" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
                     <div class="table-responsive">
                     <!-- The code to list all the grades and other people stuff that can admin can see and create.-->
                         <table class="table table-bordered table-striped table-hover table-inverse">
