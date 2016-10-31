@@ -120,12 +120,14 @@ class HomeController extends Controller
                     $mentors = User::whereHas('roles', function ($query) use($request){
                                 $query->where('name', 'like', 'Mentor');
                     })
-                        ->where('firstName','ilike','%'.$request->mentorTerm.'%')
-                        ->orWhere('email','ilike','%'.$request->mentorTerm.'%')
-                        ->orWhere('lastName','ilike','%'.$request->mentorTerm.'%')
-                        ->orWhere('city','ilike','%'.$request->mentorTerm.'%')
-                        ->orWhere('state','ilike','%'.$request->mentorTerm.'%')
-                        ->orWhere('address','ilike','%'.$request->mentorTerm.'%')
+                        ->where(function ($query) use($request){
+                            $query->where('firstName','ilike','%'.$request->mentorTerm.'%')
+                            ->orWhere('email','ilike','%'.$request->mentorTerm.'%')
+                            ->orWhere('lastName','ilike','%'.$request->mentorTerm.'%')
+                            ->orWhere('city','ilike','%'.$request->mentorTerm.'%')
+                            ->orWhere('state','ilike','%'.$request->mentorTerm.'%')
+                            ->orWhere('address','ilike','%'.$request->mentorTerm.'%');  
+                        })
                         ->orderBy('id','desc')
                         ->paginate(5);
                 }

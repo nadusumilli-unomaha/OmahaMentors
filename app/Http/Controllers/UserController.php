@@ -44,14 +44,15 @@ class UserController extends Controller
                 $mentors = User::whereHas('roles', function ($query) use($request){
                             $query->where('name', 'like', 'Mentor');
                 })
-                    ->where('firstName','ilike','%'.$request->mentorTerm.'%')
-                    ->orWhere('email','ilike','%'.$request->mentorTerm.'%')
-                    ->orWhere('lastName','ilike','%'.$request->mentorTerm.'%')
-                    ->orWhere('city','ilike','%'.$request->mentorTerm.'%')
-                    ->orWhere('state','ilike','%'.$request->mentorTerm.'%')
-                    ->orWhere('address','ilike','%'.$request->mentorTerm.'%')
-                    ->orderBy('id','desc')
-                    ->paginate(5);
+                    ->where(function ($query) use($request){
+                        $query->where('firstName','ilike','%'.$request->mentorTerm.'%')
+                        ->orWhere('email','ilike','%'.$request->mentorTerm.'%')
+                        ->orWhere('lastName','ilike','%'.$request->mentorTerm.'%')
+                        ->orWhere('city','ilike','%'.$request->mentorTerm.'%')
+                        ->orWhere('state','ilike','%'.$request->mentorTerm.'%')
+                        ->orWhere('address','ilike','%'.$request->mentorTerm.'%');
+                    })->orderBy('id','desc')
+                        ->paginate(5);
             }
             else{
                 $mentors = User::whereHas('roles', function ($query) {
@@ -63,12 +64,14 @@ class UserController extends Controller
                 $employees = User::whereHas('roles', function ($query) {
                     $query->where('name', 'like', 'Employee');
                 })
-                    ->where('firstName','ilike','%'.$request->employeeTerm.'%')
-                    ->orWhere('email','ilike','%'.$request->employeeTerm.'%')
-                    ->orWhere('lastName','ilike','%'.$request->employeeTerm.'%')
-                    ->orWhere('city','ilike','%'.$request->employeeTerm.'%')
-                    ->orWhere('state','ilike','%'.$request->employeeTerm.'%')
-                    ->orWhere('address','ilike','%'.$request->employeeTerm.'%')
+                    ->where(function ($query) use($request){
+                        $query->where('firstName','ilike','%'.$request->employeeTerm.'%')
+                        ->orWhere('email','ilike','%'.$request->employeeTerm.'%')
+                        ->orWhere('lastName','ilike','%'.$request->employeeTerm.'%')
+                        ->orWhere('city','ilike','%'.$request->employeeTerm.'%')
+                        ->orWhere('state','ilike','%'.$request->employeeTerm.'%')
+                        ->orWhere('address','ilike','%'.$request->employeeTerm.'%');
+                    })
                     ->orderBy('id','desc')
                     ->paginate(5);
             }
