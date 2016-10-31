@@ -56,7 +56,7 @@ class HomeController extends Controller
             else
             {
                 $users = User::all();            
-                return view('home',compact('users'));
+                return redirect()->action('UserController@index');
             }
         }
     }
@@ -140,7 +140,7 @@ class HomeController extends Controller
             {
                 $students = Student::all();            
                 $users = User::all();
-                return view('home',compact('users'));
+                return redirect()->action('UserController@index');
             }
         }
     }

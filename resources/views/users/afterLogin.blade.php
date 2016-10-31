@@ -83,9 +83,9 @@
 				@if($user->roles[0]->name === 'Mentor')
 					<h1 style="color: #2c3e50;">Welcome {{$user->firstName}}</h1>
 					<ul class="nav nav-tabs nav-justified">
-		                <li class="active"><a style="color: black;" href="#mentorToggle1" data-toggle="tab">My Profile</a></li>
-		                <li><a style="color: black;" href="#mentorToggle2" data-toggle="tab">Manage My Students</a></li>
-		                <li><a style="color: black;" href="#mentorToggle3" data-toggle="tab">Attendance</a></li>
+		                <li class="active"><a style="color: white;" href="#mentorToggle1" data-toggle="tab"><strong>My Profile</strong></a></li>
+		                <li><a style="color: white;" href="#mentorToggle2" data-toggle="tab"><strong>Manage My Students</strong></a></li>
+		                <li><a style="color: white;" href="#mentorToggle3" data-toggle="tab"><strong>Attendance</strong></a></li>
 		            </ul>
 
 					<!-- This is the first mentor toggle or the profile information relating to the mentors. -->

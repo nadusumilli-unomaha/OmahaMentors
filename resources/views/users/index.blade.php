@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
             <!-- This is the admin dashboard stuff with the colum sizing. -->
-            <h1>Welcome Admin</h1>
+            <h1 style="color:#2c3e50;">Welcome Admin</h1>
             <ul class="nav nav-tabs nav-justified">
                 <li class="active"><a style="color: white;" href="#adminToggle1" data-toggle="tab"><strong>My Profile</strong></a></li>
                 <li><a style="color: white;" href="#adminToggle2" data-toggle="tab"><strong>Manage Access</strong></a></li>
