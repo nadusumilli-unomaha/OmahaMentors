@@ -9,11 +9,4 @@ class Note extends Model
     protected $fillable=[
         'description',
     ];
-
-    public function users()
-    {
-
-    }
-
-    public function 
 }

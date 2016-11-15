@@ -82,7 +82,7 @@
 			<!--###########################################################################-->
 				@if($user->roles[0]->name === 'Mentor')
 					<h1 style="color: #2c3e50;">Welcome {{$user->firstName}}</h1>
-					<ul class="nav nav-tabs nav-justified">
+					<ul class="nav nav-tabs nav-justified" id="myTab">
 		                <li class="active"><a style="color: white;" href="#mentorToggle1" data-toggle="tab"><strong>My Profile</strong></a></li>
 		                <li><a style="color: white;" href="#mentorToggle2" data-toggle="tab"><strong>Manage My Students</strong></a></li>
 		                <li><a style="color: white;" href="#mentorToggle3" data-toggle="tab"><strong>Attendance</strong></a></li>
@@ -199,13 +199,16 @@
 													{{ $visit->student->firstName }}
 												</td>
 												<td>
-													<input type="text" name="Date" readonly value="{{$visit->Date}}">
+													{{ $visit->Date }}
 												</td>
 												<td>
 													<label class="switchround" >
-													  <input type="checkbox" id="isPresent" {{ $visit->actual === 'Present'  ? 'checked' : ''}} name="actual" value="Present">
+														<input type="checkbox" id="isPresent" {{ $visit->actual === 'Present'  ? 'checked' : ''}} name="actual" value="Present">
 													  <div class="slider round"></div>
 													</label>
+														<input type="hidden" name="StdFirstName"  value="{{ $visit->student->firstName }}">
+														<input type="hidden" name="MentFirstName"  value="{{ $visit->user->firstName }}">
+														<input type="hidden" name="Date"  value="{{$visit->Date}}">
 												</td>
 												</tr>
 					                		@endforeach
@@ -226,7 +229,7 @@
 				<!--###########################################################################-->
 			@if($user->roles[0]->name === 'Employee')
 				<h1 style="color: #2c3e50;">Welcome {{$user->firstName}}</h1>
-				<ul class="nav nav-tabs nav-justified">
+				<ul class="nav nav-tabs nav-justified" id="myTab">
 	                <li class="active"><a style="color: white;" href="#employeeToggle1" data-toggle="tab"><strong>My Profile</strong></a></li>
 	                <li><a style="color: white;" href="#employeeToggle2" data-toggle="tab"><strong>Manage My Students</strong></a></li>
 	                <li><a style="color: white;" href="#employeeToggle3" data-toggle="tab"><strong>Manage My Mentors</strong></a></li>

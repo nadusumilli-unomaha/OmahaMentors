@@ -10,7 +10,7 @@
                 {!! Form::open(['url' => 'users', 'class'=>'form-horizontal', 'role'=>'form']) !!}
                 <div style="color:black;">
                     {!! Form::label('role_request', 'Role:',['class'=>'col-md-4 control-label']) !!}
-                    {!! Form::select('role_request', ['Mentor','Employee']) !!}
+                    {!! Form::select('role_request', ['Mentor'=>'Mentor','Employee','Employee']) !!}
                 </div>
                 <div class="form-group floating-label-form-group controls {{ $errors->has('lastName') ? ' has-error has-feedback' : '' }}">
                     {!! Form::label('lastName', 'Last Name:',['class'=>'col-md-4 control-label']) !!}
