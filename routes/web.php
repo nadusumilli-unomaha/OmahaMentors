@@ -60,6 +60,13 @@ Route::group(['middleware' => 'roles', 'roles'=>['Admin', 'Employee']], function
 	Route::resource('visits','VisitController',['only'=>'create']);
 	Route::resource('visits','VisitController',['only'=>'store']);
 	Route::resource('visits','VisitController',['only'=>'edit']);
+});
+
+//############################################################################
+//The below are the routes that are only accessible by the Admin and Mentor.
+//############################################################################
+Route::group(['middleware' => 'roles', 'roles'=>['Admin', 'Mentor']], function()
+{
 	Route::resource('visits','VisitController',['only'=>'update']);
 });
 

@@ -31,7 +31,7 @@
 		        <div class="form-group floating-label-form-group controls {{ $errors->has('check') ? ' has-error has-feedback' : '' }}">
 		            {!! Form::label('check', 'Presence:',['class'=>'col-md-4 control-label']) !!}
 		            <div class="col-md-14">
-			            {!! Form::text('check','Absent',['class'=>'form-control','readonly','placeholder'=>'Presence','data-validation-required-message']) !!}
+			            {!! Form::text('check','Present',['class'=>'form-control','readonly','placeholder'=>'Presence','data-validation-required-message']) !!}
 			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
 			            @if ($errors->has('check'))
 			                <span class="help-block">
