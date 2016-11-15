@@ -289,7 +289,7 @@
                         <div class="modal-body">
                             <h2>University of Nebraska, Omaha</h2>
                             <hr class="star-primary">
-                            {{ HTML::image('img/UNO.png', array('class' => 'img-centered img-responsive')) }}
+                            {{ HTML::image('img/UNO.png', '', array('class' => 'img-centered img-responsive')) }}
                             <p>For more than 100 years, the University of Nebraska Omaha (UNO) has served as the point of access for excellence in higher education.The administration of UNO is dedicated to student-centered leadership and proud to work with distinguished faculty drawn from the nation's leading graduate institutions.</p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -312,7 +312,7 @@
                         <div class="modal-body">
                             <h2>College of Information Science and Technology (IS&T)</h2>
                             <hr class="star-primary">                            
-                            {{ HTML::image('img/college of is&t.png', array('class' => 'img-centered img-responsive')) }}
+                            {{ HTML::image('img/college of is&t.jpg', '', array('class' => 'img-centered img-responsive')) }}
                             <p>In the College of Information Science and Technology (IS&T), no student will go unassisted or unchallenged. IS&T creates capable technology leaders who will thrive in a globally competitive environment.Students will benefit from the college’s commitment to balance emerging disciplines with the bedrock fundamentals of information technology. The surroundings of a metropolitan campus in an emerging city offer chances to research and grow through associations with industry partners in technology.</p>
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
