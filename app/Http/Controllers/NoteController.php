@@ -54,9 +54,11 @@ class NoteController extends Controller
     {
         
         $note= new Note($request->all());
-        $note->type = 'Note';
+        $note->user_id = $request->user_id;
+        $note->visit_id = $request->visit_id;
+        $note->student_id = $request->student_id;
         $note->save();
-        return redirect('notes');
+        return route('afterLogin');
     }
 
     /**

@@ -156,7 +156,7 @@
 				                                <td></td>
 				                                <td></td>
 				                                <td>{{ $note->description }}</td>
-												<td><a class="btn btn-primary" href="{{ route('notes.show',$student->id) }}">Show</a></td>
+												<td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}">Show</a></td>
 						                    </tr>
 						                @endforeach
 					                </tbody>

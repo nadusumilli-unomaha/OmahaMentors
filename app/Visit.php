@@ -21,7 +21,7 @@ class Visit extends Model
         return $this->belongsTo('App\User');
     }
     
-    public function notes() {
+    public function note() {
         return $this->hasMany('App\Note');
     }
 }
