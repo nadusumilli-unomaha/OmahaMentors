@@ -118,7 +118,7 @@ class VisitController extends Controller
         $visit=Visit::find($id);
         if($request->date)
         {
-            $visit->date = $request->date;
+            $visit->Date = $request->date;
         }
         if($request->check)
         {

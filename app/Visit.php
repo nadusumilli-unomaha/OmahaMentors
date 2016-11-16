@@ -20,4 +20,8 @@ class Visit extends Model
     public function user() {
         return $this->belongsTo('App\User');
     }
+    
+    public function notes() {
+        return $this->hasMany('App\Note');
+    }
 }

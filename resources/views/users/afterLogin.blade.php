@@ -86,6 +86,7 @@
 		                <li class="active"><a style="color: white;" href="#mentorToggle1" data-toggle="tab"><strong>My Profile</strong></a></li>
 		                <li><a style="color: white;" href="#mentorToggle2" data-toggle="tab"><strong>Manage My Students</strong></a></li>
 		                <li><a style="color: white;" href="#mentorToggle3" data-toggle="tab"><strong>Attendance</strong></a></li>
+		                <li><a style="color: white;" href="#mentorToggle4" data-toggle="tab"><strong>Note Section</strong></a></li>
 		            </ul>
 
 					<!-- This is the first mentor toggle or the profile information relating to the mentors. -->
@@ -136,8 +137,84 @@
 						</div>
 
 						<!-- This is the second mentor toggle or the student information relating to the mentors. -->
+						<div id="mentorToggle4" class="tab-pane fade">
+							<h1>Manage Note/Comments</h1>
+							<div class="table-responsive" style="color:black;">
+								<table class="table table-bordered table-striped table-hover table-inverse">
+					                <thead>
+						                <tr class="bg-info">
+						                    <th>Visit Date</th>
+						                    <th>Mentor</th>
+						                    <th>Student</th>
+						                    <th>Note</th>
+						                </tr>
+					                </thead>
+					                <tbody>
+						                @foreach ($notes as $note)
+						                    <tr>
+				                                <td></td>
+				                                <td></td>
+				                                <td></td>
+				                                <td>{{ $note->description }}</td>
+												<td><a class="btn btn-primary" href="{{ route('notes.show',$student->id) }}">Show</a></td>
+						                    </tr>
+						                @endforeach
+					                </tbody>
+					            </table>
+							</div>
+						</div>
+							
+						<div id="mentorToggle3" class="tab-pane fade">
+							<h1>Visit Attendance</h1>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									Student Attendance
+								</div>
+								<table class="table table-bordered table-striped table-hover table-inverse">
+									<thead>
+										<th>Student</th>
+										<th>Date</th>
+										<th>Present</th>
+										<th>Notes</th>
+										<th></th>
+									</thead>
+									<tbody>
+										@foreach ($visits as $visit)
+											<tr>
+												<td>
+													{{ $visit->student->firstName }}
+												</td>
+												<td>
+													{{ $visit->Date }}
+												</td>
+												<td>
+													{!! Form::open(['method' => 'PATCH','id'=>'isPresent','route'=>['visits.update',$visit->id]]) !!}
+														<label class="switchround" >
+															<input type="checkbox" onchange="this.form.submit()" {{ $visit->check === 'Present'  ? 'checked' : ''}} name="check" value={{ $visit->check === 'Present'  ? 'Absent' : 'Present'}}>
+														  	<div class="slider round"></div>
+														</label>
+	        										{!! Form::close() !!}
+												</td>
+												<td>
+													{!! Form::open(['url' => 'notes', 'class'=>'form-horizontal', 'role'=>'form']) !!}
+														<input type="hidden" name="user_id" value="{{$visit->user->id}}">
+														<input type="hidden" name="student_id" value="{{$visit->student->id}}">
+														<input type="hidden" name="visit_id" value="{{$visit->id}}">
+														<textarea name="description" cols="30"></textarea>
+												</td>
+												<td>
+														<input class="btn btn-primary" type="submit" name="submit">
+	        										{!! Form::close() !!}
+												</td>
+											</tr>
+				                		@endforeach
+									</tbody>
+								</table>
+							</div>
+						</div>
+
 						<div id="mentorToggle2" class="tab-pane fade">
-							<h1>Student Profile</h1>
+							<h1>Student Profiles</h1>
 							<div class="table-responsive" style="color:black;">
 								<table class="table table-bordered table-striped table-hover table-inverse">
 					                <thead>
@@ -175,42 +252,6 @@
 						                @endforeach
 					                </tbody>
 					            </table>
-							</div>
-						</div>
-							
-						<div id="mentorToggle3" class="tab-pane fade">
-							<h1>Visit Attendance</h1>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									Student Attendance
-								</div>
-								<table class="table table-bordered table-striped table-hover table-inverse">
-									<thead>
-										<th>Student</th>
-										<th>Date</th>
-										<th>Present</th>
-									</thead>
-									<tbody>
-										@foreach ($visits as $visit)
-											<tr>
-												<td>
-													{{ $visit->student->firstName }}
-												</td>
-												<td>
-													{{ $visit->Date }}
-												</td>
-												<td>
-													{!! Form::open(['method' => 'PATCH','id'=>'isPresent','route'=>['visits.update',$visit->id]]) !!}
-														<label class="switchround" >
-															<input type="checkbox" onchange="this.form.submit()" {{ $visit->check === 'Present'  ? 'checked' : ''}} name="check" value={{ $visit->check === 'Present'  ? 'Absent' : 'Present'}}>
-														  	<div class="slider round"></div>
-														</label>
-	        										{!! Form::close() !!}
-												</td>
-											</tr>
-				                		@endforeach
-									</tbody>
-								</table>
 							</div>
 						</div>
 					</div>
