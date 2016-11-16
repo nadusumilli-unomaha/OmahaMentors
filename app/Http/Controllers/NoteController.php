@@ -58,7 +58,7 @@ class NoteController extends Controller
         $note->visit_id = $request->visit_id;
         $note->student_id = $request->student_id;
         $note->save();
-        return route('afterLogin');
+        return Redirect('/afterLogin');
     }
 
     /**

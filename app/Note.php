@@ -10,15 +10,15 @@ class Note extends Model
         'description',
     ];
 
-    public function users() {
+    public function user() {
         return $this->belongsTo('App\User');
     }
 
-    public function students() {
+    public function student() {
         return $this->belongsTo('App\Student');
     }
 
-    public function visits() {
+    public function visit() {
         return $this->belongsTo('App\Visit');
     }
 }

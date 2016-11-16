@@ -147,14 +147,15 @@
 						                    <th>Mentor</th>
 						                    <th>Student</th>
 						                    <th>Note</th>
+						                    <th></th>
 						                </tr>
 					                </thead>
 					                <tbody>
 						                @foreach ($notes as $note)
 						                    <tr>
-				                                <td></td>
-				                                <td></td>
-				                                <td></td>
+				                                <td>{{$note->visit->Date}}</td>
+				                                <td>{{$note->user->firstName}}</td>
+				                                <td>{{$note->student->firstName}}</td>
 				                                <td>{{ $note->description }}</td>
 												<td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}">Show</a></td>
 						                    </tr>
