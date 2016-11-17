@@ -10,8 +10,8 @@
 				<table class="table table-bordered table-striped table-hover table-inverse">
 		            <thead>
 		                <tr class="bg-info">
-		                    <th>Visit Date</th>
 		                    <th>Student</th>
+		                    <th>Visit Date</th>
 		                </tr>
 		            </thead>
 		            <tbody>

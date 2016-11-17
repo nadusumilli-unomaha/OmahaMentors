@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
-        <a class="btn btn-primary" style="margin: 0px 0px 0px 900px;" href="{{ URL::previous() }}">Go Back</a>
+        <a class="btn btn-primary" style="margin: 0px 0px 0px 900px;" href="{{ action('HomeController@afterLogin') }}">Go Back</a>
         <div class="panel panel-default ">
             <div class="panel-heading"><strong>Update User</strong></div>
             <div class="panel-body">

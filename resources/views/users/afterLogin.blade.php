@@ -131,9 +131,9 @@
 					            </tbody>
 					        </table>
 					        <!-- The Update user function. -->
-					        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit Mentor</a>
+					        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit My Profile</a>
 							<!-- This is the Visit Schedule link. -->
-							<a class="btn btn-primary" href="{{action('HomeController@upcoming')}}">My Visits</a>
+							<a class="btn btn-primary" href="{{action('HomeController@upcoming')}}">Upcoming Visits</a>
 						</div>
 
 						<!-- This is the second mentor toggle or the student information relating to the mentors. -->
@@ -276,12 +276,13 @@
 				<h1 style="color: #2c3e50;">Welcome {{$user->firstName}}</h1>
 				<ul class="nav nav-tabs nav-justified" id="myTab">
 	                <li class="active"><a style="color: white;" href="#employeeToggle1" data-toggle="tab"><strong>My Profile</strong></a></li>
-	                <li><a style="color: white;" href="#employeeToggle2" data-toggle="tab"><strong>Manage My Students</strong></a></li>
-	                <li><a style="color: white;" href="#employeeToggle3" data-toggle="tab"><strong>Manage My Mentors</strong></a></li>
+	                <li><a style="color: white;" href="#employeeToggle2" data-toggle="tab"><strong>Manage Students</strong></a></li>
+	                <li><a style="color: white;" href="#employeeToggle3" data-toggle="tab"><strong>Manage Mentors</strong></a></li>
 	                <li><a style="color: white;" href="#employeeToggle4" data-toggle="tab"><strong>Manage Visits</strong></a></li>
 	                <li><a style="color: white;" href="#employeeToggle5" data-toggle="tab"><strong>Manage Grade</strong></a></li>
 	                <li><a style="color: white;" href="#employeeToggle6" data-toggle="tab"><strong>Notify Visit</strong></a></li>
-	                <li><a style="color: white;" href="#employeeToggle7" data-toggle="tab"><strong>Genenrate Report</strong></a></li>
+	                <li><a style="color: white;" href="#employeeToggle7" data-toggle="tab"><strong>Manage Notes</strong></a></li>
+	                <li><a style="color: white;" href="#employeeToggle8" data-toggle="tab"><strong>Genenrate Report</strong></a></li>
 	            </ul>
 				<div class="tab-content">
 					<div id="employeeToggle1" class="tab-pane fade in active" >
@@ -324,9 +325,7 @@
 				            </tbody>
 				        </table>
 				        <!-- The Update user function. -->
-				        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit Mentor</a>
-						<!-- This is the Visit Schedule link. -->
-						<a class="btn btn-primary" href="#">My Visits</a>
+				        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit My Profile</a>
 					</div>
 
 					<div id="employeeToggle2" class="tab-pane fade">
@@ -340,8 +339,8 @@
 	                            </span>
 	                        </div>
 	                    {!! Form::close() !!}
-						<h1>Student Profile</h1>
-						<a class="btn btn-primary" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
+						<h1  style="margin: 0px 0px 0px 250px;">Student Profile</h1>
+						<a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
 						<div class="table-responsive">
 							<table class="table table-bordered table-striped table-hover table-inverse">
 				                <thead>
@@ -393,8 +392,8 @@
 	                            </span>
 	                        </div>
 	                    {!! Form::close() !!}
-						<h1>Mentor Profile</h1>
-						<a class="btn btn-primary" href="{{ action('UserController@create') }}">Create a Mentor</a><br/>
+						<h1  style="margin: 0px 0px 0px 250px;">Mentor Profile</h1>
+						<a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('UserController@create') }}">Create a Mentor</a><br/>
 						<div class="table-responsive">
 							<table class="table table-bordered table-striped table-hover table-inverse">
 				                <thead>
@@ -440,8 +439,8 @@
 	                            </span>
 	                        </div>
 	                    {!! Form::close() !!}
-						<h1>visit Profile</h1>
-						<a class="btn btn-primary" href="{{ action('VisitController@create') }}">Create a visit</a><br/>
+						<h1  style="margin: 0px 0px 0px 250px;">visit Profile</h1>
+						<a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('VisitController@create') }}">Create a visit</a><br/>
 						<div class="table-responsive">
 							<table class="table table-bordered table-striped table-hover table-inverse">
 				                <thead>
@@ -479,8 +478,8 @@
 	                            </span>
 	                        </div>
 	                    {!! Form::close() !!}
-						<h1>grade Profile</h1>
-						<a class="btn btn-primary" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
+						<h1  style="margin: 0px 0px 0px 250px;">grade Profile</h1>
+						<a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
 						<div class="table-responsive">
 							<table class="table table-bordered table-striped table-hover table-inverse">
 				                <thead>
@@ -508,18 +507,70 @@
 				            </table>
 			            </div>
 				    </div>
-
+						
+					{{-- This is the form control for sending notification. --}}
 					<div id="employeeToggle6" class="tab-pane fade">
-						<h1>Notify Users</h1>
-						<form style="color:black;" action="{{route('sendmail')}}" method="post">
-							<input type="email" name="email" placeholder="Email Address">
-							<input type="text" name="messages" placeholder="Message To Send">
-							<button type="submit">Notify</button>
-							{{ csrf_field() }}
-						</form>
+						<div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
+							<div style="margin: 10px" class="panel panel-default">
+								<div class="panel-heading">
+									<h1>Notify Users</h1>
+								</div>
+								<div class="panel-body">
+									<form style="color:black;" class="form-horizontal" action="{{route('sendmail')}}" method="post">
+										{!! Form::label('email', 'Email:',['class'=>'col-md-4 control-label']) !!}
+										<input type="email" class="form-control" name="email" placeholder="Email Address">
+										@if ($errors->has('email'))
+				                            <span class="help-block">
+				                                <strong>{{ $errors->first('email') }}</strong>
+				                            </span>
+				                        @endif
+										{!! Form::label('messages', 'Message:',['class'=>'col-md-4 control-label']) !!}
+										<textarea rows="7" class="form-control" name="messages" placeholder="Message To Send"></textarea>
+										@if ($errors->has('messages'))
+				                            <span class="help-block">
+				                                <strong>{{ $errors->first('messages') }}</strong>
+				                            </span>
+				                        @endif
+										<button class="btn btn-primary" style="margin: 10px 0px 10px 0px;" type="submit">Notify</button>
+										{{ csrf_field() }}
+									</form>
+								</div>
+							</div>
+						</div>
 					</div>
+					{{-- This is the ending of the form for notification. --}}
 
-					<div id="employeeToggle7" class="tab-pane fade" >
+					<!-- This is the second mentor toggle or the student information relating to the mentors. -->
+					<div id="employeeToggle7" class="tab-pane fade">
+						<h1>Manage Note/Comments</h1>
+						<div class="table-responsive" style="color:black;">
+							<table class="table table-bordered table-striped table-hover table-inverse">
+				                <thead>
+					                <tr class="bg-info">
+					                    <th>Visit Date</th>
+					                    <th>Mentor</th>
+					                    <th>Student</th>
+					                    <th>Note</th>
+					                    <th></th>
+					                </tr>
+				                </thead>
+				                <tbody>
+					                @foreach ($notes as $note)
+					                    <tr>
+			                                <td>{{$note->visit->Date}}</td>	
+			                                <td>{{$note->user->firstName}}</td>
+			                                <td>{{$note->student->firstName}}</td>
+			                                <td>{{ $note->description }}</td>
+											<td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}">Show</a></td>
+					                    </tr>
+					                @endforeach
+				                </tbody>
+				            </table>
+						</div>
+					</div>
+					
+					{{-- This is the second mentor toggle or the student information relating to the mentors. --}}
+					<div id="employeeToggle8" class="tab-pane fade" >
 	                    <div class="btn-group pull-right">
 	                        <button type="button" class="btn btn-primary">Export</button>
 	                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -532,7 +583,7 @@
 	                            <li><a href="#">Other</a></li>
 	                        </ul>
 	                    </div>
-			            <h1>Generate Reports</h1>
+			            <h1  style="margin: 10px 0px 10px 90px;">Generate Reports</h1>
 			            <div class="table-responsive">   
 				            <table class="table table-bordered table-striped table-hover table-inverse">
 				                <thead>
@@ -560,7 +611,6 @@
 				                            <td>{{ $student->email }}</td>
 				                            <td>{{ $student->phone }}</td>
 				                            <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
-				                          
 				                            <?php $bool = 1;?>
 				                    </tr>
 				                @endforeach
@@ -568,6 +618,7 @@
 				            </table>
 		        		</div>
 		        	</div>
+
 		        </div>
 			@endif
         </div>

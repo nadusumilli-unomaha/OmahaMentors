@@ -32,11 +32,12 @@ class ExcelController extends Controller
     	$export = Student::all();
         $grade = Grade::all();
         $visits = Visit::all();
+        $notes = Note::all();
         $users = User::whereHas('roles', function ($query) {
                                 $query->where('name', 'like', 'Mentor');
                             })->get();
         
-    	Excel::create('Export Student Data', function($excel) use($export,$grade,$users,$visits){
+    	Excel::create('Export Student Data', function($excel) use($export,$grade,$users,$visits,$notes){
     		$excel->sheet('Students', function($sheet) use($export){
     			$sheet->fromArray($export);
     		});
@@ -48,6 +49,9 @@ class ExcelController extends Controller
             });
             $excel->sheet('Visits', function($sheet) use($visits){
                 $sheet->fromArray($visits);
+            });
+            $excel->sheet('Notes', function($sheet) use($notes){
+                $sheet->fromArray($notes);
             });
     	})->export('xlsx');
     }

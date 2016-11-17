@@ -24,7 +24,7 @@
         <div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
             <!-- This is the admin dashboard stuff with the colum sizing. -->
             <h1 style="color:#2c3e50;">Welcome Admin</h1>
-            <ul class="nav nav-tabs nav-justified" id="myTab">
+            <ul class="nav nav-tabs" id="myTab">
                 <li class="active"><a style="color: white;" href="#adminToggle1" data-toggle="tab"><strong>My Profile</strong></a></li>
                 <li><a style="color: white;" href="#adminToggle2" data-toggle="tab"><strong>Manage Access</strong></a></li>
                 <li><a style="color: white;" href="#adminToggle3" data-toggle="tab"><strong>Manage Students</strong></a></li>
@@ -32,7 +32,8 @@
                 <li><a style="color: white;" href="#adminToggle5" data-toggle="tab"><strong>Manage Employees</strong></a></li>
                 <li><a style="color: white;" href="#adminToggle6" data-toggle="tab"><strong>Manage Visits</strong></a></li>
                 <li><a style="color: white;" href="#adminToggle7" data-toggle="tab"><strong>Manage Grades</strong></a></li>
-                <li><a style="color: white;" href="#adminToggle8" data-toggle="tab"><strong>Generate Report</strong></a></li>
+                <li><a style="color: white;" href="#adminToggle8" data-toggle="tab"><strong>Manage Notes</strong></a></li>
+                <li><a style="color: white;" href="#adminToggle9" data-toggle="tab"><strong>Generate Report</strong></a></li>
             </ul>
             <!--#############################################################################-->
             <!--####                        The End of the Table.                        ####-->
@@ -401,7 +402,36 @@
                     </div>
                 </div>
 
-                <div id="adminToggle8" class="tab-pane fade" >
+                <!-- This is the second mentor toggle or the student information relating to the mentors. -->
+                <div id="adminToggle8" class="tab-pane fade">
+                    <h1>Manage Note/Comments</h1>
+                    <div class="table-responsive" style="color:black;">
+                        <table class="table table-bordered table-striped table-hover table-inverse">
+                            <thead>
+                                <tr class="bg-info">
+                                    <th>Visit Date</th>
+                                    <th>Mentor</th>
+                                    <th>Student</th>
+                                    <th>Note</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($notes as $note)
+                                    <tr>
+                                        <td>{{$note->visit->Date}}</td> 
+                                        <td>{{$note->user->firstName}}</td>
+                                        <td>{{$note->student->firstName}}</td>
+                                        <td>{{ $note->description }}</td>
+                                        <td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}">Show</a></td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="adminToggle9" class="tab-pane fade" >
                     <div class="btn-group pull-right">
                         <button type="button" class="btn btn-primary">Export</button>
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">

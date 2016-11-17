@@ -11,6 +11,7 @@ use App\Student;
 use App\Mentor;
 use App\Visit;
 use App\Grade;
+use App\Note;
 use Auth;
 
 class UserController extends Controller
@@ -103,8 +104,8 @@ class UserController extends Controller
             else{
                 $grades = Grade::all();
             }
-
-            return view('users.index',compact('users','mentors','employees','students','visits','grades','admin'));
+            $notes = Note::all();
+            return view('users.index',compact('users','mentors','employees','students','visits','grades','admin','notes'));
         }
         else{
             return redirect('/');
