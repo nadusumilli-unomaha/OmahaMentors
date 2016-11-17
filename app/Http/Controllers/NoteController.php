@@ -92,7 +92,7 @@ class NoteController extends Controller
         }
         else{
             session()->flash('cust_edit_msg', 'You do not have permissions to edit other notes!.');
-            return redirect('notes');
+            return redirect('/afterLogin');
         }
     }
 
@@ -108,7 +108,7 @@ class NoteController extends Controller
         $note= new Note($request->all());
         $note=Note::find($id);
         $note->update($request->all());
-        return redirect('notes');
+        return redirect('/afterLogin');
     }
 
     /**
@@ -120,6 +120,6 @@ class NoteController extends Controller
     public function destroy($id)
     {
         Note::find($id)->delete();
-        return redirect('notes');
+        return redirect('/afterLogin');
     }
 }

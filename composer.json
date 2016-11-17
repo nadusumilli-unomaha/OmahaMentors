@@ -10,7 +10,8 @@
         "laravelcollective/html": "5.3.*",
         "guzzlehttp/guzzle": "^6.2",
         "mailgun/mailgun-php": "^2.1",
-        "maatwebsite/excel": "^2.1"
+        "maatwebsite/excel": "^2.1",
+        "nesbot/carbon": "^1.21"
     },
 
     "require-dev": {

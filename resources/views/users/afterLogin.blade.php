@@ -133,7 +133,7 @@
 					        <!-- The Update user function. -->
 					        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit Mentor</a>
 							<!-- This is the Visit Schedule link. -->
-							<a class="btn btn-primary" href="#">My Visits</a>
+							<a class="btn btn-primary" href="{{action('HomeController@upcoming')}}">My Visits</a>
 						</div>
 
 						<!-- This is the second mentor toggle or the student information relating to the mentors. -->
@@ -147,17 +147,23 @@
 						                    <th>Mentor</th>
 						                    <th>Student</th>
 						                    <th>Note</th>
-						                    <th></th>
+						                    <th colspan="3"></th>
 						                </tr>
 					                </thead>
 					                <tbody>
 						                @foreach ($notes as $note)
 						                    <tr>
-				                                <td>{{$note->visit->Date}}</td>
+				                                <td>{{$note->visit->Date}}</td>	
 				                                <td>{{$note->user->firstName}}</td>
 				                                <td>{{$note->student->firstName}}</td>
 				                                <td>{{ $note->description }}</td>
 												<td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}">Show</a></td>
+												<td><a class="btn btn-primary" href="{{ route('notes.edit',$note->id) }}">Edit</a></td>
+												<td>
+													{!! Form::open(['method' => 'DELETE', 'route'=>['notes.destroy', $note->id]])!!}
+                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','data-toggle'=>"modal" ,'data-target'=>"#modal-1"]) !!}
+                                                    {!! Form::close() !!}
+												</td>
 						                    </tr>
 						                @endforeach
 					                </tbody>
@@ -171,46 +177,48 @@
 								<div class="panel-heading">
 									Student Attendance
 								</div>
-								<table class="table table-bordered table-striped table-hover table-inverse">
-									<thead>
-										<th>Student</th>
-										<th>Date</th>
-										<th>Present</th>
-										<th>Notes</th>
-										<th></th>
-									</thead>
-									<tbody>
-										@foreach ($visits as $visit)
-											<tr>
-												<td>
-													{{ $visit->student->firstName }}
-												</td>
-												<td>
-													{{ $visit->Date }}
-												</td>
-												<td>
-													{!! Form::open(['method' => 'PATCH','id'=>'isPresent','route'=>['visits.update',$visit->id]]) !!}
-														<label class="switchround" >
-															<input type="checkbox" onchange="this.form.submit()" {{ $visit->check === 'Present'  ? 'checked' : ''}} name="check" value={{ $visit->check === 'Present'  ? 'Absent' : 'Present'}}>
-														  	<div class="slider round"></div>
-														</label>
-	        										{!! Form::close() !!}
-												</td>
-												<td>
-													{!! Form::open(['url' => 'notes', 'class'=>'form-horizontal', 'role'=>'form']) !!}
-														<input type="hidden" name="user_id" value="{{$visit->user->id}}">
-														<input type="hidden" name="student_id" value="{{$visit->student->id}}">
-														<input type="hidden" name="visit_id" value="{{$visit->id}}">
-														<textarea name="description" cols="30"></textarea>
-												</td>
-												<td>
-														<input class="btn btn-primary" type="submit" name="submit">
-	        										{!! Form::close() !!}
-												</td>
-											</tr>
-				                		@endforeach
-									</tbody>
-								</table>
+								<div class="table-responsive" style="color:black;">
+									<table class="table table-bordered table-striped table-hover table-inverse">
+										<thead>
+											<th>Student</th>
+											<th>Date</th>
+											<th>Present</th>
+											<th>Notes</th>
+											<th></th>
+										</thead>
+										<tbody>
+											@foreach ($visits as $visit)
+												<tr>
+													<td>
+														{{ $visit->student->firstName }}
+													</td>
+													<td>
+														{{ $visit->Date }}
+													</td>
+													<td>
+														{!! Form::open(['method' => 'PATCH','id'=>'isPresent','route'=>['visits.update',$visit->id]]) !!}
+															<label class="switchround" >
+																<input type="checkbox" onchange="this.form.submit()" {{ $visit->check === 'Present'  ? 'checked' : ''}} name="check" value={{ $visit->check === 'Present'  ? 'Absent' : 'Present'}}>
+															  	<div class="slider round"></div>
+															</label>
+		        										{!! Form::close() !!}
+													</td>
+													<td>
+														{!! Form::open(['url' => 'notes', 'class'=>'form-horizontal', 'role'=>'form']) !!}
+															<input type="hidden" name="user_id" value="{{$visit->user->id}}">
+															<input type="hidden" name="student_id" value="{{$visit->student->id}}">
+															<input type="hidden" name="visit_id" value="{{$visit->id}}">
+															<textarea name="description" cols="30"></textarea>
+													</td>
+													<td>
+															<input class="btn btn-primary" type="submit" name="submit">
+		        										{!! Form::close() !!}
+													</td>
+												</tr>
+					                		@endforeach
+										</tbody>
+									</table>
+								</div>
 							</div>
 						</div>
 

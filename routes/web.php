@@ -96,7 +96,7 @@ Route::group(['middleware' => 'roles', 'roles'=>['Admin', 'Employee', 'Mentor']]
 //The below are the routes that are only accessible by anyone on the website but they have to authenticated to do so.
 //###################################################################################################################
 Route::get('/afterLogin', 'HomeController@afterLogin');
-Route::get('afterLogin',array('as' => 'afterLogin', 'uses' => 'HomeController@afterLogin'));
+Route::get('/upcoming', 'HomeController@upcoming');
 
 //#######################################################################################
 //This is the Route to sent a mail and is only accessible when called.

@@ -9,6 +9,7 @@ use App\Mentor;
 use App\Visit;
 use App\Grade;
 use App\Note;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Auth;
 
@@ -171,5 +172,11 @@ class HomeController extends Controller
             return view('users.RegistrationSuccess',compact('passwordSuccess'));
         }
         return view('users.RegistrationSuccess',compact('passwordSuccess'));
+    }
+
+    public function upcoming()
+    {
+        $visits = Visit::whereDate('Date', '>=', Carbon::today()->format('Y-m-d'))->get();
+        return view('visits.upcomingvisits', compact('visits'));
     }
 }
