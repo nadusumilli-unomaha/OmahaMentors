@@ -139,7 +139,8 @@ class HomeController extends Controller
                                 $query->where('name', 'like', 'Mentor');
                             })->get();
                 }
-                return view('users.afterLogin', compact('user','students','mentors','visits','grades'));
+                $notes = Note::all();
+                return view('users.afterLogin', compact('user','students','mentors','visits','grades','notes'));
             }
             else
             {

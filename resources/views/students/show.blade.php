@@ -8,7 +8,7 @@
     </style>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
-    	<a class="btn btn-primary pull-right" style="margin: 10px 10px 10px 10px;" href="{{ URL::previous() }}">Go Back</a></br>
+    	<a class="btn btn-primary pull-right" style="margin: 10px 10px 10px 10px;" href="{{ action('HomeController@afterLogin') }}">Go Back</a></br>
         <h1 style="color:black; margin: 0px 0px 0px 100px;">Student</h1>
         <table class="table table-striped table-bordered table-hover">
             <tbody>
