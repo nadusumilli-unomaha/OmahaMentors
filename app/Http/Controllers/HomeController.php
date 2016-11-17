@@ -8,6 +8,7 @@ use App\Student;
 use App\Mentor;
 use App\Visit;
 use App\Grade;
+use App\Note;
 use Illuminate\Support\Facades\Hash;
 use Auth;
 
@@ -69,7 +70,8 @@ class HomeController extends Controller
             {
                 $students = Student::where('user_id',$user->id)->get();
                 $visits = Visit::all();
-                return view('users.afterLogin', compact('user','students','visits'));
+                $notes = Note::all();
+                return view('users.afterLogin', compact('user','students','visits','notes'));
             }
             else if($role->name === 'Pending')
             {

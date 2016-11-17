@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use Auth; 
+use Auth;
+use App\Note;
 
 use Session;
 
@@ -51,21 +52,13 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-                'lastName' => 'required',
-                'firstName' => 'required',
-                'address' => 'required',
-                'city' => 'required',
-                'state' => 'required',
-                'zip' => 'required|numeric|digits:5',
-                'email' => 'required|email|unique:notes,email',
-                'phone' => 'required|numeric|digits:10|unique:notes,phone',
-                'school' => 'required',
-            ]);
+        
         $note= new Note($request->all());
-        $note->type = 'Note';
+        $note->user_id = $request->user_id;
+        $note->visit_id = $request->visit_id;
+        $note->student_id = $request->student_id;
         $note->save();
-        return redirect('notes');
+        return Redirect('/afterLogin');
     }
 
     /**

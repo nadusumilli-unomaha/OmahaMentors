@@ -289,7 +289,7 @@
                         <div class="modal-body">
                             <h2>University of Nebraska, Omaha</h2>
                             <hr class="star-primary">
-                            {{ HTML::image('img/UNO.png', array('class','img-centered img-responsive')) }}
+                            {{ HTML::image('img/UNO.png', '', array('class' => 'img-centered img-responsive')) }}
                             <p>For more than 100 years, the University of Nebraska Omaha (UNO) has served as the point of access for excellence in higher education.The administration of UNO is dedicated to student-centered leadership and proud to work with distinguished faculty drawn from the nation's leading graduate institutions.</p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -312,7 +312,7 @@
                         <div class="modal-body">
                             <h2>College of Information Science and Technology (IS&T)</h2>
                             <hr class="star-primary">                            
-                            {{ HTML::image('img/college of is&t.png', array('class','img-centered img-responsive')) }}
+                            {{ HTML::image('img/college of is&t.jpg', '', array('class' => 'img-centered img-responsive')) }}
                             <p>In the College of Information Science and Technology (IS&T), no student will go unassisted or unchallenged. IS&T creates capable technology leaders who will thrive in a globally competitive environment.Students will benefit from the college’s commitment to balance emerging disciplines with the bedrock fundamentals of information technology. The surroundings of a metropolitan campus in an emerging city offer chances to research and grow through associations with industry partners in technology.</p>
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -361,8 +361,8 @@
                             <hr class="star-primary">
                             <img src="http://roycesite.com/img/royce.jpg" class="img-responsive img-centered" alt="">
                             <p> Dr. Royce is a lecturer in information technology and business at the University of Nebraska at Omaha in Omaha Nebraska. He retired from Mutual of Omaha after 29 years in IT in 2013. During 29 years he held a number of positions including Vice President of Enterprise Architecture (CTO) and Security (CISO). He also taught graduate and undergraduate classes in general project management and software project management. He has run many IT projects and has been the sponsor/product owner of additional projects.
-</p>
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
                 </div>

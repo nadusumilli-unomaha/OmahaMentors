@@ -21,7 +21,7 @@ class VisitTableSeeder extends Seeder
                         })->first();
 
         $visit = new Visit();
-        $visit->check = 'Absent';
+        $visit->check = 'Present';
         $visit->Date = '2016-10-29';
         $visit->user_id = $visit_user_0->id;
         $visit->student_id = $visit_student_0->id;

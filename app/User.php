@@ -60,6 +60,10 @@ class User extends Authenticatable
     public function visits() {
         return $this->hasMany('App\Visit');
     }
+    
+    public function notes() {
+        return $this->hasMany('App\Note');
+    }
 
     //##################################################################
     //# Helper functions to create a role based login and assignments. #

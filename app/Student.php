@@ -32,4 +32,8 @@ class Student extends Model
     public function visits() {
         return $this->hasMany('App\Visit');
     }
+
+    public function notes() {
+        return $this->hasMany('App\Note');
     }
+}

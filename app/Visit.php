@@ -9,8 +9,6 @@ class Visit extends Model
     protected $fillable=[
         'check',
         'Date',
-        'user_id',
-        'student_id',
     ];
 
     public function student() {
@@ -19,5 +17,10 @@ class Visit extends Model
 
     public function user() {
         return $this->belongsTo('App\User');
+    }
+    
+    
+    public function notes() {
+        return $this->hasMany('App\Note');
     }
 }

@@ -86,6 +86,7 @@
 		                <li class="active"><a style="color: white;" href="#mentorToggle1" data-toggle="tab"><strong>My Profile</strong></a></li>
 		                <li><a style="color: white;" href="#mentorToggle2" data-toggle="tab"><strong>Manage My Students</strong></a></li>
 		                <li><a style="color: white;" href="#mentorToggle3" data-toggle="tab"><strong>Attendance</strong></a></li>
+		                <li><a style="color: white;" href="#mentorToggle4" data-toggle="tab"><strong>Note Section</strong></a></li>
 		            </ul>
 
 					<!-- This is the first mentor toggle or the profile information relating to the mentors. -->
@@ -136,44 +137,29 @@
 						</div>
 
 						<!-- This is the second mentor toggle or the student information relating to the mentors. -->
-						<div id="mentorToggle2" class="tab-pane fade">
-							<h1>Student Profile</h1>
+						<div id="mentorToggle4" class="tab-pane fade">
+							<h1>Manage Note/Comments</h1>
 							<div class="table-responsive" style="color:black;">
 								<table class="table table-bordered table-striped table-hover table-inverse">
 					                <thead>
-					                <tr class="bg-info">
-					                    <th>Last Name</th>
-					                    <th>First Name</th>
-					                    <th>Current Address</th>
-					                    <th>City</th>
-					                    <th>State</th>
-					                    <th>Zip</th>
-					                    <th>Primary Email</th>
-					                    <th>Phone</th>
-					                    <th>Date of Birth</th>
-					                    <th>Gender</th>
-					                    <th>School</th>
-					                    <th>Actions</th>
-					                </tr>
+						                <tr class="bg-info">
+						                    <th>Visit Date</th>
+						                    <th>Mentor</th>
+						                    <th>Student</th>
+						                    <th>Note</th>
+						                    <th></th>
+						                </tr>
 					                </thead>
 					                <tbody>
-					                @foreach ($students as $student)
-					                    <tr>
-			                                <td>{{ $student->lastName }}</td>
-			                                <td>{{ $student->firstName }}</td>
-			                                <td>{{ $student->address }}</td>
-			                                <td>{{ $student->city }}</td>
-			                                <td>{{ $student->state }}</td>
-			                                <td>{{ $student->zip }}</td>
-			                                <td>{{ $student->email }}</td> 
-			                                <td>{{ $student->phone }}</td>
-			                                <td>{{ $student->dob }}</td>
-			                                <td>{{ $student->gender }}</td>
-			                                <td>{{ $student->school }}</td>
-											<td><a class="btn btn-primary" href="{{ route('students.show',$student->id) }}">Show</a></td>
-					                    </tr>
-					                @endforeach
-					                <hr/>
+						                @foreach ($notes as $note)
+						                    <tr>
+				                                <td>{{$note->visit->Date}}</td>
+				                                <td>{{$note->user->firstName}}</td>
+				                                <td>{{$note->student->firstName}}</td>
+				                                <td>{{ $note->description }}</td>
+												<td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}">Show</a></td>
+						                    </tr>
+						                @endforeach
 					                </tbody>
 					            </table>
 							</div>
@@ -185,15 +171,16 @@
 								<div class="panel-heading">
 									Student Attendance
 								</div>
-								<form>
-									<table class="table table-bordered table-striped table-hover table-inverse">
-										<thead>
-											<th>Student</th>
-											<th>Date</th>
-											<th>Present</th>
-										</thead>
-										<tbody>
-											@foreach ($visits as $visit)
+								<table class="table table-bordered table-striped table-hover table-inverse">
+									<thead>
+										<th>Student</th>
+										<th>Date</th>
+										<th>Present</th>
+										<th>Notes</th>
+										<th></th>
+									</thead>
+									<tbody>
+										@foreach ($visits as $visit)
 											<tr>
 												<td>
 													{{ $visit->student->firstName }}
@@ -202,20 +189,70 @@
 													{{ $visit->Date }}
 												</td>
 												<td>
-													<label class="switchround" >
-														<input type="checkbox" id="isPresent" {{ $visit->actual === 'Present'  ? 'checked' : ''}} name="actual" value="Present">
-													  <div class="slider round"></div>
-													</label>
-														<input type="hidden" name="StdFirstName"  value="{{ $visit->student->firstName }}">
-														<input type="hidden" name="MentFirstName"  value="{{ $visit->user->firstName }}">
-														<input type="hidden" name="Date"  value="{{$visit->Date}}">
+													{!! Form::open(['method' => 'PATCH','id'=>'isPresent','route'=>['visits.update',$visit->id]]) !!}
+														<label class="switchround" >
+															<input type="checkbox" onchange="this.form.submit()" {{ $visit->check === 'Present'  ? 'checked' : ''}} name="check" value={{ $visit->check === 'Present'  ? 'Absent' : 'Present'}}>
+														  	<div class="slider round"></div>
+														</label>
+	        										{!! Form::close() !!}
 												</td>
-												</tr>
-					                		@endforeach
-										</tbody>
-									</table>
-									<input type="submit" class="btn btn-primary">
-								</form>
+												<td>
+													{!! Form::open(['url' => 'notes', 'class'=>'form-horizontal', 'role'=>'form']) !!}
+														<input type="hidden" name="user_id" value="{{$visit->user->id}}">
+														<input type="hidden" name="student_id" value="{{$visit->student->id}}">
+														<input type="hidden" name="visit_id" value="{{$visit->id}}">
+														<textarea name="description" cols="30"></textarea>
+												</td>
+												<td>
+														<input class="btn btn-primary" type="submit" name="submit">
+	        										{!! Form::close() !!}
+												</td>
+											</tr>
+				                		@endforeach
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div id="mentorToggle2" class="tab-pane fade">
+							<h1>Student Profiles</h1>
+							<div class="table-responsive" style="color:black;">
+								<table class="table table-bordered table-striped table-hover table-inverse">
+					                <thead>
+						                <tr class="bg-info">
+						                    <th>Last Name</th>
+						                    <th>First Name</th>
+						                    <th>Current Address</th>
+						                    <th>City</th>
+						                    <th>State</th>
+						                    <th>Zip</th>
+						                    <th>Primary Email</th>
+						                    <th>Phone</th>
+						                    <th>Date of Birth</th>
+						                    <th>Gender</th>
+						                    <th>School</th>
+						                    <th>Actions</th>
+						                </tr>
+					                </thead>
+					                <tbody>
+						                @foreach ($students as $student)
+						                    <tr>
+				                                <td>{{ $student->lastName }}</td>
+				                                <td>{{ $student->firstName }}</td>
+				                                <td>{{ $student->address }}</td>
+				                                <td>{{ $student->city }}</td>
+				                                <td>{{ $student->state }}</td>
+				                                <td>{{ $student->zip }}</td>
+				                                <td>{{ $student->email }}</td> 
+				                                <td>{{ $student->phone }}</td>
+				                                <td>{{ $student->dob }}</td>
+				                                <td>{{ $student->gender }}</td>
+				                                <td>{{ $student->school }}</td>
+												<td><a class="btn btn-primary" href="{{ route('students.show',$student->id) }}">Show</a></td>
+						                    </tr>
+						                @endforeach
+					                </tbody>
+					            </table>
 							</div>
 						</div>
 					</div>
@@ -332,7 +369,6 @@
 										<td><a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}">Update</a></td>
 				                    </tr>
 				                @endforeach
-				                <hr/>
 				                </tbody>
 				            </table>
 			            </div>
@@ -380,7 +416,6 @@
 										<td><a class="btn btn-primary" href="{{ route('users.edit',$mentor->id) }}">Update</a></td>
 				                    </tr>
 				                @endforeach
-				                <hr/>
 				                </tbody>
 				            </table>
 			            </div>
@@ -420,7 +455,6 @@
 										<!-- <td><a class="btn btn-primary" href=" route('visits.edit',$visit->id) }}">Update</a></td> -->
 				                    </tr>
 				                @endforeach
-				                <hr/>
 				                </tbody>
 				            </table>
 			            </div>
@@ -462,7 +496,6 @@
 										<td><a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Update</a></td>
 				                    </tr>
 				                @endforeach
-				                <hr/>
 				                </tbody>
 				            </table>
 			            </div>

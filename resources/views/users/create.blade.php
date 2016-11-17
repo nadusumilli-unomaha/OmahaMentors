@@ -5,7 +5,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
         <a class="btn btn-primary" style="margin: 10px 10px 10px 900px;" href="{{ URL::previous() }}">Go Back</a>
         <div class="panel panel-default ">
-            <div class="panel-heading"><strong>New Student</strong></div>
+            <div class="panel-heading"><strong>New User</strong></div>
             <div class="panel-body">
                 {!! Form::open(['url' => 'users', 'class'=>'form-horizontal', 'role'=>'form']) !!}
                 <div style="color:black;">

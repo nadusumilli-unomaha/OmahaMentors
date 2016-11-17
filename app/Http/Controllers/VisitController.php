@@ -9,6 +9,7 @@ use Auth;
 use App\Visit;
 use App\User;
 use App\Student;
+use Log;
 
 class VisitController extends Controller
 {
@@ -117,11 +118,14 @@ class VisitController extends Controller
         $visit=Visit::find($id);
         if($request->date)
         {
-            $visit->date = $request->date;
+            $visit->Date = $request->date;
         }
-        else if($request->check)
+        if($request->check)
         {
             $visit->check = $request->check;
+        }
+        else{
+            $visit->check = 'Absent';
         }
         $visit->update();
         return redirect('/afterLogin');

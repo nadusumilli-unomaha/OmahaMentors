@@ -60,6 +60,13 @@ Route::group(['middleware' => 'roles', 'roles'=>['Admin', 'Employee']], function
 	Route::resource('visits','VisitController',['only'=>'create']);
 	Route::resource('visits','VisitController',['only'=>'store']);
 	Route::resource('visits','VisitController',['only'=>'edit']);
+});
+
+//############################################################################
+//The below are the routes that are only accessible by the Admin and Mentor.
+//############################################################################
+Route::group(['middleware' => 'roles', 'roles'=>['Admin', 'Mentor']], function()
+{
 	Route::resource('visits','VisitController',['only'=>'update']);
 });
 
@@ -77,6 +84,8 @@ Route::group(['middleware' => 'roles', 'roles'=>['Admin', 'Employee', 'Mentor']]
 	Route::resource('grades','GradeController',['only'=>'show']);
 	Route::resource('visits','VisitController',['only'=>'index']);
 	Route::resource('visits','VisitController',['only'=>'show']);
+	Route::resource('users','UserController',['only'=>'edit']);
+	Route::resource('users','UserController',['only'=>'update']);
 	Route::resource('notes','NoteController');
 	Route::resource('notifications','NotificationController');
 	//The below is how we can restrict access to defenitive users. Create a group and define access.
