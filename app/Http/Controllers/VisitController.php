@@ -68,6 +68,8 @@ class VisitController extends Controller
                 'cell_phone' => 'required|numeric|digits:10|unique:visits,cell_phone',
             ]);*/
         $visit = new Visit($request->all());
+        $visit->user_id = $request->user_id;
+        $visit->student_id = $request->student_id;
         $visit->save();
         return redirect('/afterLogin');
     }

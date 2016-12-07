@@ -251,7 +251,7 @@
                             <h2>Omaha Mentor For Kids</h2>
                             <hr class="star-primary">
                             <br>
-                            <img src="http://gdurl.com/ck2h" class="img-responsive img-centered" alt="" height="400" width="400">
+                            {{ HTML::image('http://gdurl.com/ck2h', '', array('class' => 'img-centered img-responsive')) }}
                             <br>
                             <p>Omaha Mentors for Kids Inc is a fictitious not-for-profit organization in Omaha Nebraska. It provides mentoring for at-risk students in the Omaha Public Schools. When OMK approached Super Awesome Company, their system managed over 800 students and mentors through spreadsheets. Super Awesome Team built this robust, simple, yet, efficient website for them. This website simplifies their tracking & reporting system, this website is compatible on mobile devices.</p>
                             <ul class="list-inline item-details">
