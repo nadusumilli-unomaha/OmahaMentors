@@ -67,7 +67,9 @@ class VisitController extends Controller
                 'home_phone' => 'numeric|digits:10|unique:visits,home_phone',
                 'cell_phone' => 'required|numeric|digits:10|unique:visits,cell_phone',
             ]);*/
-        $visit = new Visit($request->all());
+        $visit = new Visit();
+        $visit->Date = $request->Date;
+        $visit->check = $request->check;
         $visit->user_id = $request->user_id;
         $visit->student_id = $request->student_id;
         $visit->save();
