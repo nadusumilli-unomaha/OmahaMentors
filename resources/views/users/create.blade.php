@@ -135,7 +135,7 @@
                 <div class="form-group">
                         <div class="col-md-6 text-center " style="margin: 0px 0px 0px 132px;">
                         <br/>
-                            {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
+                            {!! Form::button('<span style="margin: 3px 5px 0px 0px;" class="glyphicon glyphicon-floppy-disk"></span>Save', ['class' => 'btn btn-primary form-control','type'=>'submit']) !!}
                         </div>
                 </div>
                 {!! Form::close() !!}

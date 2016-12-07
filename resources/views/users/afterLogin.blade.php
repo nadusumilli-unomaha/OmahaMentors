@@ -131,7 +131,7 @@
 					            </tbody>
 					        </table>
 					        <!-- The Update user function. -->
-					        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit My Profile</a>
+					        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-pencil"></span>Edit My Profile</a>
 							<!-- This is the Visit Schedule link. -->
 							<a class="btn btn-primary" href="{{action('HomeController@upcoming')}}">Upcoming Visits</a>
 						</div>
@@ -157,11 +157,11 @@
 				                                <td>{{$note->user->firstName}}</td>
 				                                <td>{{$note->student->firstName}}</td>
 				                                <td>{{ $note->description }}</td>
-												<td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}">Show</a></td>
-												<td><a class="btn btn-primary" href="{{ route('notes.edit',$note->id) }}">Edit</a></td>
+												<td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-eye-open"></span>Show</a></td>
+												<td><a class="btn btn-primary" href="{{ route('notes.edit',$note->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-pencil"></span>Edit</a></td>
 												<td>
 													{!! Form::open(['method' => 'DELETE', 'route'=>['notes.destroy', $note->id], 'id'=>'noteDelete'])!!}
-                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
+                                                    {!! Form::button('<span style="margin: 3px 5px 0px 0px;" class="glyphicon glyphicon-trash"></span>Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
                                                     {!! Form::close() !!}
 												</td>
 						                    </tr>
@@ -256,7 +256,7 @@
 				                                <td>{{ $student->dob }}</td>
 				                                <td>{{ $student->gender }}</td>
 				                                <td>{{ $student->school }}</td>
-												<td><a class="btn btn-primary" href="{{ route('students.show',$student->id) }}">Show</a></td>
+												<td><a class="btn btn-primary" href="{{ route('students.show',$student->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-eye-open"></span>Show</a></td>
 						                    </tr>
 						                @endforeach
 					                </tbody>
@@ -325,7 +325,7 @@
 				            </tbody>
 				        </table>
 				        <!-- The Update user function. -->
-				        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit My Profile</a>
+				        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-pencil"></span>Edit My Profile</a>
 					</div>
 
 					<div id="employeeToggle2" class="tab-pane fade">
@@ -340,7 +340,7 @@
 	                        </div>
 	                    {!! Form::close() !!}
 						<h1  style="margin: 0px 0px 0px 250px;">Student Profile</h1>
-						<a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
+						<a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('StudentController@create') }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-briefcase"></span>Create a Student</a><br/>
 						<div class="table-responsive">
 							<table class="table table-bordered table-striped table-hover table-inverse">
 				                <thead>
@@ -373,7 +373,7 @@
 		                                <td>{{ $student->dob }}</td>
 		                                <td>{{ $student->gender }}</td>
 		                                <td>{{ $student->school }}</td>
-										<td><a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}">Update</a></td>
+										<td><a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-pencil"></span>Update</a></td>
 				                    </tr>
 				                @endforeach
 				                </tbody>
@@ -393,7 +393,7 @@
 	                        </div>
 	                    {!! Form::close() !!}
 						<h1  style="margin: 0px 0px 0px 250px;">Mentor Profile</h1>
-						<a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('UserController@create') }}">Create a Mentor</a><br/>
+						<a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('UserController@create') }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-briefcase"></span>Create a Mentor</a><br/>
 						<div class="table-responsive">
 							<table class="table table-bordered table-striped table-hover table-inverse">
 				                <thead>
@@ -420,7 +420,7 @@
 		                                <td>{{ $mentor->zip }}</td>
 		                                <td>{{ $mentor->email }}</td> 
 		                                <td>{{ $mentor->phone }}</td>
-										<td><a class="btn btn-primary" href="{{ route('users.edit',$mentor->id) }}">Update</a></td>
+										<td><a class="btn btn-primary" href="{{ route('users.edit',$mentor->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-pencil"></span>Update</a></td>
 				                    </tr>
 				                @endforeach
 				                </tbody>
@@ -440,7 +440,7 @@
 	                        </div>
 	                    {!! Form::close() !!}
 						<h1  style="margin: 0px 0px 0px 250px;">visit Profile</h1>
-						<a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('VisitController@create') }}">Create a visit</a><br/>
+						<a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('VisitController@create') }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-briefcase"></span>Create a visit</a><br/>
 						<div class="table-responsive">
 							<table class="table table-bordered table-striped table-hover table-inverse">
 				                <thead>
@@ -479,7 +479,7 @@
 	                        </div>
 	                    {!! Form::close() !!}
 						<h1  style="margin: 0px 0px 0px 250px;">grade Profile</h1>
-						<a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
+						<a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('GradeController@create') }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-briefcase"></span>Create a grade</a><br/>
 						<div class="table-responsive">
 							<table class="table table-bordered table-striped table-hover table-inverse">
 				                <thead>
@@ -500,7 +500,7 @@
 		                                <td>{{ $grade->actual }}</td>
 		                                <td>{{ $grade->comments }}</td>
 		                                <td>{{ $grade->student->firstName }}</td>
-										<td><a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Update</a></td>
+										<td><a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-pencil"></span>Update</a></td>
 				                    </tr>
 				                @endforeach
 				                </tbody>
@@ -561,7 +561,7 @@
 			                                <td>{{$note->user->firstName}}</td>
 			                                <td>{{$note->student->firstName}}</td>
 			                                <td>{{ $note->description }}</td>
-											<td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}">Show</a></td>
+											<td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-eye-open"></span>Show</a></td>
 					                    </tr>
 					                @endforeach
 				                </tbody>
@@ -572,7 +572,7 @@
 					{{-- This is the second mentor toggle or the student information relating to the mentors. --}}
 					<div id="employeeToggle8" class="tab-pane fade" >
 	                    <div class="btn-group pull-right">
-	                        <button type="button" class="btn btn-primary">Export</button>
+	                        <button type="button" class="btn btn-primary"><span style="margin: 0px 5px 0px 0px;" class="glyphicon glyphicon-save"></span>Export</button>
 	                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 	                            <span class="caret"></span>
 	                            <span class="sr-only">Toggle Dropdown</span>
@@ -610,7 +610,7 @@
 				                            <td>{{ $student->zip }}</td>
 				                            <td>{{ $student->email }}</td>
 				                            <td>{{ $student->phone }}</td>
-				                            <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
+				                            <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-eye-open"></span>Read Report</a></td>
 				                            <?php $bool = 1;?>
 				                    </tr>
 				                @endforeach

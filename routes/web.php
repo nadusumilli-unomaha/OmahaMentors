@@ -76,6 +76,7 @@ Route::group(['middleware' => 'roles', 'roles'=>['Admin', 'Mentor']], function()
 Route::group(['middleware' => 'roles', 'roles'=>['Admin', 'Employee', 'Mentor']], function()
 {
 	Route::get('/home', 'HomeController@index');
+	Route::get('/updateProfile', 'UserController@updateProfile');
 	Route::get('resetPassword', 'HomeController@resetPassword');
 	Route::post('updatePassword', 'HomeController@updatePassword');
 	Route::resource('students','StudentController',['only'=>'index']);

@@ -254,4 +254,16 @@ class UserController extends Controller
         }
         return redirect()->back();
     }
+
+    public function updateProfile()
+    {
+        if(Auth::check() ){
+            $user=User::where('email',Auth::user()->email)->first();
+            return view('users.edit',compact('user'));
+        }
+        else{
+            session()->flash('cust_edit_msg', 'You do not have permissions to edit other users!.');
+            return redirect('users');
+        }
+    }
 }

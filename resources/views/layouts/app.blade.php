@@ -82,6 +82,16 @@
 
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuLink">
                                 <li>
+                                    <a class="dropdown-item" style="color:black"  href="{{ url('/updateProfile') }}">
+                                        <i class="glyphicon glyphicon-edit"></i>  Update Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" style="color:black"  href="{{ url('/resetPassword') }}">
+                                        <i class="glyphicon glyphicon-edit"></i>  Reset Password
+                                    </a>
+                                </li>
+                                <li>
                                     <a class="dropdown-item " style="color:black" href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -90,11 +100,6 @@
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" style="color:black"  href="{{ url('/resetPassword') }}">
-                                        Reset Password
-                                    </a>
                                 </li>
                             </ul>
                         </li>

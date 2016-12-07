@@ -154,7 +154,7 @@
                             </span>
                         </div>
                     {!! Form::close() !!}
-                    <a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('StudentController@create') }}">Create a Student</a><br/>
+                    <a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('StudentController@create') }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-briefcase"></span>Create a Student</a><br/>
                     <div class="table-responsive">
                         <!-- The code to list all the students and other people stuff that can admin can see and create.-->
                         <table class="table table-bordered table-striped table-hover table-inverse">
@@ -182,11 +182,11 @@
                                                 <td>{{ $student->zip }}</td>
                                                 <td>{{ $student->email }}
                                                 <td>{{ $student->phone }}</td>
-                                                <td><a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}">Update</a></td>
-                                                <td><a class="btn btn-primary" href="{{ route('students.show',$student->id) }}">Read</a></td>
+                                                <td><a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-pencil"></span>Update</a></td>
+                                                <td><a class="btn btn-primary" href="{{ route('students.show',$student->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-eye-open"></span>Read</a></td>
                                                 <td>
                                                     {!! Form::open(['method' => 'DELETE', 'route'=>['students.destroy', $student->id]])!!}
-                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
+                                                    {!! Form::button('<span style="margin: 3px 5px 0px 0px;" class="glyphicon glyphicon-trash"></span>Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
                                                     {!! Form::close() !!}
                                                 </td>
                                     </tr>
@@ -209,7 +209,7 @@
                             </span>
                         </div>
                     {!! Form::close() !!}
-                    <a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('UserController@create',"Mentor") }}">Create a Mentor</a><br/>
+                    <a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('UserController@create',"Mentor") }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-briefcase"></span>Create a Mentor</a><br/>
                     <div class="table-responsive">
                         <!-- The code to list all the mentors and other people stuff that can admin can see and create.-->
                         <table class="table table-bordered table-striped table-hover table-inverse">
@@ -237,11 +237,11 @@
                                                 <td>{{ $mentor->zip }}</td>
                                                 <td>{{ $mentor->email }}
                                                 <td>{{ $mentor->phone }}</td>
-                                                <td><a class="btn btn-primary" href="{{ route('users.edit',$mentor->id) }}">Update</a></td>
-                                                <td><a class="btn btn-primary" href="{{ route('users.show',$mentor->id) }}">Read</a></td>
+                                                <td><a class="btn btn-primary" href="{{ route('users.edit',$mentor->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-pencil"></span>Update</a></td>
+                                                <td><a class="btn btn-primary" href="{{ route('users.show',$mentor->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-eye-open"></span>Read</a></td>
                                                 <td>
                                                     {!! Form::open(['method' => 'DELETE', 'route'=>['users.destroy', $mentor->id]])!!}
-                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
+                                                    {!! Form::button('<span style="margin: 3px 5px 0px 0px;" class="glyphicon glyphicon-trash"></span>Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
                                                     {!! Form::close() !!}
                                                 </td>
                                     </tr>
@@ -264,7 +264,7 @@
                             </span>
                         </div>
                     {!! Form::close() !!}
-                    <a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('UserController@create', "Employee") }}">Create an Employee</a><br/>
+                    <a class="btn btn-primary" style="margin: 10px 0px 10px 250px;" href="{{ action('UserController@create', "Employee") }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-briefcase"></span>Create an Employee</a><br/>
                     <div class="table-responsive">
                         <!-- The code to list all the employees and other people stuff that can admin can see and create.-->
                         <table class="table table-bordered table-striped table-hover table-inverse">
@@ -292,11 +292,11 @@
                                                 <td>{{ $employee->zip }}</td>
                                                 <td>{{ $employee->email }}
                                                 <td>{{ $employee->phone }}</td>
-                                                <td><a class="btn btn-primary" href="{{ route('users.edit',$employee->id) }}">Update</a></td>
-                                                <td><a class="btn btn-primary" href="{{ route('users.show',$employee->id) }}">Read</a></td>
+                                                <td><a class="btn btn-primary" href="{{ route('users.edit',$employee->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-pencil"></span>Update</a></td>
+                                                <td><a class="btn btn-primary" href="{{ route('users.show',$employee->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-eye-open"></span>Read</a></td>
                                                 <td>
                                                     {!! Form::open(['method' => 'DELETE', 'route'=>['users.destroy', $employee->id]])!!}
-                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
+                                                    {!! Form::button('<span style="margin: 3px 5px 0px 0px;" class="glyphicon glyphicon-trash"></span>Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
                                                     {!! Form::close() !!}
                                                 </td>
                                     </tr>
@@ -319,7 +319,7 @@
                             </span>
                         </div>
                     {!! Form::close() !!}
-                    <a class="btn btn-primary" style="margin: 10px 0px 10px 230px;" href="{{ action('VisitController@create') }}">Create a visit</a><br/>
+                    <a class="btn btn-primary" style="margin: 10px 0px 10px 230px;" href="{{ action('VisitController@create') }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-briefcase"></span>Create a visit</a><br/>
                     <div class="table-responsive">
                         <!-- The code to list all the visits and other people stuff that can admin can see and create.-->
                         <table class="table table-bordered table-striped table-hover table-inverse">
@@ -339,11 +339,11 @@
                                         <td>{{ $visit->check }}</td>
                                         <td>{{ $visit->user->firstName }}</td>
                                         <td>{{ $visit->student->firstName }}</td>
-                                        <td><a class="btn btn-primary" href="{{ route('visits.edit',$visit->id) }}">Update</a></td>
-                                        <td><a class="btn btn-primary" href="{{ route('visits.show',$visit->id) }}">Read</a></td>
+                                        <td><a class="btn btn-primary" href="{{ route('visits.edit',$visit->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-pencil"></span>Update</a></td>
+                                        <td><a class="btn btn-primary" href="{{ route('visits.show',$visit->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-eye-open"></span>Read</a></td>
                                         <td>
                                             {!! Form::open(['method' => 'DELETE', 'route'=>['visits.destroy', $visit->id]])!!}
-                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
+                                                    {!! Form::button('<span style="margin: 3px 5px 0px 0px;" class="glyphicon glyphicon-trash"></span>Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
                                             {!! Form::close() !!}
                                         </td>
                                     </tr>
@@ -366,7 +366,7 @@
                             </span>
                         </div>
                     {!! Form::close() !!}
-                    <a class="btn btn-primary" style="margin: 10px 0px 10px 230px;" href="{{ action('GradeController@create') }}">Create a grade</a><br/>
+                    <a class="btn btn-primary" style="margin: 10px 0px 10px 230px;" href="{{ action('GradeController@create') }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-briefcase"></span>Create a grade</a><br/>
                     <div class="table-responsive">
                     <!-- The code to list all the grades and other people stuff that can admin can see and create.-->
                         <table class="table table-bordered table-striped table-hover table-inverse">
@@ -388,11 +388,11 @@
                                         <td>{{ $grade->actual }}</td>
                                         <td>{{ $grade->comments }}</td>
                                         <td>{{ $grade->student->firstName }}</td>
-                                        <td><a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Update</a></td>
-                                        <td><a class="btn btn-primary" href="{{ route('grades.show',$grade->id) }}">Read</a></td>
+                                        <td><a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-pencil"></span>Update</a></td>
+                                        <td><a class="btn btn-primary" href="{{ route('grades.show',$grade->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-eye-open"></span>Read</a></td>
                                         <td>
                                             {!! Form::open(['method' => 'DELETE', 'route'=>['grades.destroy', $grade->id]])!!}
-                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
+                                                    {!! Form::button('<span style="margin: 3px 5px 0px 0px;" class="glyphicon glyphicon-trash"></span>Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
                                             {!! Form::close() !!}
                                         </td>
                                     </tr>
@@ -423,7 +423,7 @@
                                         <td>{{$note->user->firstName}}</td>
                                         <td>{{$note->student->firstName}}</td>
                                         <td>{{ $note->description }}</td>
-                                        <td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}">Show</a></td>
+                                        <td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-eye-open"></span>Show</a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -433,7 +433,7 @@
 
                 <div id="adminToggle9" class="tab-pane fade" >
                     <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-primary">Export</button>
+                        <button type="button" class="btn btn-primary"><span style="margin: 0px 5px 0px 0px;" class="glyphicon glyphicon-save"></span>Export</button>
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
                             <span class="sr-only">Toggle Dropdown</span>
@@ -471,7 +471,7 @@
                                             <td>{{ $student->zip }}</td>
                                             <td>{{ $student->email }}</td>
                                             <td>{{ $student->phone }}</td>
-                                            <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}">Read Report</a></td>
+                                            <td><a class="btn btn-primary" href="{{ route('PDF.show',$student->id) }}"><span style="margin: 3px 10px 0px 0px;" class="glyphicon glyphicon-eye-open"></span>Read Report</a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
