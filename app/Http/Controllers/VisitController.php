@@ -112,10 +112,6 @@ class VisitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-                'check' => 'required',
-                'Date' => 'required|date|date_format:Y-m-d',
-            ]);
         $visit=Visit::find($id);
         if($request->date)
         {

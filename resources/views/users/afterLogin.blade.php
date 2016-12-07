@@ -198,7 +198,7 @@
 													<td>
 														{!! Form::open(['method' => 'PATCH','id'=>'isPresent','route'=>['visits.update',$visit->id]]) !!}
 															<label class="switchround" >
-																<input type="checkbox" onchange="this.form.submit()" {{ $visit->check === 'Present'  ? 'checked' : ''}} name="check" value={{ $visit->check === 'Present'  ? 'Absent' : 'Present'}}>
+																<input type="checkbox" onchange="this.form.submit()" {{ $visit->check === 'Present'  ? 'checked' : ''}} name="check" value={{ $visit->check === 'Present'  ? '' : 'Present'}}>
 															  	<div class="slider round"></div>
 															</label>
 		        										{!! Form::close() !!}
