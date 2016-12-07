@@ -116,6 +116,19 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+                'lastName' => 'required',
+                'firstName' => 'required|unique:students,firstName',
+                'dob' => 'required',
+                'gender' => 'required',
+                'address' => 'required',
+                'city' => 'required',
+                'state' => 'required',
+                'zip' => 'required|numeric|digits:5',
+                'email' => 'required|email|unique:students,email',
+                'phone' => 'numeric|digits:10|unique:students,phone',
+                'school' => 'required',
+            ]);
         $student= new Student($request->all());
         $student=Student::find($id);
         $student->update($request->all());

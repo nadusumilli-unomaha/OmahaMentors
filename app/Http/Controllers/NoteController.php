@@ -52,7 +52,9 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->validate($request,[
+                'description' => 'required',
+            ]);
         $note= new Note($request->all());
         $note->user_id = $request->user_id;
         $note->visit_id = $request->visit_id;
@@ -105,6 +107,9 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+                'description' => 'required',
+            ]);
         $note= new Note($request->all());
         $note=Note::find($id);
         $note->update($request->all());

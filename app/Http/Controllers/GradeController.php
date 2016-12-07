@@ -114,6 +114,12 @@ class GradeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+                'subject' => 'required',
+                'period' => 'required',
+                'actual' => 'required',
+                'comments' => 'required',
+            ]);
         $grade= new Grade($request->all());
         $grade=Grade::find($id);
         $grade->update($request->all());
