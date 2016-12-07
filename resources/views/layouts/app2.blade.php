@@ -126,9 +126,11 @@
                                     <div style="color:black;" class="modal-body">
                                         Are you sure you want to delete the data?
                                     </div>
+                                    <div style="color:black;" class="modal-body edit-content">
+                                    </div>
                                     <div class="modal-footer">
                                         <a href="" class="btn btn-warning pull-right" data-dismiss="modal">Close</a>
-                                        <button type="submit" style="margin: 0px 10px 0px 10px;" class="btn btn-danger" id="btnYes">Delete</button>
+                                        <button type="button" style="margin: 0px 10px 0px 10px;" class="btn btn-danger" id="btnYes">Delete</button>
                                     </div>
                                 </div>
                             </div>
@@ -379,12 +381,6 @@
         {{Html::script('vendor/bootstrap/js/bootstrap.min.js')}}
         <!-- Html::script('vendor/bootstrap/js/bootstrap-switch.min.js')}}
         Html::script('vendor/bootstrap/js/bootstrap-switch.js')}} -->
-
-        <!-- Plugin JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-        <!-- Contact Form JavaScript -->
-        {{Html::script('js/jqBootstrapValidation.js')}}
         <!-- <script src="js/jqBootstrapValidation.js"></script> -->
         {{Html::script('js/contact_me.js')}}
         <!-- <script src="js/contact_me.js"></script> -->
@@ -392,6 +388,12 @@
         <!-- Theme JavaScript -->
         {{Html::script('js/freelancer.min.js')}}
         <!-- <script src="js/freelancer.min.js"></script> -->
+
+        <!-- Contact Form JavaScript -->
+        {{Html::script('js/jqBootstrapValidation.js')}}
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     </body>
         <script type="text/javascript">
             $(document).ready(function() {
@@ -411,6 +413,18 @@
                             this.setCustomValidity("");
                         });
                 }
+
+                //This took years but i love the code because it finally worked.
+                // This is to open a modal for confirmation on submitting the delete form.
+                $('button[name="remove_levels"]').on('click', function(e){
+                    var $form=$(this).closest('form');
+                    e.preventDefault();
+                    $('#modal-1').modal({ backdrop: 'static', keyboard: false })
+                        .one('click', '#btnYes', function() {
+                            $form.trigger('submit'); // submit the form
+                        });
+                        // .one() is NOT a typo of .on()
+                });
 
                 //Auto activate the tabs in each page when they are logged in.
                 $('#myTab  a').click(function(e) {

@@ -160,8 +160,8 @@
 												<td><a class="btn btn-primary" href="{{ route('notes.show',$note->id) }}">Show</a></td>
 												<td><a class="btn btn-primary" href="{{ route('notes.edit',$note->id) }}">Edit</a></td>
 												<td>
-													{!! Form::open(['method' => 'DELETE', 'route'=>['notes.destroy', $note->id]])!!}
-                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','data-toggle'=>"modal" ,'data-target'=>"#modal-1"]) !!}
+													{!! Form::open(['method' => 'DELETE', 'route'=>['notes.destroy', $note->id], 'id'=>'noteDelete'])!!}
+                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
                                                     {!! Form::close() !!}
 												</td>
 						                    </tr>

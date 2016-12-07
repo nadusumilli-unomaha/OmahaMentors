@@ -186,7 +186,7 @@
                                                 <td><a class="btn btn-primary" href="{{ route('students.show',$student->id) }}">Read</a></td>
                                                 <td>
                                                     {!! Form::open(['method' => 'DELETE', 'route'=>['students.destroy', $student->id]])!!}
-                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','data-toggle'=>"modal" ,'data-target'=>"#modal-1"]) !!}
+                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
                                                     {!! Form::close() !!}
                                                 </td>
                                     </tr>
@@ -241,7 +241,7 @@
                                                 <td><a class="btn btn-primary" href="{{ route('users.show',$mentor->id) }}">Read</a></td>
                                                 <td>
                                                     {!! Form::open(['method' => 'DELETE', 'route'=>['users.destroy', $mentor->id]])!!}
-                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger','data-toggle'=>"modal" ,'data-target'=>"#modal-1"]) !!}
+                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
                                                     {!! Form::close() !!}
                                                 </td>
                                     </tr>
@@ -296,7 +296,7 @@
                                                 <td><a class="btn btn-primary" href="{{ route('users.show',$employee->id) }}">Read</a></td>
                                                 <td>
                                                     {!! Form::open(['method' => 'DELETE', 'route'=>['users.destroy', $employee->id]])!!}
-                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger','data-toggle'=>"modal" ,'data-target'=>"#modal-1"]) !!}
+                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
                                                     {!! Form::close() !!}
                                                 </td>
                                     </tr>
@@ -343,7 +343,7 @@
                                         <td><a class="btn btn-primary" href="{{ route('visits.show',$visit->id) }}">Read</a></td>
                                         <td>
                                             {!! Form::open(['method' => 'DELETE', 'route'=>['visits.destroy', $visit->id]])!!}
-                                            {!! Form::submit('Delete', ['class' => 'btn btn-danger','data-toggle'=>"modal" ,'data-target'=>"#modal-1"]) !!}
+                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
                                             {!! Form::close() !!}
                                         </td>
                                     </tr>
@@ -392,7 +392,7 @@
                                         <td><a class="btn btn-primary" href="{{ route('grades.show',$grade->id) }}">Read</a></td>
                                         <td>
                                             {!! Form::open(['method' => 'DELETE', 'route'=>['grades.destroy', $grade->id]])!!}
-                                            {!! Form::submit('Delete', ['class' => 'btn btn-danger','data-toggle'=>"modal" ,'data-target'=>"#modal-1"]) !!}
+                                                    {!! Form::button('Delete', ['class' => 'btn btn-danger','name'=>'remove_levels']) !!}
                                             {!! Form::close() !!}
                                         </td>
                                     </tr>
