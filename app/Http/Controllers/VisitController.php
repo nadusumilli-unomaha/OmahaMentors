@@ -56,17 +56,10 @@ class VisitController extends Controller
      */
     public function store(Request $request)
     {
-        /*$this->validate($request,[
-                'name' => 'required|unique:visits,name',
-                'address' => 'required',
-                'cust_number' => 'required|numeric',
-                'city' => 'required',
-                'state' => 'required',
-                'zip' => 'required|numeric|digits:5',
-                'email' => 'required|email|unique:visits,email',
-                'home_phone' => 'numeric|digits:10|unique:visits,home_phone',
-                'cell_phone' => 'required|numeric|digits:10|unique:visits,cell_phone',
-            ]);*/
+        $this->validate($request,[
+                'check' => 'required',
+                'Date' => 'required|date|date_format:Y-m-d',
+            ]);
         $visit = new Visit();
         $visit->Date = $request->Date;
         $visit->check = $request->check;
