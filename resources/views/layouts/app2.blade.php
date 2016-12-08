@@ -401,23 +401,19 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     </body>
         <script type="text/javascript">
+            function checkPasswordMatch() {
+                var password = $("#txtNewPassword").val();
+                var confirmPassword = $("#txtConfirmPassword").val();
+
+                if (password != confirmPassword)
+                    $("#divCheckPasswordMatch").html("Passwords do not match!");
+                else
+                    $("#divCheckPasswordMatch").html("Passwords match.");
+            }
             $(document).ready(function() {
                 //###########################################################################
                 //####                The Defenitions for JS Code.                       ####
                 //###########################################################################
-                function checkPasswordMatch() {
-                    var password = $("#password").val();
-                    var confirmPassword = $("#password-confirm").val();
-
-                    if (password != confirmPassword)
-                        $('#password, #password-confirm').each(function() {
-                            this.setCustomValidity("Passwords Don't Match");
-                        });
-                    else
-                        $('#password, #password-confirm').each(function() {
-                            this.setCustomValidity("");
-                        });
-                }
 
                 //This took years but i love the code because it finally worked.
                 // This is to open a modal for confirmation on submitting the delete form.

@@ -43,7 +43,7 @@
 	                        <label for="password" class="col-md-4 control-label" style="color:#2c3e50;">Password</label>
 
 	                        <div class="col-md-14">
-	                            <input id="password" type="password" class="form-control" placeholder="Password"  name="password" required>
+	                            <input id="txtNewPassword" type="password" class="form-control" placeholder="Password"  name="password" required>
 
 	                            @if ($errors->has('password'))
 	                                <span class="help-block">
@@ -57,7 +57,7 @@
 	                        <label for="password-confirm" class="col-md-4 control-label" style="color:#2c3e50;">Confirm Password</label>
 
 	                        <div class="col-md-14">
-	                            <input id="password-confirm" type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required>
+	                            <input id="txtConfirmPassword" type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" onchange="checkPasswordMatch();" required>
 
 	                            @if ($errors->has('password_confirmation'))
 	                                <span class="help-block">
@@ -66,6 +66,8 @@
 	                            @endif
 	                        </div>
 	                    </div>
+
+                		<div style="color:red;" class="form-group registrationFormAlert" id="divCheckPasswordMatch"></div>
 
 	                    <div class="form-group">
 	                        <div class="col-md-6 text-center">

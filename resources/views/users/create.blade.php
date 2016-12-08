@@ -7,7 +7,7 @@
         <div class="panel panel-default ">
             <div class="panel-heading"><strong>New User</strong></div>
             <div class="panel-body">
-                {!! Form::open(['url' => 'users', 'class'=>'form-horizontal', 'role'=>'form']) !!}
+                {!! Form::open(['url' => 'users', 'class'=>'user form-horizontal', 'role'=>'form']) !!}
                 <div style="color:black;">
                     {!! Form::label('role_request', 'Role:',['class'=>'col-md-4 control-label']) !!}
                     {!! Form::select('role_request', ['Mentor'=>'Mentor','Employee']) !!}
@@ -164,7 +164,7 @@
                 <div class="form-group floating-label-form-group controls {{ $errors->has('password') ? ' has-error has-feedback' : '' }}">
                     {!! Form::label('password', 'Password:',['class'=>'col-md-4 control-label']) !!}
                     <div class="col-md-14">
-                        {!! Form::text('password',null,['class'=>'form-control','placeholder'=>'Password','data-validation-required-message']) !!}
+                        {!! Form::password('password',['class'=>'form-control','type'=>'password','id'=>'txtNewPassword','placeholder'=>'Password','data-validation-required-message']) !!}
                         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                         @if ($errors->has('password'))
                             <span class="help-block">
@@ -176,7 +176,7 @@
                 <div class="form-group floating-label-form-group controls {{ $errors->has('password-confirm') ? ' has-error has-feedback' : '' }}">
                     {!! Form::label('password-confirm', 'Confirm Password:',['class'=>'col-md-4 control-label']) !!}
                     <div class="col-md-14">
-                        {!! Form::text('password-confirm',null,['class'=>'form-control','placeholder'=>'Confirm Password','data-validation-required-message']) !!}
+                        {!! Form::password('password-confirm',['class'=>'form-control','type'=>'password','id'=>'txtConfirmPassword','onchange'=>'checkPasswordMatch()','placeholder'=>'Confirm Password','data-validation-required-message']) !!}
                         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                         @if ($errors->has('password-confirm'))
                             <span class="help-block">
@@ -185,6 +185,7 @@
                         @endif
                     </div>
                 </div>
+                <div style="color:red;" class="form-group registrationFormAlert" id="divCheckPasswordMatch"></div>
                 <div class="form-group">
                         <div class="col-md-6 text-center " style="margin: 0px 0px 0px 132px;">
                         <br/>

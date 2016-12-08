@@ -188,7 +188,12 @@
 		        <div class="form-group floating-label-form-group controls {{ $errors->has('gender') ? ' has-error has-feedback' : '' }}">
 		            {!! Form::label('gender', 'Gender:',['class'=>'col-md-4 control-label']) !!}
 		            <div class="col-md-14">
-			            {!! Form::text('gender',null,['class'=>'form-control','placeholder'=>'Gender','data-validation-required-message']) !!}
+			            {{ Form::select('gender', [
+                            'Male'=> 'Male',
+                            'Female'=> 'Female'],
+                            '',
+                           ['class'=>'form-control','style'=>'color:black;','placeholder'=>'Gender','data-validation-required-message']
+                        ) }}
 			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
 			            @if ($errors->has('gender'))
 			                <span class="help-block">
