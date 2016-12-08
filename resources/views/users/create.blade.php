@@ -173,14 +173,14 @@
                         @endif
                     </div>
                 </div>
-                <div class="form-group floating-label-form-group controls {{ $errors->has('password-confirm') ? ' has-error has-feedback' : '' }}">
-                    {!! Form::label('password-confirm', 'Confirm Password:',['class'=>'col-md-4 control-label']) !!}
+                <div class="form-group floating-label-form-group controls {{ $errors->has('password_confirmation') ? ' has-error has-feedback' : '' }}">
+                    {!! Form::label('password_confirmation', 'Confirm Password:',['class'=>'col-md-4 control-label']) !!}
                     <div class="col-md-14">
-                        {!! Form::password('password-confirm',['class'=>'form-control','type'=>'password','id'=>'txtConfirmPassword','onchange'=>'checkPasswordMatch()','placeholder'=>'Confirm Password','data-validation-required-message']) !!}
+                        {!! Form::password('password_confirmation',['class'=>'form-control','type'=>'password','id'=>'txtConfirmPassword','onchange'=>'checkPasswordMatch()','placeholder'=>'Confirm Password','data-validation-required-message']) !!}
                         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                        @if ($errors->has('password-confirm'))
+                        @if ($errors->has('password_confirmation'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('password-confirm') }}</strong>
+                                <strong>{{ $errors->first('password_confirmation') }}</strong>
                             </span>
                         @endif
                     </div>

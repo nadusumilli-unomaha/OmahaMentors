@@ -139,6 +139,7 @@ class UserController extends Controller
                 'zip' => 'required|numeric|digits:5',
                 'email' => 'required|email|unique:users,email',
                 'phone' => 'required|numeric|digits:10|unique:users,phone',
+                'password' => 'required|confirmed'
         ]);
         $user = new User;
         $user->firstName = $request['firstName'];

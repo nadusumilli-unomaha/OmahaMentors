@@ -54,7 +54,7 @@
 	                    </div>
 
 	                    <div class="form-group floating-label-form-group controls{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-	                        <label for="password-confirm" class="col-md-4 control-label" style="color:#2c3e50;">Confirm Password</label>
+	                        <label for="password_confirmation" class="col-md-4 control-label" style="color:#2c3e50;">Confirm Password</label>
 
 	                        <div class="col-md-14">
 	                            <input id="txtConfirmPassword" type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" onchange="checkPasswordMatch();" required>
