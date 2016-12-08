@@ -39,7 +39,23 @@
 		        <div class="form-group floating-label-form-group controls {{ $errors->has('actual') ? ' has-error has-feedback' : '' }}">
 		            {!! Form::label('actual', 'Grade:',['class'=>'col-md-4 control-label']) !!}
 		            <div class="col-md-14">
-			            {!! Form::text('actual',null,['class'=>'form-control','placeholder'=>'Grade','data-validation-required-message']) !!}
+			            {{ Form::select('actual', [
+                            'A+'=> 'A+',
+                            'A'=> 'A',
+                            'A-'=> 'A-',
+                            'B+'=> 'B+',
+                            'B'=> 'B',
+                            'B'=> 'B-',
+                            'C+'=> 'C+',
+                            'C'=> 'C',
+                            'C-'=> 'C-',
+                            'D+'=> 'D+',
+                            'D'=> 'D',
+                            'D-'=> 'D-',
+                            'F'=> 'F'],
+                            '',
+                           ['class'=>'form-control','style'=>'color:black;','placeholder'=>'Grade','data-validation-required-message']
+                        ) }}
 			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
 			            @if ($errors->has('actual'))
 			                <span class="help-block">

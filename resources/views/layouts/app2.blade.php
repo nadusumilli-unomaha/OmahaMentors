@@ -396,9 +396,10 @@
 
         <!-- Contact Form JavaScript -->
         {{Html::script('js/jqBootstrapValidation.js')}}
-    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
         <!-- Plugin JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
     </body>
         <script type="text/javascript">
             function checkPasswordMatch() {
@@ -414,7 +415,7 @@
                 //###########################################################################
                 //####                The Defenitions for JS Code.                       ####
                 //###########################################################################
-
+                
                 //This took years but i love the code because it finally worked.
                 // This is to open a modal for confirmation on submitting the delete form.
                 $('button[name="remove_levels"]').on('click', function(e){

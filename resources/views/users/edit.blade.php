@@ -110,7 +110,7 @@
                             'West Virginia'=> 'West Virginia',
                             'Wisconsin'=> 'Wisconsin',
                             'Wyoming'=> 'Wyoming'],
-                            '',
+                            $user['state'],
                            ['class'=>'form-control','style'=>'color:black;','placeholder'=>'State','data-validation-required-message']
                         ) }}
 			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>

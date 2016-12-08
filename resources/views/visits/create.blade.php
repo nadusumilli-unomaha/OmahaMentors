@@ -19,7 +19,7 @@
 		        <div class="form-group floating-label-form-group controls {{ $errors->has('Date') ? ' has-error has-feedback' : '' }}">
 		            {!! Form::label('Date', 'Date:',['class'=>'col-md-4 control-label']) !!}
 		            <div class="col-md-14">
-			            {!! Form::text('Date',null,['class'=>'form-control','placeholder'=>'Date','data-validation-required-message']) !!}
+			            {!! Form::text('Date',null,['class'=>'form-control','id'=>'datepicker','placeholder'=>'Date','data-validation-required-message']) !!}
 			            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
 			            @if ($errors->has('Date'))
 			                <span class="help-block">
